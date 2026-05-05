@@ -1,5 +1,3 @@
-'use client'
-
 import Grid1 from "@/components/Grid1"
 
 /**
@@ -46,31 +44,30 @@ export default function Installation() {
           <div className="bg-white rounded-lg shadow-md p-8 border-l-4 border-purple-500">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">🎨 Step 3: Import Styles</h2>
             <pre className="bg-gray-900 text-gray-100 p-6 rounded-lg overflow-auto text-sm">
-{`// In your layout.tsx
-import '@syncfusion/react-grid/styles/material.css';`}
-            </pre>
+{`// In your main.tsx
+import '@syncfusion/react-grid/styles/material.css';`}</pre>
           </div>
 
           {/* Step 4 */}
           <div className="bg-white rounded-lg shadow-md p-8 border-l-4 border-orange-500">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">🚀 Step 4: Run Development Server</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">🚀 Step 4: Use the Grid</h2>
             <pre className="bg-gray-900 text-gray-100 p-6 rounded-lg overflow-auto text-sm">
-{`npm run dev
-# App available at http://localhost:3000`}
-            </pre>
+{`import { Grid } from '@syncfusion/react-grid'
+import { GridData } from './data'
+
+export default function MyGrid() {
+  return (
+    <Grid dataSource={GridData} columns={columns} />
+  )
+}`}</pre>
           </div>
 
-          {/* Step 5 - Grid Preview */}
-          <div className="bg-white rounded-lg shadow-md p-8 border-l-4 border-red-500">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">📊 Step 5: Grid Preview</h2>
-            <div className="bg-gray-50 p-12 rounded border-2 border-dashed border-gray-300 flex items-center justify-center h-120">
-              <div className="text-center" style={{ width: "100%", height: "100%" }}>
-                <p className="text-gray-500 text-sm mt-2"><Grid1 /></p>
-              </div>
-            </div>
+          {/* Demo */}
+          <div className="bg-white rounded-lg shadow-md p-8 border-l-4 border-indigo-500">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">📊 Demo Grid</h2>
+            <Grid1 />
           </div>
         </div>
-
       </div>
     </div>
   )

@@ -1,11 +1,9 @@
-'use client'
-
 import Grid3 from "@/components/Grid3"
 
 /**
- * Visual Template Page
+ * Pagination Page
  * 
- * UI template showcase for Syncfusion React Grid
+ * UI template showcase for Syncfusion React Grid with paging
  */
 
 export default function Pagination() {
@@ -13,6 +11,7 @@ export default function Pagination() {
     <div className="min-h-screen py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
         <div className="mb-12">
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">High‑Performance Grid with Paging</h1>
           <p className="text-xl text-gray-600">
             The Syncfusion React Grid provides built‑in paging to efficiently manage large datasets by dividing data into smaller, navigable pages.
 Paging minimizes initial data rendering and improves load time, ensuring consistent performance across different data sizes.
