@@ -1,5 +1,7 @@
 'use client'
 
+import Grid1 from "@/components/Grid1"
+
 /**
  * Installation & Setup Page
  * 
@@ -14,7 +16,7 @@
 export default function Installation() {
   return (
     <div className="min-h-screen py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         <div className="mb-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">Installation & Setup</h1>
           <p className="text-xl text-gray-600">
@@ -56,6 +58,16 @@ import '@syncfusion/react-grid/styles/material.css';`}
 {`npm run dev
 # App available at http://localhost:3000`}
             </pre>
+          </div>
+
+          {/* Step 5 - Grid Preview */}
+          <div className="bg-white rounded-lg shadow-md p-8 border-l-4 border-red-500">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">📊 Step 5: Grid Preview</h2>
+            <div className="bg-gray-50 p-12 rounded border-2 border-dashed border-gray-300 flex items-center justify-center h-120">
+              <div className="text-center" style={{ width: "100%", height: "100%" }}>
+                <p className="text-gray-500 text-sm mt-2"><Grid1 /></p>
+              </div>
+            </div>
           </div>
         </div>
 

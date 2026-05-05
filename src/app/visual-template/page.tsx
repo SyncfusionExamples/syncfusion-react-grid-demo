@@ -1,5 +1,7 @@
 'use client'
 
+import Grid2 from "@/components/Grid2"
+
 /**
  * Visual Template Page
  * 
@@ -18,16 +20,14 @@ export default function VisualTemplate() {
         </div>
 
         {/* Grid Preview Area */}
-        <div className="bg-white rounded-lg shadow-md p-8">
+        {/* <div className="bg-white rounded-lg shadow-md p-8"> */}
           <h2 className="text-2xl font-bold text-gray-900 mb-6">UI Template Preview</h2>
-          <div className="bg-gray-50 p-12 rounded border-2 border-dashed border-gray-300 flex items-center justify-center min-h-screen">
+          {/* <div className="bg-gray-50 p-12 rounded border-2 border-dashed border-gray-300 flex items-center justify-center min-h-120"> */}
             <div className="text-center">
-              <div className="text-6xl mb-4">🎨</div>
-              <p className="text-gray-600 text-lg">Grid Component Ready for Integration</p>
-              <p className="text-gray-500 text-sm mt-2">Add your Syncfusion React Grid component here</p>
+              <p className="text-gray-500 text-sm mt-2"><Grid2 /></p>
             </div>
-          </div>
-        </div>
+          {/* </div> */}
+        {/* </div> */}
       </div>
     </div>
   )

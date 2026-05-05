@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Navbar from '@/components/Navbar'
 import './globals.css'
+import './grid.css'
 
 export const metadata: Metadata = {
   title: 'Syncfusion React Grid Demo - Microsoft Webinar',
