@@ -1,11 +1,9 @@
-'use client'
-
 import Grid5 from "@/components/Grid5"
 
 /**
- * Visual Template Page
+ * Virtualization Page
  * 
- * UI template showcase for Syncfusion React Grid
+ * UI template showcase for Syncfusion React Grid with virtual scrolling
  */
 
 export default function Virtualization() {
@@ -13,6 +11,7 @@ export default function Virtualization() {
     <div className="min-h-screen py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
         <div className="mb-12">
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">High‑Performance Grid with Scrolling</h1>
           <p className="text-xl text-gray-600">
             The Syncfusion React Grid supports efficient scrolling to handle large datasets by rendering only the visible rows within the viewport.
 This approach reduces DOM load and improves responsiveness during continuous vertical and horizontal navigation.

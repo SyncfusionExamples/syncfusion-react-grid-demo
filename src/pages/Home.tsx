@@ -1,5 +1,3 @@
-import Link from 'next/link'
-
 export default function Home() {
   const samples = [
     {
@@ -45,7 +43,7 @@ export default function Home() {
         {/* Sample Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {samples.map((sample) => (
-            <Link
+            <a
               key={sample.id}
               href={sample.href}
               className="group"
@@ -68,7 +66,7 @@ export default function Home() {
                   <span className="ml-2 group-hover:translate-x-2 transition-transform">→</span>
                 </div>
               </div>
-            </Link>
+            </a>
           ))}
         </div>
 
