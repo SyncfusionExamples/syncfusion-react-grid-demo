@@ -1,4 +1,4 @@
-import Grid5 from "@/components/Grid5"
+import GridPerformance from "@/components/GridDataAPI"
 
 /**
  * Virtualization Page
@@ -52,7 +52,7 @@ export default function Virtualization() {
                 text-align: left !important;
               }
             `}</style>
-            <Grid5 />
+            <GridPerformance />
           </div>
         </div>
       </div>

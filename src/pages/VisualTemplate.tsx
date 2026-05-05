@@ -1,4 +1,4 @@
-import Grid2 from "@/components/Grid2"
+import GridFeature from "@/components/GridFeature"
 
 /**
  * Visual Template Page
@@ -65,7 +65,7 @@ export default function VisualTemplate() {
                 color: #9333ea;
               }
             `}</style>
-            <Grid2 />
+            <GridFeature />
           </div>
         </div>
       </div>

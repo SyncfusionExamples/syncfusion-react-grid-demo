@@ -24,7 +24,7 @@ export default function Home() {
               { label: 'Filtering', desc: 'Advanced filtering capabilities', icon: '🔍' },
               { label: 'Sorting', desc: 'Multi-column sorting & ordering', icon: '↕️' },
               { label: 'Aggregation', desc: 'Summary & aggregate calculations', icon: '∑' },
-              { label: 'Editing', desc: 'Inline cell editing capabilities', icon: '✏️' },
+              { label: 'Editing', desc: 'Editing capabilities', icon: '✏️' },
               { label: 'Performance', desc: 'Virtual scrolling & pagination', icon: '⚡' },
             ].map((feature, idx) => (
               <div key={idx} className="p-6 bg-gradient-to-br from-blue-50 to-gray-50 rounded-xl border border-blue-200 hover:border-blue-400 hover:shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer">

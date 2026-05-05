@@ -1,4 +1,4 @@
-import Grid1 from "@/components/Grid1"
+import Grid from "@/components/Grid"
 
 /**
  * Installation & Setup Page
@@ -54,7 +54,7 @@ import '@syncfusion/react-grid/styles/material.css';`}</pre>
           {/* Step 4 */}
           <div className="bg-white rounded-lg shadow-md p-8 border-l-4 border-orange-500">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">🚀 Step 4: Use the Grid</h2>
-            <pre className="bg-gray-900 text-gray-100 p-6 rounded-lg overflow-auto text-sm font-mono">
+            <pre className="bg-gray-900 text-gray-100 p-6 rounded-lg overflow-auto text-sm font-mono" style={{textAlign: 'left'}}>
 {`import { Grid } from '@syncfusion/react-grid'
 import { GridData } from './data'
 
@@ -84,7 +84,7 @@ export default function MyGrid() {
                 </div>
               </div>
             </div>
-            <Grid1 />
+            <Grid />
           </div>
         </div>
       </div>

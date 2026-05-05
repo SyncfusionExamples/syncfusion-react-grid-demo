@@ -27,7 +27,7 @@ export default function Grid3() {
             return <span>Total: {(props as unknown as { Sum: number | string })?.Sum} hrs</span> } }
         ]}
     ]);
-    const [pageSettings] = useState({ enabled: true, pageSize: 5 });
+    const [pageSettings] = useState({ enabled: true, pageSize: 10 });
     const [data] = useState(employeeTaskPerformanceData);
     return (<Grid<EmployeeTaskPerformance> dataSource={data} columns={columns} toolbar={toolbarSettings} editSettings={editSettings} sortSettings={sortSettings} aggregates={aggregateColumns} pageSettings={pageSettings} />)
 }

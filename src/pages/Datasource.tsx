@@ -1,4 +1,4 @@
-import Grid4 from "@/components/Grid4";
+import GridDataAPI from "@/components/GridDataAPI";
 
 export default function DataSource() {
     return (
@@ -80,7 +80,7 @@ export default function DataSource() {
                     color: #9333ea;
                   }
                 `}</style>
-                <Grid4 />
+                <GridDataAPI />
               </div>
             </div>
           </div>

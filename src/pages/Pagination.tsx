@@ -1,4 +1,4 @@
-import Grid3 from "@/components/Grid3"
+import GridPagination from "@/components/GridPagination"
 
 /**
  * Pagination Page
@@ -52,7 +52,7 @@ export default function Pagination() {
                 text-align: left !important;
               }
             `}</style>
-            <Grid3 />
+            <GridPagination />
           </div>
         </div>
       </div>

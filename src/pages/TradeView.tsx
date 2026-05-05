@@ -1,4 +1,4 @@
-import Grid6 from "@/components/Grid6";
+import LiveData from "@/components/LiveData";
 
 export default function TradeView() {
     return (
@@ -80,7 +80,7 @@ export default function TradeView() {
                     color: #9333ea;
                   }
                 `}</style>
-                <Grid6 />
+                <LiveData />
               </div>
             </div>
           </div>
