@@ -1,5 +1,5 @@
-import { employeeTaskPerformanceData, EmployeeTaskPerformance } from "@/app/data1";
-import { ColumnProps, ColumnTemplateProps, FilterSettings, Grid } from "@syncfusion/react-grid";
+import { employeeTaskPerformanceData, type EmployeeTaskPerformance } from "../app/data1";
+import { type ColumnProps, type ColumnTemplateProps, type FilterSettings, Grid } from "@syncfusion/react-grid";
 import { useState } from "react";
 
 export default function Grid2() {
@@ -27,6 +27,6 @@ export default function Grid2() {
             { type: 'Sum', field: 'hoursWorked' }
             ]}
         ]);
-        const [filterSettings] = useState<FilterSettings>({ enabled: true, enableFilterBarOperator: true });
+        const [filterSettings] = useState<FilterSettings>({ enabled: true, type: 'CheckBox' });
         return (<Grid<EmployeeTaskPerformance> dataSource={data} columns={columns} height={600} sortSettings={sortSettings} filterSettings={filterSettings} aggregates={aggregateColumns} />)
 }

@@ -1,5 +1,5 @@
-import { EmployeeTaskPerformance, employeeTaskPerformanceData } from "@/app/data";
-import { ColumnProps, Grid } from "@syncfusion/react-grid";
+import { type EmployeeTaskPerformance, employeeTaskPerformanceData } from "@/app/data";
+import { type ColumnProps, Grid } from "@syncfusion/react-grid";
 import { useState } from "react";
 
 export default function Grid3() {
