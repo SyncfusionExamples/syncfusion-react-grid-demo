@@ -86,12 +86,12 @@ export default function Home() {
 
 | Feature | Description |
 |---------|-------------|
-| **Editing** | CRUD operations with Dialog, and Inline modes |
+| **Editing** | CRUD operations with Inline, and Dialog modes |
 | **Paging** | Client-side and server-side pagination |
 | **Filtering** | Advanced filter bar with multiple condition operators |
 | **Sorting** | Single and multi-column sorting |
 | **Searching** | Global search via toolbar search box |
-| **Toolbar** | Add, Edit, Delete buttons |
+| **Toolbar** | Add, Edit, Delete buttons, and Search input |
 | **Selection** | Single, Multiple, Checkbox selection modes |
 | **Customization** | Custom cell & header templates with React components |
 | **Aggregates** | Sum, Average, Min, Max calculations |
