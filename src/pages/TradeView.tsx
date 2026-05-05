@@ -30,8 +30,7 @@ export default function TradeView() {
                     <span className="text-xl">⚙️</span> Capabilities
                   </h3>
                   <ul className="text-sm text-gray-600 space-y-2">
-                    <li>• Sorting & filtering on live data</li>
-                    <li>• Paging support</li>
+
                     <li>• Responsive interactions</li>
                     <li>• Scalable architecture</li>
                   </ul>
