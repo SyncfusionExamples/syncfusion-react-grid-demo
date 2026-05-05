@@ -8,35 +8,41 @@ import GridFeature from "@/components/GridFeature"
 
 export default function VisualTemplate() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 py-16 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-6xl mx-auto">
-        <div className="mb-12">
-          <div className="inline-block bg-purple-100 text-purple-700 px-4 py-2 rounded-full text-sm font-semibold mb-6">
-            Feature Showcase
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 py-20 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
+        {/* Header */}
+        <div className="mb-16">
+          <div className="inline-flex items-center gap-2 bg-purple-500/20 backdrop-blur-xl px-6 py-3 rounded-full border border-purple-400/50 mb-8">
+            <span className="w-2 h-2 bg-purple-400 rounded-full animate-pulse"></span>
+            <span className="text-sm font-semibold text-purple-100">✨ Feature Showcase</span>
           </div>
-          <h1 className="text-4xl font-bold text-gray-900 mb-6">Grid with Core Features</h1>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-            <div className="bg-white p-4 rounded-lg shadow-sm">
-              <p className="text-sm text-gray-600"><strong>✓ Paging:</strong> Editing capabilities</p>
-            </div>
-            <div className="bg-white p-4 rounded-lg shadow-sm">
-              <p className="text-sm text-gray-600"><strong>✓ Sorting:</strong> Multi-column sorting capabilities</p>
-            </div>
-            <div className="bg-white p-4 rounded-lg shadow-sm">
-              <p className="text-sm text-gray-600"><strong>✓ Filtering:</strong> Advanced data filtering options</p>
-            </div>
+          <h1 className="text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">Grid with <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Core Features</span></h1>
+          
+          {/* Feature Highlights */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+            {[
+              { icon: '✏️', title: 'Inline Editing', desc: 'Edit cells directly in the grid' },
+              { icon: '↕️', title: 'Smart Sorting', desc: 'Multi-column sorting capabilities' },
+              { icon: '🔍', title: 'Advanced Filtering', desc: 'Powerful data filtering options' },
+            ].map((feature, idx) => (
+              <div key={idx} className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl p-6 rounded-xl border border-white/10 hover:border-purple-400/50 transition-all duration-300 hover:scale-105">
+                <div className="text-3xl mb-3">{feature.icon}</div>
+                <h3 className="font-bold text-white mb-1">{feature.title}</h3>
+                <p className="text-sm text-gray-300">{feature.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
 
         {/* Divider */}
-        <div className="h-1 bg-gradient-to-r from-purple-200 via-purple-400 to-purple-200 rounded-full mb-8"></div>
+        <div className="h-1 bg-gradient-to-r from-purple-500/20 via-purple-400 to-purple-500/20 rounded-full mb-12"></div>
 
         {/* Grid Preview Area */}
-        <div className="bg-white rounded-2xl shadow-2xl overflow-hidden border border-purple-100 hover:shadow-3xl transition-shadow duration-300">
-          <div className="p-8">
-            <div className="mb-6">
-              <h2 className="text-2xl font-bold text-gray-900 mb-2">Interactive Grid Demo</h2>
-              <p className="text-gray-600">Try sorting, filtering, and paging the data below</p>
+        <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-2xl rounded-3xl overflow-hidden border border-white/10 shadow-2xl hover:shadow-3xl transition-shadow duration-300">
+          <div className="p-8 md:p-12">
+            <div className="mb-8">
+              <h2 className="text-3xl font-bold text-white mb-2">🎯 Interactive Grid Demo</h2>
+              <p className="text-gray-300">Try sorting, filtering, and editing the data below. All features are fully configured and ready to use.</p>
             </div>
             <style>{`
               /* Color-coded Avatar Backgrounds */
@@ -65,8 +71,64 @@ export default function VisualTemplate() {
                 color: #9333ea;
               }
             `}</style>
-            <GridFeature />
+            <div className="bg-white/5 rounded-xl overflow-hidden border border-white/10">
+              <GridFeature />
+            </div>
           </div>
+        </div>
+
+        {/* Feature Details */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">
+          {[
+            { 
+              title: '⚡ Performance Optimized',
+              features: [
+                'Real-time data binding',
+                'Virtual scrolling support',
+                'Efficient column rendering',
+                'Optimized memory usage'
+              ]
+            },
+            {
+              title: '🎨 Highly Customizable',
+              features: [
+                'Multiple theme options',
+                'Custom column templates',
+                'Responsive design',
+                'Extensible architecture'
+              ]
+            },
+            {
+              title: '🔐 Enterprise Ready',
+              features: [
+                'Data validation',
+                'Security built-in',
+                'API compatibility',
+                'Production tested'
+              ]
+            },
+            {
+              title: '📱 Mobile Friendly',
+              features: [
+                'Touch-optimized UI',
+                'Responsive columns',
+                'Mobile gestures',
+                'Adaptive design'
+              ]
+            }
+          ].map((section, idx) => (
+            <div key={idx} className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl p-8 rounded-2xl border border-white/10 hover:border-blue-400/50 transition-all duration-300 hover:scale-105">
+              <h3 className="text-xl font-bold text-white mb-6">{section.title}</h3>
+              <ul className="space-y-3">
+                {section.features.map((feature, fidx) => (
+                  <li key={fidx} className="flex items-center gap-3 text-gray-300">
+                    <span className="w-2 h-2 bg-blue-400 rounded-full"></span>
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
       </div>
     </div>

@@ -14,7 +14,7 @@ function App() {
   return (
     <BrowserRouter>
       <Navbar />
-      <main className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+      <main className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/installation" element={<Installation />} />

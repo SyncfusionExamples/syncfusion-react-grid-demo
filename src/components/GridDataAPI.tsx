@@ -1,5 +1,5 @@
 import { useState, useCallback } from 'react';
-import { Grid, Columns, Column, TextAlign, ClipMode, type ColumnTemplateProps, type FilterSettings, type SortSettings, ColumnType, VirtualDomType } from '@syncfusion/react-grid';
+import { Grid, Columns, Column, TextAlign, ClipMode, type ColumnTemplateProps, type SortSettings, ColumnType, VirtualDomType } from '@syncfusion/react-grid';
 import { type EmployeeData, generateEmployeeData } from '@/app/data2';
 import styles from '@/app/scrolling-basic.module.css';
 
