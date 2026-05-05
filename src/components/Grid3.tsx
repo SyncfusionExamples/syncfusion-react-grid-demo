@@ -1,27 +1,26 @@
 import { EmployeeTaskPerformance, employeeTaskPerformanceData } from "@/app/data";
-import { ColumnProps, ColumnTemplateProps, Grid } from "@syncfusion/react-grid";
+import { ColumnProps, ColumnTemplateProps, FilterSettings, Grid } from "@syncfusion/react-grid";
 import { useState } from "react";
 
 export default function Grid3() {
     const [columns] = useState<ColumnProps[]>([
-        { field: "taskId", headerText: "Task ID", width: 100 },
-        {
-            field: "employeeName", headerText: "Employee Name", width: 150,
-            template: (data?: ColumnTemplateProps) => {
-                return <div style={{ display: 'inline-flex', gap: '5px' }}>
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" /><circle cx="12" cy="7" r="4" />
-                    </svg>
-                    <span className="font-medium text-blue-600">{(data?.data as EmployeeTaskPerformance).employeeName}</span>
-                </div>;
-            }
-        },
-        { field: "taskName", headerText: "Task Name", width: 200 },
-        { field: "taskStartDate", headerText: "Start Date", width: 120, format: "yMd" },
-        { field: "taskEndDate", headerText: "End Date", width: 120, format: "yMd" },
-        { field: "estimatedHours", headerText: "Estimated Hours", width: 150 },
-        { field: "hoursWorked", headerText: "Hours Worked", width: 150 },
+        { field: "taskId", headerText: "Task ID", width: 100, textAlign: 'Right' },
+        { field: "employeeName", headerText: "Employee Name", width: 150, textAlign: 'Left' },
+        { field: "taskName", headerText: "Task Name", width: 200, textAlign: 'Left' },
+        { field: "taskStartDate", headerText: "Start Date", width: 120, format: "yMd", textAlign: 'Right' },
+        { field: "taskEndDate", headerText: "End Date", width: 120, format: "yMd", textAlign: 'Right' },
+        { field: "estimatedHours", headerText: "Estimated Hours", width: 150, textAlign: 'Right' },
+        { field: "hoursWorked", headerText: "Hours Worked", width: 150, textAlign: 'Right' },
     ]);
+    const [sortSettings] = useState({ enabled: true });
+    const [filterSettings] = useState<FilterSettings>({ enabled: true, type: 'CheckBox' });
+    const [aggregateColumns] = useState([{
+        columns: [
+        { type: 'Sum', field: 'estimatedHours' },
+        { type: 'Sum', field: 'hoursWorked' }
+        ]}
+    ]);
+    const [pageSettings] = useState({ enabled: true });
     const [data] = useState(employeeTaskPerformanceData);
-    return (<Grid<EmployeeTaskPerformance> dataSource={data} columns={columns} pageSettings={{enabled: true}} />)
+    return (<Grid<EmployeeTaskPerformance> dataSource={data} columns={columns} sortSettings={sortSettings} filterSettings={filterSettings} aggregates={aggregateColumns} pageSettings={pageSettings} />)
 }

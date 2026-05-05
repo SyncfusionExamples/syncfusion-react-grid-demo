@@ -26,6 +26,7 @@ export default function Pagination() {
             <div className="text-center">
               <p className="text-gray-500 text-sm mt-2">
                 <style>{`
+                  sf-grid-pager
                   /* Color-coded Avatar Backgrounds */
                   .leads .avatar-red {
                     background-color: #fce8e6;
