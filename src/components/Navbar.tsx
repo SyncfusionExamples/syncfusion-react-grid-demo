@@ -10,6 +10,7 @@ export default function Navbar() {
     { href: '/', label: '🏠 Home' },
     { href: '/installation', label: '📦 Installation' },
     { href: '/visual-template', label: '🎨 Visual Template' },
+    { href: '/pagination', label: '🎨 Pagination Visual Template' },
     { href: '/grid-features', label: '⚙️ Grid Features' },
   ]
 

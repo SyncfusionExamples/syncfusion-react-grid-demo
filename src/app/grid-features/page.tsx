@@ -1,5 +1,7 @@
 'use client'
 
+import Grid4 from "@/components/Grid4"
+
 /**
  * Grid Features Page
  * 
@@ -89,7 +91,7 @@ export default function GridFeatures() {
             <div className="bg-gray-50 p-12 rounded border-2 border-dashed border-gray-300 flex items-center justify-center h-96">
               <div className="text-center">
                 <div className="text-6xl mb-4">📊</div>
-                <p className="text-gray-600 text-lg">Grid Component Ready for Integration</p>
+                <p className="text-gray-600 text-lg"><Grid4/></p>
               </div>
             </div>
           </div>

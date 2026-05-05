@@ -17,6 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <script src="https://cdn.syncfusion.com/ej2/syncfusion-helper.js" type ="text/javascript"></script>
       <body>
         <Navbar />
         <main className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">

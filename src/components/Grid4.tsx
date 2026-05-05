@@ -1,8 +1,8 @@
 import { EmployeeTaskPerformance, employeeTaskPerformanceData } from "@/app/data";
 import { ColumnProps, ColumnTemplateProps, Grid } from "@syncfusion/react-grid";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-export default function Grid3() {
+export default function Grid4() {
     const [columns] = useState<ColumnProps[]>([
         { field: "taskId", headerText: "Task ID", width: 100 },
         {
@@ -23,5 +23,5 @@ export default function Grid3() {
         { field: "hoursWorked", headerText: "Hours Worked", width: 150 },
     ]);
     const [data] = useState(employeeTaskPerformanceData);
-    return (<Grid<EmployeeTaskPerformance> dataSource={data} columns={columns} pageSettings={{enabled: true}} />)
+    return (<Grid<EmployeeTaskPerformance> dataSource={data} columns={columns} height={400} />)
 }
