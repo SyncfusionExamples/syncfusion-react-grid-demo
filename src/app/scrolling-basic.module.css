@@ -1,0 +1,147 @@
+/* Template Container Styles */
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  line-height: 1.4;
+  font-size: 14px;
+}
+.phone {
+  justify-content: flex-end;
+}
+
+.textEllipsis {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.departmentBadge {
+  background-color: #dbeafe;
+  color: #0369a1;
+}
+
+.departmentBadge span {
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.statusBadgeBg {
+  padding: 2px 6px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.statusBadgeBg span {
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.statusActive {
+  background-color: #dcfce7;
+  color: #059669;
+}
+
+.statusOnLeave {
+  background-color: #fefce8;
+  color: #f59e0b;
+}
+
+.statusInactive {
+  background-color: #fee2e2;
+  color: #dc2626;
+}
+
+.employmentBadge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.employmentFullTime {
+  background-color: #dcfce7;
+  color: #059669;
+}
+
+.employmentPartTime {
+  background-color: #e0f2fe;
+  color: #0284c7;
+}
+
+.employmentContract {
+  background-color: #fefce8;
+  color: #f59e0b;
+}
+
+.employmentIntern {
+  background-color: #fed7aa;
+  color: #7c2d12;
+}
+
+.employmentDefault {
+  background-color: #f3f4f6;
+  color: #6b7280;
+}
+
+.salaryText {
+  color: #059669;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.ratingContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  font-size: 14px;
+}
+
+.ratingHigh {
+  color: #059669;
+  font-weight: 600;
+}
+
+.ratingMedium {
+  color: #f59e0b;
+  font-weight: 600;
+}
+
+.ratingLow {
+  color: #dc2626;
+  font-weight: 600;
+}
+
+.iconBase {
+  flex-shrink: 0;
+}
+
+.icon12px {
+  width: 12px;
+  height: 12px;
+}

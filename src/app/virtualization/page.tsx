@@ -1,6 +1,6 @@
 'use client'
 
-import Grid3 from "@/components/Grid3"
+import Grid5 from "@/components/Grid5"
 
 /**
  * Visual Template Page
@@ -8,7 +8,7 @@ import Grid3 from "@/components/Grid3"
  * UI template showcase for Syncfusion React Grid
  */
 
-export default function Pagination() {
+export default function Virtualization() {
   return (
     <div className="min-h-screen py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
@@ -30,7 +30,7 @@ export default function Pagination() {
                     text-align: left !important;
                   }
                 `}</style>
-                <Grid3 />
+                <Grid5 />
               </p>
             </div>
           {/* </div> */}
