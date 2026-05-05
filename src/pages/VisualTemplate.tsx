@@ -17,7 +17,7 @@ export default function VisualTemplate() {
           <h1 className="text-4xl font-bold text-gray-900 mb-6">Grid with Core Features</h1>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
             <div className="bg-white p-4 rounded-lg shadow-sm">
-              <p className="text-sm text-gray-600"><strong>✓ Paging:</strong> Organize large datasets efficiently</p>
+              <p className="text-sm text-gray-600"><strong>✓ Paging:</strong> Editing capabilities</p>
             </div>
             <div className="bg-white p-4 rounded-lg shadow-sm">
               <p className="text-sm text-gray-600"><strong>✓ Sorting:</strong> Multi-column sorting capabilities</p>
