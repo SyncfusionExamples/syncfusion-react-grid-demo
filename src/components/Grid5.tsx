@@ -8,7 +8,6 @@ export default function Grid5() {
 
   const [gridHeight] = useState(400);
   const [gridWidth] = useState(100);
-  const [filterSettings] = useState<FilterSettings>({ enabled: true, type: 'CheckBox' });
   const [sortSettings] = useState<SortSettings>({enabled: true});
   const [virtualizationSettings] = useState({ type: VirtualDomType.Row });
 
@@ -146,11 +145,10 @@ export default function Grid5() {
         width={`${gridWidth}%`}
         clipMode={ClipMode.EllipsisWithTooltip}
         virtualizationSettings={virtualizationSettings}
-        filterSettings={filterSettings}
         sortSettings={sortSettings}
       >
         <Columns>
-          <Column field='EmployeeID' headerText='Employee ID' width='120px' textAlign={TextAlign.Left} template={employeeIdTemplate} />
+          <Column field='EmployeeID' headerText='Employee ID' width='150px' textAlign={TextAlign.Left} template={employeeIdTemplate} />
           <Column field='FullName' headerText='Full Name' width='120px' textAlign={TextAlign.Left} template={fullNameTemplate} />
           <Column field='Email' headerText='Email' width='215px' textAlign={TextAlign.Left} template={emailTemplate} />
           <Column field='Phone' headerText='Phone' width='110px' textAlign={TextAlign.Right} template={phoneTemplate} />

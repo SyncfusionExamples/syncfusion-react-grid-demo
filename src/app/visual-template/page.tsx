@@ -13,16 +13,14 @@ export default function VisualTemplate() {
     <div className="min-h-screen py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
         <div className="mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Visual Template</h1>
           <p className="text-xl text-gray-600">
-            Beautiful UI design template for React Grid
+            The Syncfusion React Grid supports essential data operations such as paging, sorting, and filtering to efficiently manage and present structured data.
+It offers configurable column definitions and built‑in navigation features that enable clear and intuitive data interaction.
+Its modular design allows developers to enable only the required features, ensuring flexibility, simplicity, and optimized performance.
           </p>
         </div>
 
         {/* Grid Preview Area */}
-        {/* <div className="bg-white rounded-lg shadow-md p-8"> */}
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">UI Template Preview</h2>
-          {/* <div className="bg-gray-50 p-12 rounded border-2 border-dashed border-gray-300 flex items-center justify-center min-h-120"> */}
             <div className="text-center">
               <p className="text-gray-500 text-sm mt-2">
                 <style>{`
@@ -55,8 +53,6 @@ export default function VisualTemplate() {
                 <Grid2 />
               </p>
             </div>
-          {/* </div> */}
-        {/* </div> */}
       </div>
     </div>
   )
