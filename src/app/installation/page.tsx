@@ -38,7 +38,7 @@ export default function Installation() {
           <div className="bg-white rounded-lg shadow-md p-8 border-l-4 border-green-500">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">📥 Step 2: Add Syncfusion React Grid</h2>
             <pre className="bg-gray-900 text-gray-100 p-6 rounded-lg overflow-auto text-sm">
-{`npm install @syncfusion/ej2-react-grids @syncfusion/ej2-base @syncfusion/ej2-buttons @syncfusion/ej2-dropdowns`}
+{`npm install @syncfusion/react-grid`}
             </pre>
           </div>
 
@@ -71,16 +71,6 @@ import '@syncfusion/react-grid/styles/material.css';`}
           </div>
         </div>
 
-        {/* Project Ready */}
-        <div className="mt-12 bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-lg p-8">
-          <h3 className="text-2xl font-bold mb-4">✨ Project Ready!</h3>
-          <ul className="space-y-2 text-lg">
-            <li>✅ Next.js 14 with App Router</li>
-            <li>✅ TypeScript for type safety</li>
-            <li>✅ Tailwind CSS for styling</li>
-            <li>✅ Syncfusion React Grid ready</li>
-          </ul>
-        </div>
       </div>
     </div>
   )

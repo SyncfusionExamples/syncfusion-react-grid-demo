@@ -7,26 +7,17 @@ export default function Navbar() {
   const pathname = usePathname()
 
   const navItems = [
-    { href: '/', label: '🏠 Home' },
-    { href: '/installation', label: '📦 Installation' },
-    { href: '/visual-template', label: '🎨 Visual Template' },
-    { href: '/pagination', label: '🎨 Pagination Visual Template' },
-    { href: '/virtualization', label: '🎨 Virtualization Visual Template' },
-    { href: '/grid-features', label: '⚙️ Grid Features' },
+    { href: '/', label: 'Home' },
+    { href: '/installation', label: 'Quick Setup' },
+    { href: '/visual-template', label: 'Grid with Core Features' },
+    { href: '/pagination', label: 'High‑Performance Grid with Paging' },
+    { href: '/virtualization', label: 'High‑Performance Grid with Scrolling' },
   ]
 
   return (
     <nav className="sticky top-0 z-50 bg-white shadow-md border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">RG</span>
-            </div>
-            <span className="hidden sm:inline font-bold text-lg text-gray-900">React Grid</span>
-          </Link>
-
           {/* Navigation Items */}
           <div className="flex items-center space-x-1">
             {navItems.map((item) => (

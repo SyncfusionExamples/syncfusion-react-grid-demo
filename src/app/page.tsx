@@ -35,7 +35,6 @@ export default function Home() {
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
             Syncfusion React Grid
-            <span className="block text-blue-600 mt-2">Microsoft Webinar Demo</span>
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Explore powerful data grid capabilities including real-time data binding, advanced filtering,
