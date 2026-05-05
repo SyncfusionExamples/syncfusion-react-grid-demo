@@ -32,7 +32,7 @@ Create `components/SimpleGrid.tsx`:
 
 ```typescript
 import React from 'react';
-import { Grid, Columns, Column, SearchSettings, FilterSettings, SortSettings, PageSettings, EditSettings } from '@syncfusion/react-grid';
+import { Grid, Columns, Column, SearchSettings, FilterSettings, SortSettings, PageSettings } from '@syncfusion/react-grid';
 
 const SimpleGrid = () => {
 
@@ -40,8 +40,7 @@ const SimpleGrid = () => {
     const [filterSettings] = useState<FilterSettings>({enabled: true});
     const [sortSettings] = useState<SortSettings>({enabled: true});
     const [pageSettings] = useState<PageSettings>({ enabled: true, pageSize: 8, pageCount: 4 });
-    const [editSettings] = useState<EditSettings>({ allowEdit: true, allowAdd: true, allowDelete: true });
-    const [toolbarSettings] = useState<string[]>(['Add', 'Edit', 'Delete', 'Update', 'Cancel', 'Search']);
+    const [toolbarSettings] = useState<string[]>(['Search']);
 
     const data = [
         { OrderID: 10248, CustomerName: 'VINET', TotalAmount: 32.38, OrderDate: '1996-07-04', Status: 'Pending' },
@@ -58,10 +57,9 @@ const SimpleGrid = () => {
             pageSettings={pageSettings}
             searchSettings={searchSettings}
             toolbar={toolbarSettings}
-            editSettings={editSettings}
         >
             <Columns>
-                <Column field="OrderID" headerText="Order ID" isPrimaryKey={true} />
+                <Column field="OrderID" headerText="Order ID" />
                 <Column field="CustomerName" headerText="Name" />
                 <Column field="TotalAmount" headerText="Amount" />
                 <Column field="OrderDate" headerText="Order Date" />
@@ -88,13 +86,13 @@ export default function Home() {
 
 | Feature | Description |
 |---------|-------------|
-| **Editing** | CRUD operations with Dialog, Inline, and Batch modes |
+| **Editing** | CRUD operations with Inline, and Dialog modes |
 | **Paging** | Client-side and server-side pagination |
 | **Filtering** | Advanced filter bar with multiple condition operators |
 | **Sorting** | Single and multi-column sorting |
 | **Searching** | Global search via toolbar search box |
-| **Toolbar** | Add, Edit, Delete, Search, Export buttons |
-| **Selection** | Single, Multiple, Checkbox, Range selection modes |
+| **Toolbar** | Add, Edit, Delete buttons, and Search input |
+| **Selection** | Single, Multiple, Checkbox selection modes |
 | **Customization** | Custom cell & header templates with React components |
 | **Aggregates** | Sum, Average, Min, Max calculations |
 | **Accessibility** | WCAG 2.1 Level AA, keyboard navigation, screen readers |
@@ -117,9 +115,6 @@ http://localhost:3000
 ## Documentation
 
 - [Overview](https://react.syncfusion.com/react-ui/data-grid/overview/)
-- [Getting Started](https://react.syncfusion.com/react-ui/data-grid/getting-started/)
-- [Filtering](https://react.syncfusion.com/react-ui/data-grid/filtering/configuration/)
-- [Editing](https://react.syncfusion.com/react-ui/data-grid/editing/configuration/)
 
 ## 📝 License
 
