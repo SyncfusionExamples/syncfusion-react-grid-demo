@@ -2,6 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Enhanced Grid Container Styling */
+@layer components {
+  .grid-container-shadow {
+    @apply rounded-2xl shadow-2xl border hover:shadow-3xl transition-all duration-300;
+  }
+  
+  .grid-divider {
+    @apply h-1 bg-gradient-to-r rounded-full mb-8;
+  }
+  
+  .shadow-3xl {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15), 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
