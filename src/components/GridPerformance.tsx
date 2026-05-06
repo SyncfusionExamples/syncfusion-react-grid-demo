@@ -138,10 +138,10 @@ export default function GridPerformance() {
   ), []);
 
   return (
-    <>
+    <div style={{ width: '100%' }}>
       <Grid<EmployeeData>
         dataSource={data}
-        height={`${gridHeight}px`}
+        height={gridHeight}
         width={`${gridWidth}%`}
         clipMode={ClipMode.EllipsisWithTooltip}
         virtualizationSettings={virtualizationSettings}
@@ -162,6 +162,6 @@ export default function GridPerformance() {
           <Column field='PerformanceRating' headerText='Impact Rating' width='130px' textAlign={TextAlign.Center} template={performanceRatingTemplate} />
         </Columns>
       </Grid>
-    </>
+    </div>
   );
 }

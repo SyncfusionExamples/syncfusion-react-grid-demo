@@ -171,10 +171,10 @@ export default function GridDataAPI() {
   }, []);
 
   return (
-    <div style={{ height: '500px' }}>
+    <div style={{ width: '100%' }}>
       <Grid<EmployeeServerData>
         dataSource={data}
-        height='100%'
+        height={500}
         virtualizationSettings={virtualizationSettings}
         pageSettings={pageSettings}
         query={query}

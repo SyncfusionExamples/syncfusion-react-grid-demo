@@ -5,40 +5,29 @@ import CodeViewer from "@/components/CodeViewer"
 export default function DataSource() {
   const content = {
     description: (
-      <div className="space-y-4">
-        <div className="space-y-2">
-          <h3 className="text-2xl font-bold text-gray-900 tracking-tight">Server-Side Data with Virtual Scrolling</h3>
-          <p className="text-base text-gray-600 leading-relaxed font-medium">Handle 100,000+ records with paging and virtualization</p>
-        </div>
+      <div className="space-y-3 text-left">
+        <h2 className="text-xl font-bold text-gray-900">Server-Side Data with Virtual Scrolling</h2>
         
-        <p className="text-gray-700 text-base leading-relaxed border-l-4 border-teal-500 pl-4 py-3 bg-teal-50 rounded-r-lg">
-          Demonstrates loading data from an external API with server-side virtualization. The grid fetches paginated data on demand, displaying only visible rows. Custom templates showcase rich data visualization with status badges, progress bars, and performance ratings.
+        <p className="text-gray-700 text-sm leading-relaxed">
+          Manages 100,000+ records using server-side pagination and virtual scrolling. Data is fetched on-demand with 50 records per page. Custom templates display status badges, progress metrics, and performance ratings.
         </p>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-          <div className="bg-gradient-to-br from-teal-50 to-cyan-50 border-2 border-teal-300 rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow">
-            <div className="flex items-center gap-2 mb-3">
-              <span className="text-2xl">⚡</span>
-              <h4 className="font-semibold text-teal-900 text-base">Features Enabled</h4>
-            </div>
-            <ul className="space-y-2 text-teal-800 text-sm">
-              <li className="flex items-center gap-2"><span className="text-teal-600 font-bold">✓</span> <span>Server-side paging (100K records)</span></li>
-              <li className="flex items-center gap-2"><span className="text-teal-600 font-bold">✓</span> <span>Virtual scrolling with cache</span></li>
-              <li className="flex items-center gap-2"><span className="text-teal-600 font-bold">✓</span> <span>Custom column templates</span></li>
-              <li className="flex items-center gap-2"><span className="text-teal-600 font-bold">✓</span> <span>Status badges & ratings</span></li>
+        <div className="space-y-3">
+          <div>
+            <h3 className="font-semibold text-gray-900 text-sm mb-2">Features</h3>
+            <ul className="list-disc list-inside space-y-1 text-gray-700 text-xs">
+              <li>Server-side pagination (50 records per page)</li>
+              <li>Virtual scrolling with cache</li>
+              <li>Custom column templates</li>
+              <li>External API integration</li>
             </ul>
           </div>
           
-          <div className="bg-gradient-to-br from-cyan-50 to-blue-50 border-2 border-cyan-300 rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow">
-            <div className="flex items-center gap-2 mb-3">
-              <span className="text-2xl">🚀</span>
-              <h4 className="font-semibold text-cyan-900 text-base">Performance Benefits</h4>
-            </div>
-            <ul className="space-y-2 text-cyan-800 text-sm">
-              <li className="flex items-center gap-2"><span className="text-blue-600 font-bold">→</span> <span>Only 50 rows in memory</span></li>
-              <li className="flex items-center gap-2"><span className="text-blue-600 font-bold">→</span> <span>Smooth scrolling experience</span></li>
-              <li className="flex items-center gap-2"><span className="text-blue-600 font-bold">→</span> <span>Smart data loading</span></li>
-            </ul>
+          <div>
+            <h3 className="font-semibold text-gray-900 text-sm mb-2">Performance</h3>
+            <p className="text-gray-700 text-xs">
+              Constant memory footprint with only viewport rows in DOM. Smooth scrolling without performance degradation.
+            </p>
           </div>
         </div>
       </div>
@@ -48,7 +37,7 @@ export default function DataSource() {
         <h3 className="text-sm font-bold text-gray-900 mb-2">Implementation Steps</h3>
         
         <div className="bg-white rounded p-2 border-l-4 border-teal-500">
-          <h4 className="font-semibold text-gray-900 mb-1 text-xs">Step 1: Import Shimmer/Skeleton dependency styles</h4>
+          <h4 className="text-left font-semibold text-gray-900 mb-1 text-xs">Step 1: Import Shimmer/Skeleton dependency styles</h4>
           <pre className="bg-gray-900 text-gray-100 p-2 rounded text-xs overflow-auto text-left font-mono leading-tight">
 {`@import '@syncfusion/react-base/styles/material.css';
 @import '@syncfusion/react-notifications/styles/material.css'; // skeleton
@@ -57,7 +46,7 @@ export default function DataSource() {
         </div>
 
         <div className="bg-white rounded p-2 border-l-4 border-teal-500">
-          <h4 className="font-semibold text-gray-900 mb-1 text-xs">Step 2: Create Data Service</h4>
+          <h4 className="text-left font-semibold text-gray-900 mb-1 text-xs">Step 2: Create Data Service</h4>
           <pre className="bg-gray-900 text-gray-100 p-2 rounded text-xs overflow-auto text-left font-mono leading-tight">
 {`import { DataManager, Query, UrlAdaptor } from '@syncfusion/react-data';
 
@@ -70,7 +59,7 @@ const data = new DataManager({
         </div>
 
         <div className="bg-white rounded p-2 border-l-4 border-teal-500">
-          <h4 className="font-semibold text-gray-900 mb-1 text-xs">Step 3: Configure Grid for Server-Side Data</h4>
+          <h4 className="text-left font-semibold text-gray-900 mb-1 text-xs">Step 3: Configure Grid for Server-Side Data</h4>
           <pre className="bg-gray-900 text-gray-100 p-2 rounded text-xs overflow-auto text-left font-mono leading-tight">
 {`import { Grid, Columns, Column, ScrollMode, type VirtualizationSettings } from '@syncfusion/react-grid';
 
@@ -83,10 +72,8 @@ const [virtualizationSettings] = useState<VirtualizationSettings>({
       </div>
     ),
     sample: (
-      <div className="h-full w-full flex flex-col">
-        <div className="flex-1 overflow-hidden w-full">
-          <GridDataAPI />
-        </div>
+      <div className="w-full">
+        <GridDataAPI />
       </div>
     ),
     code: (
@@ -96,7 +83,6 @@ const [virtualizationSettings] = useState<VirtualizationSettings>({
             {
               filename: "GridDataAPI.tsx",
               language: "typescript",
-              description: "Grid with server-side virtualization using DataManager",
               code: `import { useState, useCallback } from 'react';
 import { Grid, Columns, Column, ScrollMode, type PageSettings, type VirtualizationSettings, TextAlign, ClipMode, type ColumnTemplateProps } from '@syncfusion/react-grid';
 import { DataManager, Query, UrlAdaptor } from '@syncfusion/react-data';
@@ -307,7 +293,6 @@ export default function GridDataAPI() {
             {
               filename: "grid-data-api.css",
               language: "css",
-              description: "Grid with shimmer/skeleton styling",
               code: `@import '@syncfusion/react-base/styles/material.css';
 @import '@syncfusion/react-notifications/styles/material.css';
 @import '@syncfusion/react-grid/styles/material.css';`
@@ -315,7 +300,6 @@ export default function GridDataAPI() {
             {
               filename: "grid-data-api.module.css",
               language: "css",
-              description: "Grid with template styling",
               code: `/* Template Container Styles */
 
 .iconWrapper {
