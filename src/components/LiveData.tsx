@@ -271,27 +271,29 @@ function TradeView() {
              * @returns The Syncfusion Grid component with configured columns and templates.
              */
             () => (
-              <Grid
-                className="trade"
-                ref={gridRef}
-                dataSource={tradeTickerData}
-                enableHover={false}
-                rowHeight={40}
-                height={400}
-                onDataLoad={onDataLoad}
-                selectionSettings={{ enabled: false }}
-                allowKeyboard={false}
-              >
-                <Columns>
-                  <Column field="ticker" headerText="Ticker" width="100" template={stockTemplate} textAlign={TextAlign.Left} />
-                  <Column field="change_percent" headerText="Change %" width="100" textAlign={TextAlign.Right} template={ChangePercentTemplate} />
-                  <Column field="change" headerText="Change" width="100" format="C2" textAlign={TextAlign.Right} template={ChangeTemplate} />
-                  <Column field="price" headerText="Price" width="100" format="C2" textAlign={TextAlign.Right} />
-                  <Column field="high" headerText="High" format="C2" textAlign={TextAlign.Right} width="130" />
-                  <Column field="low" headerText="Low" format="C2" textAlign={TextAlign.Right} width="130" />
-                  <Column field="Rating" headerText="Tech Rating" textAlign={TextAlign.Left} width="150" template={RatingTemplate} />
-                </Columns>
-              </Grid>
+              <div style={{ width: '100%', height: 'calc(100vh - 120px)' }}>
+                <Grid
+                  className="trade"
+                  ref={gridRef}
+                  dataSource={tradeTickerData}
+                  enableHover={false}
+                  rowHeight={40}
+                  height={'100%'}
+                  onDataLoad={onDataLoad}
+                  selectionSettings={{ enabled: false }}
+                  allowKeyboard={false}
+                >
+                  <Columns>
+                    <Column field="ticker" headerText="Ticker" width="100" template={stockTemplate} textAlign={TextAlign.Left} />
+                    <Column field="change_percent" headerText="Change %" width="100" textAlign={TextAlign.Right} template={ChangePercentTemplate} />
+                    <Column field="change" headerText="Change" width="100" format="C2" textAlign={TextAlign.Right} template={ChangeTemplate} />
+                    <Column field="price" headerText="Price" width="100" format="C2" textAlign={TextAlign.Right} />
+                    <Column field="high" headerText="High" format="C2" textAlign={TextAlign.Right} width="130" />
+                    <Column field="low" headerText="Low" format="C2" textAlign={TextAlign.Right} width="130" />
+                    <Column field="Rating" headerText="Tech Rating" textAlign={TextAlign.Left} width="150" template={RatingTemplate} />
+                  </Columns>
+                </Grid>
+              </div>
             ),
             []
           )}

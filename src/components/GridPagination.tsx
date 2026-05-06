@@ -18,7 +18,11 @@ export default function GridPagination() {
         { field: "estimatedHours", headerText: "Estimated Hours", width: 160, textAlign: 'Right', validationRules: numberRules },
         { field: "hoursWorked", headerText: "Hours Worked", width: 120, textAlign: 'Right', validationRules: numberRules },
     ]);
+
+    // sortSettings: enables multi-column sorting for arranging data
     const [sortSettings] = useState({ enabled: true });
+
+    // aggregateColumns: enables footer aggregates (Sum) for specified columns
     const [aggregateColumns] = useState([{
         columns: [
             {
@@ -34,11 +38,13 @@ export default function GridPagination() {
         ]
     }
     ]);
-    const [pageSettings] = useState({ enabled: true, pageSize: 6 });
+
+    // pageSettings: enables pagination with 6 records per page
+    const [pageSettings] = useState({ enabled: true, pageSize: 30 });
     const [data] = useState(employeeTaskPerformanceData);
     return (
-        <div style={{ width: '100%' }}>
-            <Grid<EmployeeTaskPerformance> dataSource={data} columns={columns} toolbar={toolbarSettings} editSettings={editSettings} sortSettings={sortSettings} aggregates={aggregateColumns} pageSettings={pageSettings} />
+        <div style={{ width: '100%', height: 'calc(100vh - 120px)' }}>
+            <Grid<EmployeeTaskPerformance> height={'100%'} dataSource={data} columns={columns} toolbar={toolbarSettings} editSettings={editSettings} sortSettings={sortSettings} aggregates={aggregateColumns} pageSettings={pageSettings} />
         </div>
     )
 }

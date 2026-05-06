@@ -13,10 +13,10 @@ export default function Grid1() {
         { field: "estimatedHours", headerText: "Estimated Hours", width: 160, textAlign: 'Right' },
         { field: "hoursWorked", headerText: "Hours Worked", width: 120, textAlign: 'Right' },
     ]);
-    const [data] = useState(employeeTaskPerformanceData.slice(0, 10));
+    const [data] = useState(employeeTaskPerformanceData.slice(0, 30));
     return (
-        <div style={{ width: '100%' }}>
-            <Grid dataSource={data} columns={columns} />
+        <div style={{ width: '100%', height: 'calc(100vh - 120px)'}}>
+            <Grid dataSource={data} columns={columns} height={'100%'} />
         </div>
     )
 }

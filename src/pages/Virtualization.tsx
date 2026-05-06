@@ -37,12 +37,13 @@ export default function Virtualization() {
     ),
     steps: (
       <div className="space-y-2">
-        <h2 className="text-sm font-bold text-gray-900 mb-2">Implementation Steps</h2>
+        <h2 className="text-base font-bold text-gray-900 mb-2">Implementation Steps</h2>
         
         <div className="bg-white rounded p-2 border-l-4 border-red-500">
-          <h4 className="text-left font-semibold text-gray-900 mb-1 text-xs">Step 1: Configure Virtual Scrolling</h4>
-          <p className="text-xs text-gray-600 mt-1">To enable row virtualization for smooth scrolling with large datasets, set virtualizationSettings.type as VirtualDomType.Row.</p>
-          <pre className="bg-gray-900 text-gray-100 p-4 rounded text-xs overflow-auto flex-1 border border-gray-700 leading-relaxed text-left font-mono whitespace-pre-wrap break-words">
+          <h4 className="text-left font-semibold text-gray-900 mb-1 text-base">Step 1: Configure Virtual Scrolling</h4>
+          <p className="text-base text-gray-600 mt-1">To enable row virtualization for smooth scrolling with large datasets, set <strong>virtualizationSettings.type</strong> as VirtualDomType.Row.</p>
+          <br/>
+          <pre className="bg-gray-900 text-gray-100 p-4 rounded text-base overflow-auto flex-1 border border-gray-700 leading-relaxed text-left font-mono whitespace-pre-wrap break-words">
 {`import { useState, useCallback } from 'react';
 import { Grid, Columns, Column, ColumnType, VirtualDomType } from '@syncfusion/react-grid';
 import { type EmployeeData, generateEmployeeData } from '@/app/models/data2';
@@ -62,9 +63,10 @@ height={gridHeight}/>`}
         </div>
 
         <div className="bg-white rounded p-2 border-l-4 border-red-500">
-          <h4 className="text-left font-semibold text-gray-900 mb-1 text-xs">Step 2: Enable Column Virtualization</h4>
-          <p className="text-xs text-gray-600 mt-1">To enable row virtualization for smooth scrolling with large datasets, set virtualizationSettings.type as VirtualDomType.Column.</p>
-          <pre className="bg-gray-900 text-gray-100 p-4 rounded text-xs overflow-auto flex-1 border border-gray-700 leading-relaxed text-left font-mono whitespace-pre-wrap break-words">
+          <h4 className="text-left font-semibold text-gray-900 mb-1 text-base">Step 2: Enable Column Virtualization</h4>
+          <p className="text-base text-gray-600 mt-1">To enable row virtualization for smooth scrolling with large datasets, set <strong>virtualizationSettings.type</strong> as VirtualDomType.Column.</p>
+          <br/>
+          <pre className="bg-gray-900 text-gray-100 p-4 rounded text-base overflow-auto flex-1 border border-gray-700 leading-relaxed text-left font-mono whitespace-pre-wrap break-words">
 {`import { useState, useCallback } from 'react';
 import { Grid, Columns, Column, ColumnType, VirtualDomType } from '@syncfusion/react-grid';
 import { type EmployeeData, generateEmployeeData } from '@/app/models/data2';

@@ -37,11 +37,11 @@ export default function DataSource() {
     ),
     steps: (
       <div className="space-y-2">
-        <h2 className="text-sm font-bold text-gray-900 mb-2">Implementation Steps</h2>
+        <h2 className="text-base font-bold text-gray-900 mb-2">Implementation Steps</h2>
         
         <div className="bg-white rounded p-2 border-l-4 border-teal-500">
-          <h4 className="text-left font-semibold text-gray-900 mb-1 text-xs">Step 1: Import Shimmer/Skeleton dependency styles</h4>
-          <pre className="bg-gray-900 text-gray-100 p-4 rounded text-xs overflow-auto flex-1 border border-gray-700 leading-relaxed text-left font-mono whitespace-pre-wrap break-words" style={{ fontFamily: 'monospace' }}>
+          <h4 className="text-left font-semibold text-gray-900 mb-1 text-base">Step 1: Import Shimmer/Skeleton dependency styles</h4>
+          <pre className="bg-gray-900 text-gray-100 p-4 rounded text-base overflow-auto flex-1 border border-gray-700 leading-relaxed text-left font-mono whitespace-pre-wrap break-words" style={{ fontFamily: 'monospace' }}>
 {`@import '@syncfusion/react-base/styles/material.css';
 @import '@syncfusion/react-notifications/styles/material.css'; // skeleton
 @import '@syncfusion/react-grid/styles/material.css';`}
@@ -49,8 +49,8 @@ export default function DataSource() {
         </div>
 
         <div className="bg-white rounded p-2 border-l-4 border-teal-500">
-          <h4 className="text-left font-semibold text-gray-900 mb-1 text-xs">Step 2: Create Data Service</h4>
-          <pre className="bg-gray-900 text-gray-100 p-4 rounded text-xs overflow-auto flex-1 border border-gray-700 leading-relaxed text-left font-mono whitespace-pre-wrap break-words" style={{ fontFamily: 'monospace' }}>
+          <h4 className="text-left font-semibold text-gray-900 mb-1 text-base">Step 2: Create Data Service</h4>
+          <pre className="bg-gray-900 text-gray-100 p-4 rounded text-base overflow-auto flex-1 border border-gray-700 leading-relaxed text-left font-mono whitespace-pre-wrap break-words" style={{ fontFamily: 'monospace' }}>
 {`import { DataManager, Query, UrlAdaptor } from '@syncfusion/react-data';
 
 // Initializes DataManager with UrlAdaptor and service URL.
@@ -62,8 +62,8 @@ const data = new DataManager({
         </div>
 
         <div className="bg-white rounded p-2 border-l-4 border-teal-500">
-          <h4 className="text-left font-semibold text-gray-900 mb-1 text-xs">Step 3: Configure Grid for Server-Side Data</h4>
-          <pre className="bg-gray-900 text-gray-100 p-4 rounded text-xs overflow-auto flex-1 border border-gray-700 leading-relaxed text-left font-mono whitespace-pre-wrap break-words" style={{ fontFamily: 'monospace' }}>
+          <h4 className="text-left font-semibold text-gray-900 mb-1 text-base">Step 3: Configure Grid for Server-Side Data</h4>
+          <pre className="bg-gray-900 text-gray-100 p-4 rounded text-base overflow-auto flex-1 border border-gray-700 leading-relaxed text-left font-mono whitespace-pre-wrap break-words" style={{ fontFamily: 'monospace' }}>
 {`import { Grid, Columns, Column, ScrollMode, type VirtualizationSettings } from '@syncfusion/react-grid';
 
 const [virtualizationSettings] = useState<VirtualizationSettings>({
