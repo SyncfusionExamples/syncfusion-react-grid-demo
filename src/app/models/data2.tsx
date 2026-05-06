@@ -20,7 +20,7 @@ export const generateEmployeeData = (): EmployeeData[] => {
   const rows: EmployeeData[] = [];
   
   // First pass: create all employees with proper positions
-  for (let i = 1; i <= 100; i++) {
+  for (let i = 1; i <= 11000; i++) {
     let position = 'Associate'; // default
     let department = 'Executive'; // default
     

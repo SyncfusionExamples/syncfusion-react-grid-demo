@@ -9,15 +9,15 @@ export default function VisualTemplate() {
         <div>
           <h2 className="text-2xl font-bold text-gray-900 mb-3" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "-0.3px", lineHeight: "1.4" }}>Advanced Grid Features</h2>
           
-          <p className="text-gray-700 text-base leading-relaxed" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.3px", lineHeight: "1.6", fontWeight: "400" }}>
+          <p className="text-gray-700 text-sm leading-relaxed" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.3px", lineHeight: "1.6", fontWeight: "400" }}>
             Comprehensive data management with multi-column sorting, checkbox filtering, inline editing, custom templates with avatars, field validation, and footer aggregates.
           </p>
         </div>
         
         <div className="space-y-4 pt-2">
           <div>
-            <h2 className="font-semibold text-gray-900 text-base mb-3" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.2px", fontWeight: "700" }}>Key Features:</h2>
-            <ul className="list-disc list-inside space-y-2 text-gray-700 text-base" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.2px", lineHeight: "1.6" }}>
+            <h2 className="font-semibold text-gray-900 text-sm mb-3" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.2px", fontWeight: "700" }}>Key Features:</h2>
+            <ul className="list-disc list-inside space-y-2 text-gray-700 text-sm" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.2px", lineHeight: "1.6" }}>
               <li><span className="font-semibold text-gray-900">Multi-column Sorting:</span> Sort by multiple columns</li>
               <li><span className="font-semibold text-gray-900">Checkbox Filtering:</span> Filter records with checkboxes</li>
               <li><span className="font-semibold text-gray-900">Inline Editing:</span> Edit data directly with validation</li>
@@ -28,8 +28,8 @@ export default function VisualTemplate() {
           </div>
           
           <div>
-            <h2 className="font-semibold text-gray-900 text-base mb-3" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.2px", fontWeight: "700" }}>Supported Operations</h2>
-            <p className="text-gray-700 text-base" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.2px", lineHeight: "1.6", fontWeight: "400" }}>
+            <h2 className="font-semibold text-gray-900 text-sm mb-3" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.2px", fontWeight: "700" }}>Supported Operations</h2>
+            <p className="text-gray-700 text-sm" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.2px", lineHeight: "1.6", fontWeight: "400" }}>
               The Data Grid supports multi‑criteria filtering for efficient record discovery, inline editing with type and range validation, and custom templates for complex data visualization. Toolbar actions enable full CRUD functionality, while footer aggregates provide summary calculations for enhanced data insights.
             </p>
           </div>
@@ -41,9 +41,9 @@ export default function VisualTemplate() {
         <h2 className="text-base font-bold text-gray-900 mb-2">Implementation Steps</h2>
         
         <div className="bg-white rounded p-2 border-l-4 border-blue-500">
-          <h4 className="text-left font-semibold text-gray-900 mb-1 text-base">Step 1: Import Core Features Dependency Styles</h4>
+          <h4 className="text-left font-semibold text-gray-900 mb-1 text-sm">Step 1: Import Core Features Dependency Styles</h4>
           <br/>
-          <pre className="bg-gray-900 text-gray-100 p-4 rounded text-base overflow-auto flex-1 border border-gray-700 leading-relaxed text-left font-mono whitespace-pre-wrap break-words">
+          <pre className="bg-gray-900 text-gray-100 p-4 rounded text-sm overflow-auto flex-1 border border-gray-700 leading-relaxed text-left font-mono whitespace-pre-wrap break-words">
 {`@import '@syncfusion/react-base/styles/material.css';
 @import '@syncfusion/react-buttons/styles/material.css'; /* Toolbar */
 @import '@syncfusion/react-calendars/styles/material.css'; /* DatePicker */
@@ -57,10 +57,10 @@ export default function VisualTemplate() {
         </div>
 
         <div className="bg-white rounded p-2 border-l-4 border-blue-500">
-          <h4 className="text-left font-semibold text-gray-900 mb-1 text-base">Step 2: Enable Features</h4>
-          <p className="text-base text-gray-600 mt-1">To enable basic sorting feature, set <strong>sortSettings.enabled</strong> as true. To enable basic filtering, set <strong>filterSettings.enabled</strong> as true.</p>
+          <h4 className="text-left font-semibold text-gray-900 mb-1 text-sm">Step 2: Enable Features</h4>
+          <p className="text-sm text-gray-600 mt-1 text-left">To enable basic sorting feature, set "sortSettings.enabled" as true. To enable basic filtering, set "filterSettings.enabled" as true.</p>
           <br/>
-          <pre className="bg-gray-900 text-gray-100 p-4 rounded text-base overflow-auto flex-1 border border-gray-700 leading-relaxed text-left font-mono whitespace-pre-wrap break-words">
+          <pre className="bg-gray-900 text-gray-100 p-4 rounded text-sm overflow-auto flex-1 border border-gray-700 leading-relaxed text-left font-mono whitespace-pre-wrap break-words">
 {`import { employeeTaskPerformanceData, type EmployeeTaskPerformance } from "../app/models/data1";
 import { type ColumnProps, type EditSettings, EditType, type FilterSettings, Grid } from "@syncfusion/react-grid";
 import { useState } from "react";
