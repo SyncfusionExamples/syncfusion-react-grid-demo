@@ -41,6 +41,7 @@ export default function Virtualization() {
         
         <div className="bg-white rounded p-2 border-l-4 border-red-500">
           <h4 className="text-left font-semibold text-gray-900 mb-1 text-xs">Step 1: Configure Virtual Scrolling</h4>
+          <p className="text-xs text-gray-600 mt-1">To enable row virtualization for smooth scrolling with large datasets, set virtualizationSettings.type as VirtualDomType.Row.</p>
           <pre className="bg-gray-900 text-gray-100 p-4 rounded text-xs overflow-auto flex-1 border border-gray-700 leading-relaxed text-left font-mono whitespace-pre-wrap break-words">
 {`import { useState, useCallback } from 'react';
 import { Grid, Columns, Column, ColumnType, VirtualDomType } from '@syncfusion/react-grid';
@@ -62,6 +63,7 @@ height={gridHeight}/>`}
 
         <div className="bg-white rounded p-2 border-l-4 border-red-500">
           <h4 className="text-left font-semibold text-gray-900 mb-1 text-xs">Step 2: Enable Column Virtualization</h4>
+          <p className="text-xs text-gray-600 mt-1">To enable row virtualization for smooth scrolling with large datasets, set virtualizationSettings.type as VirtualDomType.Column.</p>
           <pre className="bg-gray-900 text-gray-100 p-4 rounded text-xs overflow-auto flex-1 border border-gray-700 leading-relaxed text-left font-mono whitespace-pre-wrap break-words">
 {`import { useState, useCallback } from 'react';
 import { Grid, Columns, Column, ColumnType, VirtualDomType } from '@syncfusion/react-grid';

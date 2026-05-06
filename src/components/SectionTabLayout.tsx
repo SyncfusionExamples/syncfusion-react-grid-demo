@@ -53,7 +53,7 @@ export default function SectionTabLayout({
     <div className="fixed top-12 left-0 right-0 bottom-0 bg-white flex flex-col" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" }}>
 
       {/* Main Content Area */}
-      <div className="flex flex-1">
+      <div className="flex" style={{height: 'calc(100vh - 46px)'}}>
         {/* Vertical Tabs Sidebar - Text Only */}
         <div className="w-32 bg-gray-50 border-r border-gray-200 py-2 flex flex-col gap-0 flex-shrink-0">
           {tabs.map((tab) => (
