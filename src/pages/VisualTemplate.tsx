@@ -1,6 +1,7 @@
 import GridFeature from "@/components/GridFeature"
 import SectionTabLayout from "@/components/SectionTabLayout"
 import CodeViewer from "@/components/CodeViewer"
+import CodeSnippet from "@/components/CodeSnippet"
 
 export default function VisualTemplate() {
   const content = {
@@ -43,8 +44,7 @@ export default function VisualTemplate() {
         <div className="bg-white rounded p-2 border-l-4 border-blue-500">
           <h4 className="text-left font-semibold text-gray-900 mb-1 text-sm">Step 1: Import Core Features Dependency Styles</h4>
           <br/>
-          <pre className="bg-gray-900 text-gray-100 p-4 rounded text-sm overflow-auto flex-1 border border-gray-700 leading-relaxed text-left font-mono whitespace-pre-wrap break-words">
-{`@import '@syncfusion/react-base/styles/material.css';
+          <CodeSnippet code={`@import '@syncfusion/react-base/styles/material.css';
 @import '@syncfusion/react-buttons/styles/material.css'; /* Toolbar */
 @import '@syncfusion/react-calendars/styles/material.css'; /* DatePicker */
 @import '@syncfusion/react-dropdowns/styles/material.css'; /* Dropdownlist */
@@ -52,16 +52,14 @@ export default function VisualTemplate() {
 @import '@syncfusion/react-navigations/styles/material.css'; /* Toolbar */
 @import '@syncfusion/react-popups/styles/material.css'; /* Spinner, DatePicker(Calendar) */
 @import '@syncfusion/react-lists/styles/material.css'; /* Dropdownlist */
-@import '@syncfusion/react-grid/styles/material.css';`}
-          </pre>
+@import '@syncfusion/react-grid/styles/material.css';`} language="css" />
         </div>
 
         <div className="bg-white rounded p-2 border-l-4 border-blue-500">
           <h4 className="text-left font-semibold text-gray-900 mb-1 text-sm">Step 2: Enable Features</h4>
           <p className="text-sm text-gray-600 mt-1 text-left">To enable basic sorting feature, set "sortSettings.enabled" as true. To enable basic filtering, set "filterSettings.enabled" as true.</p>
           <br/>
-          <pre className="bg-gray-900 text-gray-100 p-4 rounded text-sm overflow-auto flex-1 border border-gray-700 leading-relaxed text-left font-mono whitespace-pre-wrap break-words">
-{`import { employeeTaskPerformanceData, type EmployeeTaskPerformance } from "../app/models/data1";
+          <CodeSnippet code={`import { employeeTaskPerformanceData, type EmployeeTaskPerformance } from "../app/models/data1";
 import { type ColumnProps, type EditSettings, EditType, type FilterSettings, Grid } from "@syncfusion/react-grid";
 import { useState } from "react";
 import '../app/styles/grid-feature.css';
@@ -91,8 +89,7 @@ const [aggregateColumns] = useState([{
   }
 ]);
 const [filterSettings] = useState<FilterSettings>({ enabled: true, type: 'CheckBox' });
-return (<Grid<EmployeeTaskPerformance> dataSource={data} columns={columns} height={600} toolbar={toolbarSettings} editSettings={editSettings} sortSettings={sortSettings} filterSettings={filterSettings} aggregates={aggregateColumns} />)`}
-          </pre>
+return (<Grid<EmployeeTaskPerformance> dataSource={data} columns={columns} height={600} toolbar={toolbarSettings} editSettings={editSettings} sortSettings={sortSettings} filterSettings={filterSettings} aggregates={aggregateColumns} />)`} language="typescript" />
         </div>
       </div>
     ),
@@ -108,7 +105,7 @@ return (<Grid<EmployeeTaskPerformance> dataSource={data} columns={columns} heigh
             {
               filename: "GridFeature.tsx",
               language: "typescript",
-              code: `import { employeeTaskPerformanceData, type EmployeeTaskPerformance } from "../app/models/data1";
+              code: `import { employeeTaskPerformanceData, type EmployeeTaskPerformance } from "../app/models/employee-performance-data";
 import { type ColumnProps, type ColumnTemplateProps, type EditSettings, EditType, type FilterSettings, Grid } from "@syncfusion/react-grid";
 import { useState } from "react";
 import '../app/styles/grid-feature.css';
@@ -171,7 +168,7 @@ export default function GridFeature() {
 @import '@syncfusion/react-grid/styles/material.css';`
             },
             {
-              filename: "data1.ts",
+              filename: "employee-performance-data.ts",
               language: "ts",
               code: `export interface EmployeeTaskPerformance {
   taskId: number;
@@ -327,6 +324,306 @@ export const employeeTaskPerformanceData: EmployeeTaskPerformance[] = [
   },
   {
     taskId: 5010,
+    employeeName: "Ava Hernandez",
+    department: "Engineering",
+    taskName: "Monitoring Setup",
+    priority: "High",
+    status: "Completed",
+    taskStartDate: new Date(2026, 3, 10),
+    taskEndDate: new Date(2026, 4, 25),
+    completionPercentage: 70,
+    performanceScore: 4.6,
+    hoursWorked: 70,
+    estimatedHours: 100,
+    imgId: 10
+  },
+  {
+    taskId: 5011,
+    employeeName: "David Miller",
+    department: "Engineering",
+    taskName: "Cloud Deployment",
+    priority: "High",
+    status: "In Progress",
+    taskStartDate: new Date(2026, 0, 1),
+    taskEndDate: new Date(2026, 1, 16),
+    completionPercentage: 40,
+    performanceScore: 3.0,
+    hoursWorked: 24,
+    estimatedHours: 60,
+    imgId: 1
+  },
+  {
+    taskId: 5012,
+    employeeName: "Sophia Johnson",
+    department: "Design",
+    taskName: "API Integration",
+    priority: "Medium",
+    status: "Completed",
+    taskStartDate: new Date(2026, 1, 2),
+    taskEndDate: new Date(2026, 2, 17),
+    completionPercentage: 50,
+    performanceScore: 3.4,
+    hoursWorked: 35,
+    estimatedHours: 70,
+    imgId: 2
+  },
+  {
+    taskId: 5013,
+    employeeName: "Michael Brown",
+    department: "QA",
+    taskName: "UI Revamp",
+    priority: "Low",
+    status: "At Risk",
+    taskStartDate: new Date(2026, 2, 3),
+    taskEndDate: new Date(2026, 3, 18),
+    completionPercentage: 60,
+    performanceScore: 3.8,
+    hoursWorked: 48,
+    estimatedHours: 80,
+    imgId: 3
+  },
+  {
+    taskId: 5014,
+    employeeName: "Emma Davis",
+    department: "Engineering",
+    taskName: "Performance Optimization",
+    priority: "High",
+    status: "Delayed",
+    taskStartDate: new Date(2026, 3, 4),
+    taskEndDate: new Date(2026, 4, 19),
+    completionPercentage: 70,
+    performanceScore: 4.2,
+    hoursWorked: 63,
+    estimatedHours: 90,
+    imgId: 4
+  },
+  {
+    taskId: 5015,
+    employeeName: "Daniel Wilson",
+    department: "Design",
+    taskName: "Automation Setup",
+    priority: "Medium",
+    status: "In Progress",
+    taskStartDate: new Date(2026, 4, 5),
+    taskEndDate: new Date(2026, 5, 20),
+    completionPercentage: 80,
+    performanceScore: 4.6,
+    hoursWorked: 80,
+    estimatedHours: 100,
+    imgId: 5
+  },
+  {
+    taskId: 5016,
+    employeeName: "Olivia Martinez",
+    department: "QA",
+    taskName: "Regression Testing",
+    priority: "Low",
+    status: "Completed",
+    taskStartDate: new Date(2026, 5, 6),
+    taskEndDate: new Date(2026, 6, 21),
+    completionPercentage: 90,
+    performanceScore: 3.0,
+    hoursWorked: 54,
+    estimatedHours: 60,
+    imgId: 6
+  },
+  {
+    taskId: 5017,
+    employeeName: "James Anderson",
+    department: "Engineering",
+    taskName: "Deployment Automation",
+    priority: "High",
+    status: "At Risk",
+    taskStartDate: new Date(2026, 0, 7),
+    taskEndDate: new Date(2026, 1, 22),
+    completionPercentage: 40,
+    performanceScore: 3.4,
+    hoursWorked: 28,
+    estimatedHours: 70,
+    imgId: 7
+  },
+  {
+    taskId: 5018,
+    employeeName: "Isabella Thomas",
+    department: "Design",
+    taskName: "Service Refactoring",
+    priority: "Medium",
+    status: "Delayed",
+    taskStartDate: new Date(2026, 1, 8),
+    taskEndDate: new Date(2026, 2, 23),
+    completionPercentage: 50,
+    performanceScore: 3.8,
+    hoursWorked: 40,
+    estimatedHours: 80,
+    imgId: 8
+  },
+  {
+    taskId: 5019,
+    employeeName: "William Taylor",
+    department: "QA",
+    taskName: "Security Patch",
+    priority: "Low",
+    status: "In Progress",
+    taskStartDate: new Date(2026, 2, 9),
+    taskEndDate: new Date(2026, 3, 24),
+    completionPercentage: 60,
+    performanceScore: 4.2,
+    hoursWorked: 54,
+    estimatedHours: 90,
+    imgId: 9
+  },
+  {
+    taskId: 5020,
+    employeeName: "Ava Hernandez",
+    department: "Engineering",
+    taskName: "Monitoring Setup",
+    priority: "High",
+    status: "Completed",
+    taskStartDate: new Date(2026, 3, 10),
+    taskEndDate: new Date(2026, 4, 25),
+    completionPercentage: 70,
+    performanceScore: 4.6,
+    hoursWorked: 70,
+    estimatedHours: 100,
+    imgId: 10
+  },
+  {
+    taskId: 5021,
+    employeeName: "David Miller",
+    department: "Engineering",
+    taskName: "Cloud Deployment",
+    priority: "High",
+    status: "In Progress",
+    taskStartDate: new Date(2026, 0, 1),
+    taskEndDate: new Date(2026, 1, 16),
+    completionPercentage: 40,
+    performanceScore: 3.0,
+    hoursWorked: 24,
+    estimatedHours: 60,
+    imgId: 1
+  },
+  {
+    taskId: 5022,
+    employeeName: "Sophia Johnson",
+    department: "Design",
+    taskName: "API Integration",
+    priority: "Medium",
+    status: "Completed",
+    taskStartDate: new Date(2026, 1, 2),
+    taskEndDate: new Date(2026, 2, 17),
+    completionPercentage: 50,
+    performanceScore: 3.4,
+    hoursWorked: 35,
+    estimatedHours: 70,
+    imgId: 2
+  },
+  {
+    taskId: 5023,
+    employeeName: "Michael Brown",
+    department: "QA",
+    taskName: "UI Revamp",
+    priority: "Low",
+    status: "At Risk",
+    taskStartDate: new Date(2026, 2, 3),
+    taskEndDate: new Date(2026, 3, 18),
+    completionPercentage: 60,
+    performanceScore: 3.8,
+    hoursWorked: 48,
+    estimatedHours: 80,
+    imgId: 3
+  },
+  {
+    taskId: 5024,
+    employeeName: "Emma Davis",
+    department: "Engineering",
+    taskName: "Performance Optimization",
+    priority: "High",
+    status: "Delayed",
+    taskStartDate: new Date(2026, 3, 4),
+    taskEndDate: new Date(2026, 4, 19),
+    completionPercentage: 70,
+    performanceScore: 4.2,
+    hoursWorked: 63,
+    estimatedHours: 90,
+    imgId: 4
+  },
+  {
+    taskId: 5025,
+    employeeName: "Daniel Wilson",
+    department: "Design",
+    taskName: "Automation Setup",
+    priority: "Medium",
+    status: "In Progress",
+    taskStartDate: new Date(2026, 4, 5),
+    taskEndDate: new Date(2026, 5, 20),
+    completionPercentage: 80,
+    performanceScore: 4.6,
+    hoursWorked: 80,
+    estimatedHours: 100,
+    imgId: 5
+  },
+  {
+    taskId: 5026,
+    employeeName: "Olivia Martinez",
+    department: "QA",
+    taskName: "Regression Testing",
+    priority: "Low",
+    status: "Completed",
+    taskStartDate: new Date(2026, 5, 6),
+    taskEndDate: new Date(2026, 6, 21),
+    completionPercentage: 90,
+    performanceScore: 3.0,
+    hoursWorked: 54,
+    estimatedHours: 60,
+    imgId: 6
+  },
+  {
+    taskId: 5027,
+    employeeName: "James Anderson",
+    department: "Engineering",
+    taskName: "Deployment Automation",
+    priority: "High",
+    status: "At Risk",
+    taskStartDate: new Date(2026, 0, 7),
+    taskEndDate: new Date(2026, 1, 22),
+    completionPercentage: 40,
+    performanceScore: 3.4,
+    hoursWorked: 28,
+    estimatedHours: 70,
+    imgId: 7
+  },
+  {
+    taskId: 5028,
+    employeeName: "Isabella Thomas",
+    department: "Design",
+    taskName: "Service Refactoring",
+    priority: "Medium",
+    status: "Delayed",
+    taskStartDate: new Date(2026, 1, 8),
+    taskEndDate: new Date(2026, 2, 23),
+    completionPercentage: 50,
+    performanceScore: 3.8,
+    hoursWorked: 40,
+    estimatedHours: 80,
+    imgId: 8
+  },
+  {
+    taskId: 5029,
+    employeeName: "William Taylor",
+    department: "QA",
+    taskName: "Security Patch",
+    priority: "Low",
+    status: "In Progress",
+    taskStartDate: new Date(2026, 2, 9),
+    taskEndDate: new Date(2026, 3, 24),
+    completionPercentage: 60,
+    performanceScore: 4.2,
+    hoursWorked: 54,
+    estimatedHours: 90,
+    imgId: 9
+  },
+  {
+    taskId: 5030,
     employeeName: "Ava Hernandez",
     department: "Engineering",
     taskName: "Monitoring Setup",

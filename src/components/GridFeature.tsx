@@ -1,4 +1,4 @@
-import { employeeTaskPerformanceData, type EmployeeTaskPerformance } from "../app/models/data1";
+import { employeeTaskPerformanceData, type EmployeeTaskPerformance } from "../app/models/employee-performance-data";
 import { ClipMode, type ColumnProps, type ColumnTemplateProps, type EditSettings, EditType, type FilterSettings, Grid } from "@syncfusion/react-grid";
 import { useState } from "react";
 import '../app/styles/grid-feature.css';

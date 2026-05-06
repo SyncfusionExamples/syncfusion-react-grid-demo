@@ -1,6 +1,7 @@
 import GridPerformance from "@/components/GridPerformance"
 import SectionTabLayout from "@/components/SectionTabLayout"
 import CodeViewer from "@/components/CodeViewer"
+import CodeSnippet from "@/components/CodeSnippet"
 
 export default function Virtualization() {
   const content = {
@@ -43,8 +44,7 @@ export default function Virtualization() {
           <h4 className="text-left font-semibold text-gray-900 mb-1 text-sm">Step 1: Configure Virtual Scrolling</h4>
           <p className="text-sm text-gray-600 mt-1 text-left">To enable row virtualization for smooth scrolling with large datasets, set "virtualizationSettings.type" as "VirtualDomType.Row".</p>
           <br/>
-          <pre className="bg-gray-900 text-gray-100 p-4 rounded text-sm overflow-auto flex-1 border border-gray-700 leading-relaxed text-left font-mono whitespace-pre-wrap break-words">
-{`import { useState, useCallback } from 'react';
+          <CodeSnippet code={`import { useState, useCallback } from 'react';
 import { Grid, Columns, Column, ColumnType, VirtualDomType } from '@syncfusion/react-grid';
 import { type EmployeeData, generateEmployeeData } from '@/app/models/data2';
 import styles from '@/app/styles/grid-performance.module.css';
@@ -58,16 +58,14 @@ const [virtualizationSettings] = useState({ type: VirtualDomType.Row });
 dataSource={data}
 width={{gridWidth}%}
 virtualizationSettings={virtualizationSettings}
-height={gridHeight}/>`}
-          </pre>
+height={gridHeight}/>`} language="typescript" />
         </div>
 
         <div className="bg-white rounded p-2 border-l-4 border-red-500">
           <h4 className="text-left font-semibold text-gray-900 mb-1 text-sm">Step 2: Enable Column Virtualization</h4>
           <p className="text-sm text-gray-600 mt-1 text-left">To enable row virtualization for smooth scrolling with large datasets, set "virtualizationSettings.type" as "VirtualDomType.Column"."</p>
           <br/>
-          <pre className="bg-gray-900 text-gray-100 p-4 rounded text-sm overflow-auto flex-1 border border-gray-700 leading-relaxed text-left font-mono whitespace-pre-wrap break-words">
-{`import { useState, useCallback } from 'react';
+          <CodeSnippet code={`import { useState, useCallback } from 'react';
 import { Grid, Columns, Column, ColumnType, VirtualDomType } from '@syncfusion/react-grid';
 import { type EmployeeData, generateEmployeeData } from '@/app/models/data2';
 import styles from '@/app/styles/grid-performance.module.css';
@@ -81,8 +79,7 @@ const [virtualizationSettings] = useState({ type: VirtualDomType.Column });
 dataSource={data}
 width={{gridWidth}%}
 virtualizationSettings={virtualizationSettings}
-height={gridHeight}/>`}
-          </pre>
+height={gridHeight}/>`} language="typescript" />
         </div>
       </div>
     ),
@@ -100,7 +97,7 @@ height={gridHeight}/>`}
               language: "typescript",
               code: `import { useState, useCallback } from 'react';
 import { Grid, Columns, Column, TextAlign, ClipMode, type ColumnTemplateProps, type FilterSettings, type SortSettings, ColumnType, VirtualDomType } from '@syncfusion/react-grid';
-import { type EmployeeData, generateEmployeeData } from '@/app/models/data2';
+import { type EmployeeData, generateEmployeeData } from '@/app/models/employee-data';
 import styles from '@/app/styles/grid-performance.module.css';
 
 export default function GridPerformance() {
@@ -422,7 +419,7 @@ export default function GridPerformance() {
 }`
             },
             {
-              filename: "grid-performance-data.ts",
+              filename: "employee-data.ts",
               language: "typescript",
               code: `export type EmployeeData = {
   EmployeeID: string;

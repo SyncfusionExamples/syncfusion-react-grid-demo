@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
+import { oneLight } from 'react-syntax-highlighter/dist/esm/styles/prism'
 
 interface CodeFile {
   filename: string
@@ -48,10 +50,25 @@ export default function CodeViewer({ files, defaultFile = 0 }: CodeViewerProps) 
         </p>
       )}
 
-      {/* Code Content - Left Aligned */}
-      <pre className="bg-gray-900 text-gray-100 p-4 rounded text-sm overflow-auto flex-1 border border-gray-700 leading-relaxed text-left font-mono whitespace-pre-wrap break-words" style={{ height: 'calc(100vh - 120px)', fontFamily: 'monospace' }}>
-        <code className="bg-gray-900 text-left text-sm">{activeFileData.code}</code>
-      </pre>
+      {/* Code Content with Syntax Highlighting */}
+      <div className="flex-1 overflow-auto border border-gray-200">
+        <SyntaxHighlighter
+          language={activeFileData.language}
+          style={oneLight}
+          customStyle={{
+            margin: 0,
+            padding: '16px',
+            fontSize: '0.875rem',
+            lineHeight: '1.6',
+            fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, monospace",
+            minHeight: '100%',
+          }}
+          wrapLines={true}
+          wrapLongLines={true}
+        >
+          {activeFileData.code}
+        </SyntaxHighlighter>
+      </div>
     </div>
   )
 }

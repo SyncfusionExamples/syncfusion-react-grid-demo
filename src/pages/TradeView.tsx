@@ -1,6 +1,7 @@
 import LiveData from "@/components/LiveData";
 import SectionTabLayout from "@/components/SectionTabLayout"
 import CodeViewer from "@/components/CodeViewer"
+import CodeSnippet from "@/components/CodeSnippet"
 
 export default function TradeView() {
   const content = {
@@ -42,15 +43,14 @@ export default function TradeView() {
         <div className="bg-white rounded p-2 border-l-4 border-amber-500">
           <h4 className="text-left font-semibold text-gray-900 mb-1 text-sm">Step 1: Create a live data hook and dynamically update cell values using the Data Grid.</h4>
           <br/>
-          <pre className="bg-gray-900 text-gray-100 p-4 rounded text-sm overflow-auto flex-1 border border-gray-700 leading-relaxed text-left font-mono whitespace-pre-wrap break-words">
-{`import { useState, useEffect } from 'react';
+          <CodeSnippet code={`import { useState, useEffect } from 'react';
 
 export function useLiveData() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      // Updates a specific cell’s value in a row identified by its primary key.
+      // Updates a specific cell's value in a row identified by its primary key.
       gridRef.current?.setCellValue?.(row.id, 'change', newChange, true);
     }, 1000);
     
@@ -58,23 +58,20 @@ export function useLiveData() {
   }, []);
 
   return data;
-}`}
-          </pre>
+}`} language="typescript" />
         </div>
 
         <div className="bg-white rounded p-2 border-l-4 border-amber-500">
           <h4 className="text-left font-semibold text-gray-900 mb-1 text-sm">Step 2: Bind live data to the Data Grid using the "dataSource" property.</h4>
           <br/>
-          <pre className="bg-gray-900 text-gray-100 p-4 rounded text-sm overflow-auto flex-1 border border-gray-700 leading-relaxed text-left font-mono whitespace-pre-wrap break-words">
-{`import { Grid } from '@syncfusion/react-grid';
+          <CodeSnippet code={`import { Grid } from '@syncfusion/react-grid';
 
 <Grid ref={gridRef} dataSource={liveData}>
   <Columns>
     <Column field='ticker' headerText='Ticker' width='80' />
     <Column field='price' headerText='Price' width='100' />
   </Columns>
-</Grid>`}
-          </pre>
+</Grid>`} language="typescript" />
         </div>
       </div>
     ),
