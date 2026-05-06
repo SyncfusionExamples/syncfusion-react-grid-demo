@@ -5,29 +5,31 @@ import CodeViewer from "@/components/CodeViewer"
 export default function VisualTemplate() {
   const content = {
     description: (
-      <div className="space-y-3 text-left">
-        <h2 className="text-xl font-bold text-gray-900">Advanced Grid Features</h2>
+      <div className="space-y-5 text-left">
+        <div>
+          <h2 className="text-2xl font-bold text-gray-900 mb-3" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "-0.3px", lineHeight: "1.4" }}>Advanced Grid Features</h2>
+          
+          <p className="text-gray-700 text-base leading-relaxed" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.3px", lineHeight: "1.6", fontWeight: "400" }}>
+            Comprehensive data management with multi-column sorting, checkbox filtering, inline editing, custom templates with avatars, field validation, and footer aggregates.
+          </p>
+        </div>
         
-        <p className="text-gray-700 text-sm leading-relaxed">
-          Comprehensive data management with multi-column sorting, checkbox filtering, inline editing, custom templates with avatars, field validation, and footer aggregates.
-        </p>
-        
-        <div className="space-y-3">
+        <div className="space-y-4 pt-2">
           <div>
-            <h3 className="font-semibold text-gray-900 text-sm mb-2">Features</h3>
-            <ul className="list-disc list-inside space-y-1 text-gray-700 text-xs">
-              <li>Multi-column sorting</li>
-              <li>Checkbox filtering</li>
-              <li>Inline editing with validation</li>
-              <li>CRUD toolbar</li>
-              <li>Avatar templates</li>
-              <li>Footer aggregates</li>
+            <h2 className="font-semibold text-gray-900 text-base mb-3" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.2px", fontWeight: "700" }}>Key Features:</h2>
+            <ul className="list-disc list-inside space-y-2 text-gray-700 text-base" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.2px", lineHeight: "1.6" }}>
+              <li><span className="font-semibold text-gray-900">Multi-column Sorting:</span> Sort by multiple columns</li>
+              <li><span className="font-semibold text-gray-900">Checkbox Filtering:</span> Filter records with checkboxes</li>
+              <li><span className="font-semibold text-gray-900">Inline Editing:</span> Edit data directly with validation</li>
+              <li><span className="font-semibold text-gray-900">CRUD Toolbar:</span> Complete data operations</li>
+              <li><span className="font-semibold text-gray-900">Custom Templates:</span> Avatar and complex data support</li>
+              <li><span className="font-semibold text-gray-900">Footer Aggregates:</span> Totals and calculations</li>
             </ul>
           </div>
           
           <div>
-            <h3 className="font-semibold text-gray-900 text-sm mb-2">Operations</h3>
-            <p className="text-gray-700 text-xs">
+            <h2 className="font-semibold text-gray-900 text-base mb-3" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.2px", fontWeight: "700" }}>Operations</h2>
+            <p className="text-gray-700 text-base" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.2px", lineHeight: "1.6", fontWeight: "400" }}>
               Multi-criteria filtering for record discovery. Inline editing with type and range validation. Custom templates for complex data. Toolbar actions for CRUD operations. Footer totals for aggregated data.
             </p>
           </div>
@@ -36,7 +38,7 @@ export default function VisualTemplate() {
     ),
     steps: (
       <div className="space-y-2">
-        <h3 className="text-sm font-bold text-gray-900 mb-2">Implementation Steps</h3>
+        <h2 className="text-sm font-bold text-gray-900 mb-2">Implementation Steps</h2>
         
         <div className="bg-white rounded p-2 border-l-4 border-blue-500">
           <h4 className="text-left font-semibold text-gray-900 mb-1 text-xs">Step 1: Import Core Features Dependency Styles</h4>

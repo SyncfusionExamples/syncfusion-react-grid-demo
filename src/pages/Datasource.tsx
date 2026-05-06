@@ -5,28 +5,31 @@ import CodeViewer from "@/components/CodeViewer"
 export default function DataSource() {
   const content = {
     description: (
-      <div className="space-y-3 text-left">
-        <h2 className="text-xl font-bold text-gray-900">Server-Side Data with Virtual Scrolling</h2>
+      <div className="space-y-5 text-left">
+        <div>
+          <h2 className="text-2xl font-bold text-gray-900 mb-3" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "-0.3px", lineHeight: "1.4" }}>Server-Side Data with Virtual Scrolling</h2>
+          
+          <p className="text-gray-700 text-base leading-relaxed" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.3px", lineHeight: "1.6", fontWeight: "400" }}>
+            Manages 100,000+ records using server-side pagination and virtual scrolling. Data is fetched on-demand with 50 records per page. Custom templates display status badges, progress metrics, and performance ratings.
+          </p>
+        </div>
         
-        <p className="text-gray-700 text-sm leading-relaxed">
-          Manages 100,000+ records using server-side pagination and virtual scrolling. Data is fetched on-demand with 50 records per page. Custom templates display status badges, progress metrics, and performance ratings.
-        </p>
-        
-        <div className="space-y-3">
+        <div className="space-y-4 pt-2">
           <div>
-            <h3 className="font-semibold text-gray-900 text-sm mb-2">Features</h3>
-            <ul className="list-disc list-inside space-y-1 text-gray-700 text-xs">
-              <li>Server-side pagination (50 records per page)</li>
-              <li>Virtual scrolling with cache</li>
-              <li>Custom column templates</li>
-              <li>External API integration</li>
+            <h2 className="font-semibold text-gray-900 text-base mb-3" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.2px", fontWeight: "700" }}>Key Characteristics:</h2>
+            <ul className="list-disc list-inside space-y-2 text-gray-700 text-base" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.2px", lineHeight: "1.6" }}>
+              <li><span className="font-semibold text-gray-900">Tabular Display:</span> Organizes data into rows and columns for easy readability.</li>
+              <li><span className="font-semibold text-gray-900">High Performance:</span> Handles large datasets with optimized rendering techniques.</li>
+              <li><span className="font-semibold text-gray-900">Interactive Features:</span> Supports sorting, filtering, grouping, and editing.</li>
+              <li><span className="font-semibold text-gray-900">Data Binding:</span> Connects to arrays, APIs, or databases.</li>
+              <li><span className="font-semibold text-gray-900">Customizable UI:</span> Allows styling and templating of grid elements.</li>
             </ul>
           </div>
           
           <div>
-            <h3 className="font-semibold text-gray-900 text-sm mb-2">Performance</h3>
-            <p className="text-gray-700 text-xs">
-              Constant memory footprint with only viewport rows in DOM. Smooth scrolling without performance degradation.
+            <h2 className="font-semibold text-gray-900 text-base mb-3" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.2px", fontWeight: "700" }}>Use</h2>
+            <p className="text-gray-700 text-base" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.2px", lineHeight: "1.6", fontWeight: "400" }}>
+              Foundation for Grid implementation. Prerequisite before advanced features like pagination, editing, and filtering.
             </p>
           </div>
         </div>
@@ -34,7 +37,7 @@ export default function DataSource() {
     ),
     steps: (
       <div className="space-y-2">
-        <h3 className="text-sm font-bold text-gray-900 mb-2">Implementation Steps</h3>
+        <h2 className="text-sm font-bold text-gray-900 mb-2">Implementation Steps</h2>
         
         <div className="bg-white rounded p-2 border-l-4 border-teal-500">
           <h4 className="text-left font-semibold text-gray-900 mb-1 text-xs">Step 1: Import Shimmer/Skeleton dependency styles</h4>

@@ -5,28 +5,30 @@ import CodeViewer from "@/components/CodeViewer"
 export default function Pagination() {
   const content = {
     description: (
-      <div className="space-y-3 text-left">
-        <h2 className="text-xl font-bold text-gray-900">Pagination with Editing and Aggregates</h2>
+      <div className="space-y-5 text-left">
+        <div>
+          <h2 className="text-2xl font-bold text-gray-900 mb-3" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "-0.3px", lineHeight: "1.4" }}>Pagination with Editing and Aggregates</h2>
+          
+          <p className="text-gray-700 text-base leading-relaxed" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.3px", lineHeight: "1.6", fontWeight: "400" }}>
+            Integrates client-side pagination with CRUD operations and data aggregation. 10 records per page with inline editing, field validation, toolbar actions, and footer sum aggregates.
+          </p>
+        </div>
         
-        <p className="text-gray-700 text-sm leading-relaxed">
-          Integrates client-side pagination with CRUD operations and data aggregation. 10 records per page with inline editing, field validation, toolbar actions, and footer sum aggregates.
-        </p>
-        
-        <div className="space-y-3">
+        <div className="space-y-4 pt-2">
           <div>
-            <h3 className="font-semibold text-gray-900 text-sm mb-2">Functionality</h3>
-            <ul className="list-disc list-inside space-y-1 text-gray-700 text-xs">
-              <li>Pagination with 10 records per page</li>
-              <li>Inline editing with validation</li>
-              <li>CRUD toolbar (Add, Edit, Delete)</li>
-              <li>Footer sum aggregates</li>
-              <li>Date picker editor</li>
+            <h2 className="font-semibold text-gray-900 text-base mb-3" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.2px", fontWeight: "700" }}>Key Features:</h2>
+            <ul className="list-disc list-inside space-y-2 text-gray-700 text-base" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.2px", lineHeight: "1.6" }}>
+              <li><span className="font-semibold text-gray-900">Pagination:</span> 10 records per page with navigation controls</li>
+              <li><span className="font-semibold text-gray-900">Inline Editing:</span> Edit data directly in grid cells with validation</li>
+              <li><span className="font-semibold text-gray-900">CRUD Operations:</span> Add, Edit, Delete toolbar actions</li>
+              <li><span className="font-semibold text-gray-900">Data Aggregation:</span> Footer sum aggregates and calculations</li>
+              <li><span className="font-semibold text-gray-900">Date Picker:</span> Temporal field editor support</li>
             </ul>
           </div>
           
           <div>
-            <h3 className="font-semibold text-gray-900 text-sm mb-2">Validation</h3>
-            <p className="text-gray-700 text-xs">
+            <h2 className="font-semibold text-gray-900 text-base mb-3" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.2px", fontWeight: "700" }}>Validation</h2>
+            <p className="text-gray-700 text-base" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.2px", lineHeight: "1.6", fontWeight: "400" }}>
               Type enforcement, range constraints, primary key uniqueness, minimum length requirements, date picker for temporal fields.
             </p>
           </div>
@@ -35,7 +37,7 @@ export default function Pagination() {
     ),
     steps: (
       <div className="space-y-2">
-        <h3 className="text-sm font-bold text-gray-900 mb-2">Implementation Steps</h3>
+        <h2 className="text-sm font-bold text-gray-900 mb-2">Implementation Steps</h2>
         
         <div className="bg-white rounded p-2 border-l-4 border-orange-500">
           <h4 className="text-left font-semibold text-gray-900 mb-1 text-xs">Step 1: Configure Grid with Paging</h4>

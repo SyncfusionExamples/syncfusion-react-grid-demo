@@ -5,28 +5,30 @@ import CodeViewer from "@/components/CodeViewer"
 export default function Virtualization() {
   const content = {
     description: (
-      <div className="space-y-3 text-left">
-        <h2 className="text-xl font-bold text-gray-900">Virtual Scrolling for Large Datasets</h2>
+      <div className="space-y-5 text-left">
+        <div>
+          <h2 className="text-2xl font-bold text-gray-900 mb-3" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "-0.3px", lineHeight: "1.4" }}>Virtual Scrolling for Large Datasets</h2>
+          
+          <p className="text-gray-700 text-base leading-relaxed" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.3px", lineHeight: "1.6", fontWeight: "400" }}>
+            DOM virtualization for efficient rendering of 10,000+ records. Renders only visible rows with buffer rows for seamless scrolling. Multi-column sorting with consistent performance.
+          </p>
+        </div>
         
-        <p className="text-gray-700 text-sm leading-relaxed">
-          DOM virtualization for efficient rendering of 10,000+ records. Renders only visible rows with buffer rows for seamless scrolling. Multi-column sorting with consistent performance.
-        </p>
-        
-        <div className="space-y-3">
+        <div className="space-y-4 pt-2">
           <div>
-            <h3 className="font-semibold text-gray-900 text-sm mb-2">Architecture</h3>
-            <ul className="list-disc list-inside space-y-1 text-gray-700 text-xs">
-              <li>Row-level DOM virtualization</li>
-              <li>Viewport-based rendering</li>
-              <li>Multi-column sorting support</li>
-              <li>Custom column templates</li>
-              <li>Debounced scroll handling</li>
+            <h2 className="font-semibold text-gray-900 text-base mb-3" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.2px", fontWeight: "700" }}>Architecture:</h2>
+            <ul className="list-disc list-inside space-y-2 text-gray-700 text-base" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.2px", lineHeight: "1.6" }}>
+              <li><span className="font-semibold text-gray-900">Row Virtualization:</span> DOM virtualization at row level</li>
+              <li><span className="font-semibold text-gray-900">Viewport Rendering:</span> Smart viewport-based rendering</li>
+              <li><span className="font-semibold text-gray-900">Sorting:</span> Multi-column sorting support</li>
+              <li><span className="font-semibold text-gray-900">Templates:</span> Custom column templates</li>
+              <li><span className="font-semibold text-gray-900">Scroll Handling:</span> Debounced scroll event optimization</li>
             </ul>
           </div>
           
           <div>
-            <h3 className="font-semibold text-gray-900 text-sm mb-2">Performance</h3>
-            <p className="text-gray-700 text-xs">
+            <h2 className="font-semibold text-gray-900 text-base mb-3" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.2px", fontWeight: "700" }}>Performance</h2>
+            <p className="text-gray-700 text-base" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.2px", lineHeight: "1.6", fontWeight: "400" }}>
               Constant memory usage independent of dataset size. Only viewport rows in DOM. Smooth scrolling at high velocities without degradation.
             </p>
           </div>
@@ -35,7 +37,7 @@ export default function Virtualization() {
     ),
     steps: (
       <div className="space-y-2">
-        <h3 className="text-sm font-bold text-gray-900 mb-2">Implementation Steps</h3>
+        <h2 className="text-sm font-bold text-gray-900 mb-2">Implementation Steps</h2>
         
         <div className="bg-white rounded p-2 border-l-4 border-red-500">
           <h4 className="text-left font-semibold text-gray-900 mb-1 text-xs">Step 1: Configure Virtual Scrolling</h4>
