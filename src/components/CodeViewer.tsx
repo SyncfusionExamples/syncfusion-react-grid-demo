@@ -22,7 +22,7 @@ export default function CodeViewer({ files, defaultFile = 0 }: CodeViewerProps) 
   const activeFileData = files[activeFile]
 
   return (
-    <div className="space-y-2 h-full flex flex-col bg-white">
+    <div className="w-full h-full flex flex-col bg-white overflow-hidden">
       {/* Horizontal File Tabs */}
       <div className="flex gap-0 overflow-x-auto border-b border-gray-300 flex-wrap flex-shrink-0">
         {files.map((file, index) => (
@@ -49,7 +49,7 @@ export default function CodeViewer({ files, defaultFile = 0 }: CodeViewerProps) 
       )}
 
       {/* Code Content - Left Aligned */}
-      <pre className="bg-gray-900 text-gray-100 p-4 rounded text-xs overflow-auto flex-1 border border-gray-700 leading-relaxed text-left font-mono whitespace-pre-wrap break-words">
+      <pre className="bg-gray-900 text-gray-100 p-4 rounded text-xs overflow-auto border border-gray-700 leading-relaxed text-left font-mono whitespace-pre-wrap break-words" style={{ height: 'calc(100vh - 120px)' }}>
         <code className="text-left">{activeFileData.code}</code>
       </pre>
     </div>
