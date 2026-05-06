@@ -41,7 +41,7 @@ export default function Pagination() {
         
         <div className="bg-white rounded p-2 border-l-4 border-orange-500">
           <h4 className="text-left font-semibold text-gray-900 mb-1 text-xs">Step 1: Configure Grid with Paging</h4>
-          <pre className="bg-gray-900 text-gray-100 p-2 rounded text-xs overflow-auto text-left font-mono leading-tight">
+          <pre className="bg-gray-900 text-gray-100 p-4 rounded text-xs overflow-auto flex-1 border border-gray-700 leading-relaxed text-left font-mono whitespace-pre-wrap break-words">
 {`import { Grid } from '@syncfusion/react-grid';
 import '../app/styles/grid-pagination.css';
 
@@ -53,7 +53,7 @@ return (<Grid<EmployeeTaskPerformance> dataSource={data} columns={columns} pageS
 
         <div className="bg-white rounded p-2 border-l-4 border-orange-500">
           <h4 className="text-left font-semibold text-gray-900 mb-1 text-xs">Step 2: Advanced Page Configuration</h4>
-          <pre className="bg-gray-900 text-gray-100 p-2 rounded text-xs overflow-auto text-left font-mono leading-tight">
+          <pre className="bg-gray-900 text-gray-100 p-4 rounded text-xs overflow-auto flex-1 border border-gray-700 leading-relaxed text-left font-mono whitespace-pre-wrap break-words">
 {`import { Grid } from '@syncfusion/react-grid';
 import '../app/styles/grid-pagination.css';
 
