@@ -6,9 +6,13 @@ import styles from '@/app/styles/grid-performance.module.css';
 export default function GridPerformance() {
   const [data] = useState(() => generateEmployeeData());
 
-  const [gridHeight] = useState(400);
+  const [gridHeight] = useState('100%');
   const [gridWidth] = useState(100);
+
+  // sortSettings: enables multi-column sorting for arranging data
   const [sortSettings] = useState<SortSettings>({enabled: true});
+
+  // virtualizationSettings: enables row virtualization for efficient rendering of large datasets
   const [virtualizationSettings] = useState({ type: VirtualDomType.Row });
 
   // Template functions for real-world employee data display
@@ -138,7 +142,7 @@ export default function GridPerformance() {
   ), []);
 
   return (
-    <div style={{ width: '100%' }}>
+    <div style={{ width: '100%', height: 'calc(100vh - 120px)' }}>
       <Grid<EmployeeData>
         dataSource={data}
         height={gridHeight}

@@ -27,7 +27,11 @@ export default function GridFeature() {
         { field: "hoursWorked", headerText: "Hours Worked", width: 150, textAlign: 'Right', validationRules: numberRules },
     ]);
     const [data] = useState(employeeTaskPerformanceData);
+
+    // sortSettings: enables multi-column sorting for arranging data
     const [sortSettings] = useState({ enabled: true });
+
+    // aggregateColumns: enables footer aggregates (Sum) for specified columns
     const [aggregateColumns] = useState([{
         columns: [
             {
@@ -43,10 +47,12 @@ export default function GridFeature() {
         ]
     }
     ]);
+
+    // filterSettings: enables checkbox-style filtering for record filtering
     const [filterSettings] = useState<FilterSettings>({ enabled: true, type: 'CheckBox' });
     return (
-        <div style={{ width: '100%' }}>
-            <Grid<EmployeeTaskPerformance> dataSource={data} columns={columns} toolbar={toolbarSettings} editSettings={editSettings} sortSettings={sortSettings} filterSettings={filterSettings} aggregates={aggregateColumns} height={550} clipMode={ClipMode.EllipsisWithTooltip}/>
+        <div style={{ width: '100%', height: 'calc(100vh - 120px)' }}>
+            <Grid<EmployeeTaskPerformance> height={'100%'} dataSource={data} columns={columns} toolbar={toolbarSettings} editSettings={editSettings} sortSettings={sortSettings} filterSettings={filterSettings} aggregates={aggregateColumns} clipMode={ClipMode.EllipsisWithTooltip}/>
         </div>
     )
 }

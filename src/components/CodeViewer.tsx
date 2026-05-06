@@ -29,7 +29,7 @@ export default function CodeViewer({ files, defaultFile = 0 }: CodeViewerProps) 
           <button
             key={index}
             onClick={() => setActiveFile(index)}
-            className={`px-2 py-1.5 text-xs font-500 whitespace-nowrap transition-all duration-150 border-b-2 ${
+            className={`px-2 py-1.5 text-base font-500 whitespace-nowrap transition-all duration-150 border-b-2 ${
               activeFile === index
                 ? 'border-blue-600 text-blue-600 bg-blue-50'
                 : 'border-transparent text-gray-600 hover:text-gray-900 hover:bg-gray-50'
@@ -43,13 +43,13 @@ export default function CodeViewer({ files, defaultFile = 0 }: CodeViewerProps) 
 
       {/* File Description */}
       {activeFileData.description && (
-        <p className="text-xs text-gray-600 bg-gray-50 px-2 py-1 rounded border border-gray-200 flex-shrink-0">
+        <p className="text-base text-gray-600 bg-gray-50 px-2 py-1 rounded border border-gray-200 flex-shrink-0">
           {activeFileData.description}
         </p>
       )}
 
       {/* Code Content - Left Aligned */}
-      <pre className="bg-gray-900 text-gray-100 p-4 rounded text-xs overflow-auto border border-gray-700 leading-relaxed text-left font-mono whitespace-pre-wrap break-words" style={{ height: 'calc(100vh - 120px)' }}>
+      <pre className="bg-gray-900 text-gray-100 p-4 rounded text-base overflow-auto border border-gray-700 leading-relaxed text-left font-mono whitespace-pre-wrap break-words" style={{ height: 'calc(100vh - 120px)' }}>
         <code className="text-left">{activeFileData.code}</code>
       </pre>
     </div>

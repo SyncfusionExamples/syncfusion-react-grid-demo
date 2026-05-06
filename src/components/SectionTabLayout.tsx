@@ -55,7 +55,7 @@ export default function SectionTabLayout({
       {/* Main Content Area */}
       <div className="flex" style={{height: 'calc(100vh - 46px)'}}>
         {/* Vertical Tabs Sidebar - Text Only */}
-        <div className="w-32 bg-gray-50 border-r border-gray-200 py-2 flex flex-col gap-0 flex-shrink-0">
+        <div className="w-32 bg-gray-50 border-r border-gray-200 py-2 flex flex-col gap-0 flex-shrink-0" style={{width: '15%'}}>
           {tabs.map((tab) => (
             <button
               key={tab.id}

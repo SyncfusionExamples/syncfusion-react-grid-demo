@@ -37,11 +37,11 @@ export default function TradeView() {
     ),
     steps: (
       <div className="space-y-2">
-        <h2 className="text-sm font-bold text-gray-900 mb-2">Implementation Steps</h2>
+        <h2 className="text-base font-bold text-gray-900 mb-2">Implementation Steps</h2>
         
         <div className="bg-white rounded p-2 border-l-4 border-amber-500">
-          <h4 className="text-left font-semibold text-gray-900 mb-1 text-xs">Step 1: Create Live Data Hook</h4>
-          <pre className="bg-gray-900 text-gray-100 p-4 rounded text-xs overflow-auto flex-1 border border-gray-700 leading-relaxed text-left font-mono whitespace-pre-wrap break-words">
+          <h4 className="text-left font-semibold text-gray-900 mb-1 text-base">Step 1: Create Live Data Hook</h4>
+          <pre className="bg-gray-900 text-gray-100 p-4 rounded text-base overflow-auto flex-1 border border-gray-700 leading-relaxed text-left font-mono whitespace-pre-wrap break-words">
 {`import { useState, useEffect } from 'react';
 
 export function useLiveData() {
@@ -61,8 +61,8 @@ export function useLiveData() {
         </div>
 
         <div className="bg-white rounded p-2 border-l-4 border-amber-500">
-          <h4 className="text-left font-semibold text-gray-900 mb-1 text-xs">Step 2: Connect to Grid</h4>
-          <pre className="bg-gray-900 text-gray-100 p-4 rounded text-xs overflow-auto flex-1 border border-gray-700 leading-relaxed text-left font-mono whitespace-pre-wrap break-words">
+          <h4 className="text-left font-semibold text-gray-900 mb-1 text-base">Step 2: Connect to Grid</h4>
+          <pre className="bg-gray-900 text-gray-100 p-4 rounded text-base overflow-auto flex-1 border border-gray-700 leading-relaxed text-left font-mono whitespace-pre-wrap break-words">
 {`import { Grid } from '@syncfusion/react-grid';
 
 <Grid dataSource={liveData}>

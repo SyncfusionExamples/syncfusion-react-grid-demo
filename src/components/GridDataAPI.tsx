@@ -26,9 +26,13 @@ export default function GridDataAPI() {
     url: 'https://services.syncfusion.com/js/production/api/UrlDataSource',
     adaptor: new UrlAdaptor()
   });
+
+  // pageSettings: enables server-side pagination (50 records per page)
   const [pageSettings] = useState<PageSettings>({
     pageSize: pageSize
   });
+
+  // virtualizationSettings: enables virtual scrolling for efficient rendering of large server-side datasets
   const [virtualizationSettings] = useState<VirtualizationSettings>({
     enabled: true,
     scrollMode: ScrollMode.Virtual,
@@ -171,10 +175,10 @@ export default function GridDataAPI() {
   }, []);
 
   return (
-    <div style={{ width: '100%' }}>
+    <div style={{ width: '100%', height: 'calc(100vh - 120px)' }}>
       <Grid<EmployeeServerData>
         dataSource={data}
-        height={500}
+        height={'100%'}
         virtualizationSettings={virtualizationSettings}
         pageSettings={pageSettings}
         query={query}
