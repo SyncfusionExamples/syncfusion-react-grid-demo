@@ -1,6 +1,7 @@
 import GridPagination from "@/components/GridPagination"
 import SectionTabLayout from "@/components/SectionTabLayout"
 import CodeViewer from "@/components/CodeViewer"
+import CodeSnippet from "@/components/CodeSnippet"
 
 export default function Pagination() {
   const content = {
@@ -43,29 +44,25 @@ export default function Pagination() {
           <h4 className="text-left font-semibold text-gray-900 mb-1 text-sm">Step 1: Configure Grid with Paging</h4>
           <p className="text-sm text-gray-600 mt-1 text-left">To enable basic paging feature, set "pageSettings.enabled" as true.</p>
           <br/>
-          <pre className="bg-gray-900 text-gray-100 p-4 rounded text-sm overflow-auto flex-1 border border-gray-700 leading-relaxed text-left font-mono whitespace-pre-wrap break-words">
-{`import { Grid } from '@syncfusion/react-grid';
+          <CodeSnippet code={`import { Grid } from '@syncfusion/react-grid';
 import '../app/styles/grid-pagination.css';
 
 // pageSettings: enables pagination
 const [pageSettings] = useState({ enabled: true });
 const [data] = useState(employeeTaskPerformanceData);
-return (<Grid<EmployeeTaskPerformance> dataSource={data} columns={columns} pageSettings={pageSettings} />)`}
-          </pre>
+return (<Grid<EmployeeTaskPerformance> dataSource={data} columns={columns} pageSettings={pageSettings} />)`} language="typescript" />
         </div>
 
         <div className="bg-white rounded p-2 border-l-4 border-orange-500">
           <h4 className="text-left font-semibold text-gray-900 mb-1 text-sm">Step 2: Advanced Page Configuration</h4>
           <br/>
-          <pre className="bg-gray-900 text-gray-100 p-4 rounded text-sm overflow-auto flex-1 border border-gray-700 leading-relaxed text-left font-mono whitespace-pre-wrap break-words">
-{`import { Grid } from '@syncfusion/react-grid';
+          <CodeSnippet code={`import { Grid } from '@syncfusion/react-grid';
 import '../app/styles/grid-pagination.css';
 
 // pageSettings: enables pagination with 10 records per page
 const [pageSettings] = useState({ enabled: true, pageSize: 10, currentPage: 1, pageCount: 4 });
 const [data] = useState(employeeTaskPerformanceData);
-return (<Grid<EmployeeTaskPerformance> dataSource={data} columns={columns} pageSettings={pageSettings} />)`}
-          </pre>
+return (<Grid<EmployeeTaskPerformance> dataSource={data} columns={columns} pageSettings={pageSettings} />)`} language="typescript" />
         </div>
       </div>
     ),

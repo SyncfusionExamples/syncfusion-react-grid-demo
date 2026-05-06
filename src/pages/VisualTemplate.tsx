@@ -1,6 +1,7 @@
 import GridFeature from "@/components/GridFeature"
 import SectionTabLayout from "@/components/SectionTabLayout"
 import CodeViewer from "@/components/CodeViewer"
+import CodeSnippet from "@/components/CodeSnippet"
 
 export default function VisualTemplate() {
   const content = {
@@ -43,8 +44,7 @@ export default function VisualTemplate() {
         <div className="bg-white rounded p-2 border-l-4 border-blue-500">
           <h4 className="text-left font-semibold text-gray-900 mb-1 text-sm">Step 1: Import Core Features Dependency Styles</h4>
           <br/>
-          <pre className="bg-gray-900 text-gray-100 p-4 rounded text-sm overflow-auto flex-1 border border-gray-700 leading-relaxed text-left font-mono whitespace-pre-wrap break-words">
-{`@import '@syncfusion/react-base/styles/material.css';
+          <CodeSnippet code={`@import '@syncfusion/react-base/styles/material.css';
 @import '@syncfusion/react-buttons/styles/material.css'; /* Toolbar */
 @import '@syncfusion/react-calendars/styles/material.css'; /* DatePicker */
 @import '@syncfusion/react-dropdowns/styles/material.css'; /* Dropdownlist */
@@ -52,16 +52,14 @@ export default function VisualTemplate() {
 @import '@syncfusion/react-navigations/styles/material.css'; /* Toolbar */
 @import '@syncfusion/react-popups/styles/material.css'; /* Spinner, DatePicker(Calendar) */
 @import '@syncfusion/react-lists/styles/material.css'; /* Dropdownlist */
-@import '@syncfusion/react-grid/styles/material.css';`}
-          </pre>
+@import '@syncfusion/react-grid/styles/material.css';`} language="css" />
         </div>
 
         <div className="bg-white rounded p-2 border-l-4 border-blue-500">
           <h4 className="text-left font-semibold text-gray-900 mb-1 text-sm">Step 2: Enable Features</h4>
           <p className="text-sm text-gray-600 mt-1 text-left">To enable basic sorting feature, set "sortSettings.enabled" as true. To enable basic filtering, set "filterSettings.enabled" as true.</p>
           <br/>
-          <pre className="bg-gray-900 text-gray-100 p-4 rounded text-sm overflow-auto flex-1 border border-gray-700 leading-relaxed text-left font-mono whitespace-pre-wrap break-words">
-{`import { employeeTaskPerformanceData, type EmployeeTaskPerformance } from "../app/models/data1";
+          <CodeSnippet code={`import { employeeTaskPerformanceData, type EmployeeTaskPerformance } from "../app/models/data1";
 import { type ColumnProps, type EditSettings, EditType, type FilterSettings, Grid } from "@syncfusion/react-grid";
 import { useState } from "react";
 import '../app/styles/grid-feature.css';
@@ -91,8 +89,7 @@ const [aggregateColumns] = useState([{
   }
 ]);
 const [filterSettings] = useState<FilterSettings>({ enabled: true, type: 'CheckBox' });
-return (<Grid<EmployeeTaskPerformance> dataSource={data} columns={columns} height={600} toolbar={toolbarSettings} editSettings={editSettings} sortSettings={sortSettings} filterSettings={filterSettings} aggregates={aggregateColumns} />)`}
-          </pre>
+return (<Grid<EmployeeTaskPerformance> dataSource={data} columns={columns} height={600} toolbar={toolbarSettings} editSettings={editSettings} sortSettings={sortSettings} filterSettings={filterSettings} aggregates={aggregateColumns} />)`} language="typescript" />
         </div>
       </div>
     ),

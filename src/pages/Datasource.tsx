@@ -1,6 +1,7 @@
 import GridDataAPI from "@/components/GridDataAPI";
 import SectionTabLayout from "@/components/SectionTabLayout"
 import CodeViewer from "@/components/CodeViewer"
+import CodeSnippet from "@/components/CodeSnippet"
 
 export default function DataSource() {
   const content = {
@@ -42,38 +43,32 @@ export default function DataSource() {
         <div className="bg-white rounded p-2 border-l-4 border-teal-500">
           <h4 className="text-left font-semibold text-gray-900 mb-1 text-sm">Step 1: Import Shimmer/Skeleton dependency styles</h4>
           <br/>
-          <pre className="bg-gray-900 text-gray-100 p-4 rounded text-sm overflow-auto flex-1 border border-gray-700 leading-relaxed text-left font-mono whitespace-pre-wrap break-words" style={{ fontFamily: 'monospace' }}>
-{`@import '@syncfusion/react-base/styles/material.css';
+          <CodeSnippet code={`@import '@syncfusion/react-base/styles/material.css';
 @import '@syncfusion/react-notifications/styles/material.css'; // skeleton
-@import '@syncfusion/react-grid/styles/material.css';`}
-          </pre>
+@import '@syncfusion/react-grid/styles/material.css';`} language="css" />
         </div>
 
         <div className="bg-white rounded p-2 border-l-4 border-teal-500">
           <h4 className="text-left font-semibold text-gray-900 mb-1 text-sm">Step 2: Connect the backend API using the DataManager to enable seamless server‑side data operations.</h4>
           <br/>
-          <pre className="bg-gray-900 text-gray-100 p-4 rounded text-sm overflow-auto flex-1 border border-gray-700 leading-relaxed text-left font-mono whitespace-pre-wrap break-words" style={{ fontFamily: 'monospace' }}>
-{`import { DataManager, Query, UrlAdaptor } from '@syncfusion/react-data';
+          <CodeSnippet code={`import { DataManager, Query, UrlAdaptor } from '@syncfusion/react-data';
 
 // Initializes DataManager with UrlAdaptor and service URL.
 const data = new DataManager({
   url: 'https://services.syncfusion.com/js/production/api/UrlDataSource',
   adaptor: new UrlAdaptor()
-});`}
-          </pre>
+});`} language="typescript" />
         </div>
 
         <div className="bg-white rounded p-2 border-l-4 border-teal-500">
           <h4 className="text-left font-semibold text-gray-900 mb-1 text-sm">Step 3: Configure the Data Grid for server‑side data using the "dataSource" property, and enable virtual scrolling by setting "virtualizationSettings.scrollMode" to "Virtual" for improved performance.</h4>
           <br/>
-          <pre className="bg-gray-900 text-gray-100 p-4 rounded text-sm overflow-auto flex-1 border border-gray-700 leading-relaxed text-left font-mono whitespace-pre-wrap break-words" style={{ fontFamily: 'monospace' }}>
-{`import { Grid, Columns, Column, ScrollMode, type VirtualizationSettings } from '@syncfusion/react-grid';
+          <CodeSnippet code={`import { Grid, Columns, Column, ScrollMode, type VirtualizationSettings } from '@syncfusion/react-grid';
 
 const [virtualizationSettings] = useState<VirtualizationSettings>({
   scrollMode: ScrollMode.Virtual
 });
-<Grid<EmployeeServerData> dataSource={data} height='100%' virtualizationSettings={virtualizationSettings}/>`}
-          </pre>
+<Grid<EmployeeServerData> dataSource={data} height='100%' virtualizationSettings={virtualizationSettings}/>`} language="typescript" />
         </div>
       </div>
     ),

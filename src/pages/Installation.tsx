@@ -1,6 +1,7 @@
 import Grid from "@/components/Grid"
 import SectionTabLayout from "@/components/SectionTabLayout"
 import CodeViewer from "@/components/CodeViewer"
+import CodeSnippet from "@/components/CodeSnippet"
 
 export default function Installation() {
   const content = {
@@ -44,27 +45,22 @@ export default function Installation() {
         <div className="bg-white rounded p-2 border-l-4 border-green-500">
           <h4 className="text-left font-semibold text-gray-900 mb-1 text-sm">Install Grid Package</h4>
           <br/>
-          <pre className="bg-gray-900 text-gray-100 p-4 rounded text-sm overflow-auto flex-1 border border-gray-700 leading-relaxed text-left font-mono whitespace-pre-wrap break-words">
-{`npm install @syncfusion/react-grid`}
-          </pre>
+          <CodeSnippet code={`npm install @syncfusion/react-grid`} language="bash" />
         </div>
 
         <div className="bg-white rounded p-2 border-l-4 border-purple-500">
           <h4 className="text-left font-semibold text-gray-900 mb-1 text-sm">Import Grid Styles</h4>
           <br/>
-          <pre className="bg-gray-900 text-gray-100 p-4 rounded text-sm overflow-auto flex-1 border border-gray-700 leading-relaxed text-left font-mono whitespace-pre-wrap break-words">
-{`@import '@syncfusion/react-base/styles/material.css';
+          <CodeSnippet code={`@import '@syncfusion/react-base/styles/material.css';
 @import '@syncfusion/react-popups/styles/material.css'; // Spinner
 @import '@syncfusion/react-grid/styles/material.css';
-`}
-          </pre>
+`} language="css" />
         </div>
 
         <div className="bg-white rounded p-2 border-l-4 border-orange-500">
           <h4 className="text-left font-semibold text-gray-900 mb-1 text-sm">Create Your First Grid</h4>
           <br/>
-          <pre className="bg-gray-900 text-gray-100 p-4 rounded text-sm overflow-auto flex-1 border border-gray-700 leading-relaxed text-left font-mono whitespace-pre-wrap break-words">
-{`import { Grid } from "@syncfusion/react-grid";
+          <CodeSnippet code={`import { Grid } from "@syncfusion/react-grid";
 import { employeeTaskPerformanceData } from '@/app/models/data';
 
 // Column definition
@@ -83,8 +79,7 @@ return (
     <div style={{ height: '100%', width: '100%' }}>
         <Grid dataSource={data} columns={columns} />
     </div>
-)`}
-          </pre>
+)`} language="typescript" />
         </div>
       </div>
     ),

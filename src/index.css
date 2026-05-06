@@ -147,7 +147,6 @@ code,
 code {
   font-size: 13px;
   line-height: 1.5;
-  padding: 4px 8px;
   background: var(--code-bg);
   letter-spacing: 0px;
 }
