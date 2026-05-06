@@ -50,7 +50,7 @@ export default function CodeViewer({ files, defaultFile = 0 }: CodeViewerProps) 
 
       {/* Code Content - Left Aligned */}
       <pre className="bg-gray-900 text-gray-100 p-4 rounded text-base overflow-auto border border-gray-700 leading-relaxed text-left font-mono whitespace-pre-wrap break-words" style={{ height: 'calc(100vh - 120px)' }}>
-        <code className="text-left">{activeFileData.code}</code>
+        <code className="bg-gray-900 text-left">{activeFileData.code}</code>
       </pre>
     </div>
   )

@@ -65,7 +65,7 @@ export default function SectionTabLayout({
                   ? 'bg-blue-50 text-blue-700 border-l-blue-600'
                   : 'text-gray-700 border-l-transparent hover:bg-gray-100'
               }`}
-              style={{ fontSize: 'var(--fs-tab)', fontWeight: 500 }}
+              style={{ fontSize: '16px', fontWeight: 500 }}
               title={tab.label}
             >
               {tab.label}
