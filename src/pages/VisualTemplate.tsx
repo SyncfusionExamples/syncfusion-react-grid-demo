@@ -1,74 +1,394 @@
 import GridFeature from "@/components/GridFeature"
-
-/**
- * Visual Template Page
- * 
- * UI template showcase for Syncfusion React Grid
- */
+import SectionTabLayout from "@/components/SectionTabLayout"
+import CodeViewer from "@/components/CodeViewer"
 
 export default function VisualTemplate() {
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 py-16 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-6xl mx-auto">
-        <div className="mb-12">
-          <div className="inline-block bg-purple-100 text-purple-700 px-4 py-2 rounded-full text-sm font-semibold mb-6">
-            Feature Showcase
-          </div>
-          <h1 className="text-4xl font-bold text-gray-900 mb-6">Grid with Core Features</h1>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-            <div className="bg-white p-4 rounded-lg shadow-sm">
-              <p className="text-sm text-gray-600"><strong>✓ Paging:</strong> Editing capabilities</p>
-            </div>
-            <div className="bg-white p-4 rounded-lg shadow-sm">
-              <p className="text-sm text-gray-600"><strong>✓ Sorting:</strong> Multi-column sorting capabilities</p>
-            </div>
-            <div className="bg-white p-4 rounded-lg shadow-sm">
-              <p className="text-sm text-gray-600"><strong>✓ Filtering:</strong> Advanced data filtering options</p>
-            </div>
-          </div>
+  const content = {
+    description: (
+      <div className="space-y-4">
+        <div className="space-y-2">
+          <h3 className="text-2xl font-bold text-gray-900 tracking-tight">Advanced Grid Features</h3>
+          <p className="text-base text-gray-600 leading-relaxed font-medium">Sorting, filtering, editing with employee avatars</p>
         </div>
-
-        {/* Divider */}
-        <div className="h-1 bg-gradient-to-r from-purple-200 via-purple-400 to-purple-200 rounded-full mb-8"></div>
-
-        {/* Grid Preview Area */}
-        <div className="bg-white rounded-2xl shadow-2xl overflow-hidden border border-purple-100 hover:shadow-3xl transition-shadow duration-300">
-          <div className="p-8">
-            <div className="mb-6">
-              <h2 className="text-2xl font-bold text-gray-900 mb-2">Interactive Grid Demo</h2>
-              <p className="text-gray-600">Try sorting, filtering, and paging the data below</p>
+        
+        <p className="text-gray-700 text-base leading-relaxed border-l-4 border-purple-500 pl-4 py-3 bg-purple-50 rounded-r-lg">
+          Comprehensive demonstration of core grid features including multi-column sorting, checkbox filtering, inline editing with date pickers, and custom column templates with employee avatars. Includes toolbar actions and footer aggregates.
+        </p>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div className="bg-gradient-to-br from-blue-50 to-indigo-50 border-2 border-blue-300 rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow">
+            <div className="flex items-center gap-2 mb-3">
+              <span className="text-2xl">📊</span>
+              <h4 className="font-semibold text-blue-900 text-base">Sorting & Filtering</h4>
             </div>
-            <style>{`
-              /* Color-coded Avatar Backgrounds */
-              .leads .avatar-red {
-                background-color: #fce8e6;
-                color: #d93025;
-              }
-
-              .leads .avatar-blue {
-                background-color: #e8f0fe;
-                color: #1a73e8;
-              }
-
-              .leads .avatar-green {
-                background-color: #e6f4ea;
-                color: #137333;
-              }
-
-              .leads .avatar-orange {
-                background-color: #fef7e0;
-                color: #ea8600;
-              }
-
-              .leads .avatar-purple {
-                background-color: #f3e8ff;
-                color: #9333ea;
-              }
-            `}</style>
-            <GridFeature />
+            <p className="text-blue-800 text-sm leading-relaxed mb-2.5">Sort by one or multiple columns. Filter with checkboxes for efficient data discovery.</p>
+            <ul className="space-y-1.5 text-blue-800 text-sm">
+              <li className="flex items-center gap-2"><span className="text-blue-600 font-bold">✓</span> <span>Multi-column sorting</span></li>
+              <li className="flex items-center gap-2"><span className="text-blue-600 font-bold">✓</span> <span>Checkbox filtering</span></li>
+            </ul>
+          </div>
+          
+          <div className="bg-gradient-to-br from-green-50 to-emerald-50 border-2 border-green-300 rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow">
+            <div className="flex items-center gap-2 mb-3">
+              <span className="text-2xl">✏️</span>
+              <h4 className="font-semibold text-green-900 text-base">Editing & CRUD</h4>
+            </div>
+            <p className="text-green-800 text-sm leading-relaxed mb-2.5">Edit records with validation. Add, delete with toolbar controls.</p>
+            <ul className="space-y-1.5 text-green-800 text-sm">
+              <li className="flex items-center gap-2"><span className="text-green-600 font-bold">✓</span> <span>Inline editing</span></li>
+              <li className="flex items-center gap-2"><span className="text-green-600 font-bold">✓</span> <span>Field validation</span></li>
+            </ul>
+          </div>
+          
+          <div className="bg-gradient-to-br from-purple-50 to-pink-50 border-2 border-purple-300 rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow">
+            <div className="flex items-center gap-2 mb-3">
+              <span className="text-2xl">🖼️</span>
+              <h4 className="font-semibold text-purple-900 text-base">Custom Templates</h4>
+            </div>
+            <p className="text-purple-800 text-sm leading-relaxed mb-2.5">Employee avatars and rich data formatting in columns.</p>
+            <ul className="space-y-1.5 text-purple-800 text-sm">
+              <li className="flex items-center gap-2"><span className="text-purple-600 font-bold">✓</span> <span>Avatar templates</span></li>
+              <li className="flex items-center gap-2"><span className="text-purple-600 font-bold">✓</span> <span>Date pickers</span></li>
+            </ul>
+          </div>
+          
+          <div className="bg-gradient-to-br from-orange-50 to-amber-50 border-2 border-orange-300 rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow">
+            <div className="flex items-center gap-2 mb-3">
+              <span className="text-2xl">📈</span>
+              <h4 className="font-semibold text-orange-900 text-base">Aggregates & Summary</h4>
+            </div>
+            <p className="text-orange-800 text-sm leading-relaxed mb-2.5">Footer totals and calculations across the dataset.</p>
+            <ul className="space-y-1.5 text-orange-800 text-sm">
+              <li className="flex items-center gap-2"><span className="text-orange-600 font-bold">✓</span> <span>Sum aggregates</span></li>
+              <li className="flex items-center gap-2"><span className="text-orange-600 font-bold">✓</span> <span>Footer totals</span></li>
+            </ul>
           </div>
         </div>
       </div>
-    </div>
+    ),
+    steps: (
+      <div className="space-y-2">
+        <h3 className="text-sm font-bold text-gray-900 mb-2">Implementation Steps</h3>
+        
+        <div className="bg-white rounded p-2 border-l-4 border-blue-500">
+          <h4 className="font-semibold text-gray-900 mb-1 text-xs">Step 1: Import Core Features Dependency Styles</h4>
+          <pre className="bg-gray-900 text-gray-100 p-2 rounded text-xs overflow-auto text-left font-mono leading-tight">
+{`@import '@syncfusion/react-base/styles/material.css';
+@import '@syncfusion/react-buttons/styles/material.css'; /* Toolbar */
+@import '@syncfusion/react-calendars/styles/material.css'; /* DatePicker */
+@import '@syncfusion/react-dropdowns/styles/material.css'; /* Dropdownlist */
+@import '@syncfusion/react-inputs/styles/material.css'; /* Editing inputs - TextBox, NumericTextBox, DatePicker, etc., */
+@import '@syncfusion/react-navigations/styles/material.css'; /* Toolbar */
+@import '@syncfusion/react-popups/styles/material.css'; /* Spinner, DatePicker(Calendar) */
+@import '@syncfusion/react-lists/styles/material.css'; /* Dropdownlist */
+@import '@syncfusion/react-grid/styles/material.css';`}
+          </pre>
+        </div>
+
+        <div className="bg-white rounded p-2 border-l-4 border-blue-500">
+          <h4 className="font-semibold text-gray-900 mb-1 text-xs">Step 2: Enable Features</h4>
+          <pre className="bg-gray-900 text-gray-100 p-2 rounded text-xs overflow-auto text-left font-mono leading-tight">
+{`import { employeeTaskPerformanceData, type EmployeeTaskPerformance } from "../app/models/data1";
+import { type ColumnProps, type EditSettings, EditType, type FilterSettings, Grid } from "@syncfusion/react-grid";
+import { useState } from "react";
+import '../app/styles/grid-feature.css';
+
+const [editSettings] = useState<EditSettings>({ allowEdit: true, allowAdd: true, allowDelete: true });
+const taskIdRules = { required: true, number: true };
+const stringValidationRules = { required: true, minLength: 4 };
+const numberRules = { required: true, min: 10, max: 500 };
+const [toolbarSettings] = useState<string[]>(['Edit', 'Delete', 'Update', 'Cancel']);
+const [columns] = useState<ColumnProps[]>([
+    { field: "taskId", headerText: "Task ID", width: 150, textAlign: 'Right', validationRules: taskIdRules, isPrimaryKey: true },
+    { field: 'imgId', headerText: "Employee Image", width: 150, allowEdit: false, allowFilter: false, allowSort: false },
+    { field: "employeeName", headerText: "Employee Name", width: 180, textAlign: 'Left', validationRules: stringValidationRules, edit: { type: EditType.DropDownList } },
+    { field: "taskName", headerText: "Task Name", width: 170, textAlign: 'Left', validationRules: stringValidationRules, edit: { type: EditType.DropDownList } },
+    { field: "taskStartDate", headerText: "Start Date", width: 200, format: "yMd", textAlign: 'Right', edit: { type: EditType.DatePicker } },
+    { field: "taskEndDate", headerText: "End Date", width: 200, format: "yMd", textAlign: 'Right', edit: { type: EditType.DatePicker } },
+    { field: "estimatedHours", headerText: "Estimated Hours", width: 200, textAlign: 'Right', clipMode: 'EllipsisWithTooltip', validationRules: numberRules },
+    { field: "hoursWorked", headerText: "Hours Worked", width: 150, textAlign: 'Right', validationRules: numberRules },
+]);
+const [data] = useState(employeeTaskPerformanceData);
+const [sortSettings] = useState({ enabled: true });
+const [aggregateColumns] = useState([{
+    columns: [
+        { type: 'Sum', field: 'estimatedHours' },
+        { type: 'Sum', field: 'hoursWorked' }
+    ]
+  }
+]);
+const [filterSettings] = useState<FilterSettings>({ enabled: true, type: 'CheckBox' });
+return (<Grid<EmployeeTaskPerformance> dataSource={data} columns={columns} height={600} toolbar={toolbarSettings} editSettings={editSettings} sortSettings={sortSettings} filterSettings={filterSettings} aggregates={aggregateColumns} />)`}
+          </pre>
+        </div>
+      </div>
+    ),
+    sample: (
+      <div className="h-full w-full flex flex-col">
+        <div className="flex-1 overflow-hidden w-full">
+          <GridFeature />
+        </div>
+      </div>
+    ),
+    code: (
+      <div className="space-y-2 h-full flex flex-col">
+        <CodeViewer
+          files={[
+            {
+              filename: "GridFeature.tsx",
+              language: "typescript",
+              description: "Core features Grid with sorting, filtering, and editing",
+              code: `import { employeeTaskPerformanceData, type EmployeeTaskPerformance } from "../app/models/data1";
+import { type ColumnProps, type ColumnTemplateProps, type EditSettings, EditType, type FilterSettings, Grid } from "@syncfusion/react-grid";
+import { useState } from "react";
+import '../app/styles/grid-feature.css';
+
+export default function GridFeature() {
+    const [editSettings] = useState<EditSettings>({ allowEdit: true, allowAdd: true, allowDelete: true });
+        const taskIdRules = { required: true, number: true };
+        const stringValidationRules = { required: true, minLength: 4 };
+        const numberRules = { required: true, min: 10, max: 500 };
+        const [toolbarSettings] = useState<string[]>(['Edit', 'Delete', 'Update', 'Cancel']);
+        const [columns] = useState<ColumnProps[]>([
+            { field: "taskId", headerText: "Task ID", width: 150, textAlign: 'Right', validationRules: taskIdRules, isPrimaryKey: true },
+            {
+                field: 'imgId', template: (data?: ColumnTemplateProps) => {
+                    return <div style={{ display: 'inline-flex', gap: '5px', justifyContent: 'center', alignItems: 'center', width: '100%', height: '100%' }}>
+                        <img src={https://react.syncfusion.com/react-ui/images/grid/avatar/avatar-{(data?.data as EmployeeTaskPerformance).imgId}.jpg} alt="avatar" className="w-6 h-6 rounded-full" />
+                    </div>;
+                },
+                headerText: "Employee Image", width: 150, allowEdit: false, allowFilter: false, allowSort: false
+            },
+            { field: "employeeName", headerText: "Employee Name", width: 180, textAlign: 'Left', validationRules: stringValidationRules, edit: { type: EditType.DropDownList } },
+            { field: "taskName", headerText: "Task Name", width: 170, textAlign: 'Left', validationRules: stringValidationRules, edit: { type: EditType.DropDownList } },
+            { field: "taskStartDate", headerText: "Start Date", width: 200, format: "yMd", textAlign: 'Right', edit: { type: EditType.DatePicker } },
+            { field: "taskEndDate", headerText: "End Date", width: 200, format: "yMd", textAlign: 'Right', edit: { type: EditType.DatePicker } },
+            { field: "estimatedHours", headerText: "Estimated Hours", width: 200, textAlign: 'Right', clipMode: 'EllipsisWithTooltip', validationRules: numberRules },
+            { field: "hoursWorked", headerText: "Hours Worked", width: 150, textAlign: 'Right', validationRules: numberRules },
+        ]);
+        const [data] = useState(employeeTaskPerformanceData);
+        const [sortSettings] = useState({ enabled: true });
+        const [aggregateColumns] = useState([{
+            columns: [
+                {
+                    type: 'Sum', field: 'estimatedHours', footerTemplate: (props?: object) => {
+                        return <span>Total: {(props as unknown as { Sum: number | string })?.Sum} hrs</span>
+                    }
+                },
+                {
+                    type: 'Sum', field: 'hoursWorked', footerTemplate: (props?: object) => {
+                        return <span>Total: {(props as unknown as { Sum: number | string })?.Sum} hrs</span>
+                    }
+                }
+            ]
+        }
+        ]);
+        const [filterSettings] = useState<FilterSettings>({ enabled: true, type: 'CheckBox' });
+        return (<Grid<EmployeeTaskPerformance> dataSource={data} columns={columns} height={600} toolbar={toolbarSettings} editSettings={editSettings} sortSettings={sortSettings} filterSettings={filterSettings} aggregates={aggregateColumns} />)
+}`
+            },
+            {
+              filename: "grid-feature.css",
+              language: "css",
+              description: "Styles of Core features Grid with sorting, filtering, and editing",
+              code: `@import '@syncfusion/react-base/styles/material.css';
+@import '@syncfusion/react-buttons/styles/material.css'; /* Toolbar */
+@import '@syncfusion/react-calendars/styles/material.css'; /* DatePicker */
+@import '@syncfusion/react-dropdowns/styles/material.css'; /* Dropdownlist */
+@import '@syncfusion/react-inputs/styles/material.css'; /* Editing inputs - TextBox, NumericTextBox, DatePicker, etc., */
+@import '@syncfusion/react-navigations/styles/material.css'; /* Toolbar */
+@import '@syncfusion/react-popups/styles/material.css'; /* Spinner, DatePicker(Calendar) */
+@import '@syncfusion/react-lists/styles/material.css'; /* Dropdownlist */
+@import '@syncfusion/react-grid/styles/material.css';`
+            },
+            {
+              filename: "data1.ts",
+              language: "ts",
+              description: "Model Data of Core features Grid with sorting, filtering, and editing",
+              code: `export interface EmployeeTaskPerformance {
+  taskId: number;
+  employeeName: string;
+  department: "Engineering" | "Design" | "QA" | string;
+  taskName: string;
+  priority: "High" | "Medium" | "Low";
+  status: "In Progress" | "Completed" | "At Risk" | "Delayed";
+  taskStartDate: Date;
+  taskEndDate: Date;
+  completionPercentage: number; // 0–100
+  performanceScore: number;     // e.g. 1–5 scale
+  hoursWorked: number;
+  estimatedHours: number;
+  imgId?: number; // Optional field for employee image ID
+}
+
+export const employeeTaskPerformanceData: EmployeeTaskPerformance[] = [
+  {
+    taskId: 5001,
+    employeeName: "David Miller",
+    department: "Engineering",
+    taskName: "Cloud Deployment",
+    priority: "High",
+    status: "In Progress",
+    taskStartDate: new Date(2026, 0, 1),
+    taskEndDate: new Date(2026, 1, 16),
+    completionPercentage: 40,
+    performanceScore: 3.0,
+    hoursWorked: 24,
+    estimatedHours: 60,
+    imgId: 1
+  },
+  {
+    taskId: 5002,
+    employeeName: "Sophia Johnson",
+    department: "Design",
+    taskName: "API Integration",
+    priority: "Medium",
+    status: "Completed",
+    taskStartDate: new Date(2026, 1, 2),
+    taskEndDate: new Date(2026, 2, 17),
+    completionPercentage: 50,
+    performanceScore: 3.4,
+    hoursWorked: 35,
+    estimatedHours: 70,
+    imgId: 2
+  },
+  {
+    taskId: 5003,
+    employeeName: "Michael Brown",
+    department: "QA",
+    taskName: "UI Revamp",
+    priority: "Low",
+    status: "At Risk",
+    taskStartDate: new Date(2026, 2, 3),
+    taskEndDate: new Date(2026, 3, 18),
+    completionPercentage: 60,
+    performanceScore: 3.8,
+    hoursWorked: 48,
+    estimatedHours: 80,
+    imgId: 3
+  },
+  {
+    taskId: 5004,
+    employeeName: "Emma Davis",
+    department: "Engineering",
+    taskName: "Performance Optimization",
+    priority: "High",
+    status: "Delayed",
+    taskStartDate: new Date(2026, 3, 4),
+    taskEndDate: new Date(2026, 4, 19),
+    completionPercentage: 70,
+    performanceScore: 4.2,
+    hoursWorked: 63,
+    estimatedHours: 90,
+    imgId: 4
+  },
+  {
+    taskId: 5005,
+    employeeName: "Daniel Wilson",
+    department: "Design",
+    taskName: "Automation Setup",
+    priority: "Medium",
+    status: "In Progress",
+    taskStartDate: new Date(2026, 4, 5),
+    taskEndDate: new Date(2026, 5, 20),
+    completionPercentage: 80,
+    performanceScore: 4.6,
+    hoursWorked: 80,
+    estimatedHours: 100,
+    imgId: 5
+  },
+  {
+    taskId: 5006,
+    employeeName: "Olivia Martinez",
+    department: "QA",
+    taskName: "Regression Testing",
+    priority: "Low",
+    status: "Completed",
+    taskStartDate: new Date(2026, 5, 6),
+    taskEndDate: new Date(2026, 6, 21),
+    completionPercentage: 90,
+    performanceScore: 3.0,
+    hoursWorked: 54,
+    estimatedHours: 60,
+    imgId: 6
+  },
+  {
+    taskId: 5007,
+    employeeName: "James Anderson",
+    department: "Engineering",
+    taskName: "Deployment Automation",
+    priority: "High",
+    status: "At Risk",
+    taskStartDate: new Date(2026, 0, 7),
+    taskEndDate: new Date(2026, 1, 22),
+    completionPercentage: 40,
+    performanceScore: 3.4,
+    hoursWorked: 28,
+    estimatedHours: 70,
+    imgId: 7
+  },
+  {
+    taskId: 5008,
+    employeeName: "Isabella Thomas",
+    department: "Design",
+    taskName: "Service Refactoring",
+    priority: "Medium",
+    status: "Delayed",
+    taskStartDate: new Date(2026, 1, 8),
+    taskEndDate: new Date(2026, 2, 23),
+    completionPercentage: 50,
+    performanceScore: 3.8,
+    hoursWorked: 40,
+    estimatedHours: 80,
+    imgId: 8
+  },
+  {
+    taskId: 5009,
+    employeeName: "William Taylor",
+    department: "QA",
+    taskName: "Security Patch",
+    priority: "Low",
+    status: "In Progress",
+    taskStartDate: new Date(2026, 2, 9),
+    taskEndDate: new Date(2026, 3, 24),
+    completionPercentage: 60,
+    performanceScore: 4.2,
+    hoursWorked: 54,
+    estimatedHours: 90,
+    imgId: 9
+  },
+  {
+    taskId: 5010,
+    employeeName: "Ava Hernandez",
+    department: "Engineering",
+    taskName: "Monitoring Setup",
+    priority: "High",
+    status: "Completed",
+    taskStartDate: new Date(2026, 3, 10),
+    taskEndDate: new Date(2026, 4, 25),
+    completionPercentage: 70,
+    performanceScore: 4.6,
+    hoursWorked: 70,
+    estimatedHours: 100,
+    imgId: 10
+  }
+];`
+            }
+          ]}
+        />
+      </div>
+    ),
+  }
+
+  return (
+    <SectionTabLayout
+      title="Core Features"
+      subtitle="Sorting, filtering, editing & selection"
+      badge={{
+        text: "Features",
+        className: "bg-purple-100 text-purple-700"
+      }}
+      content={content}
+    />
   )
 }

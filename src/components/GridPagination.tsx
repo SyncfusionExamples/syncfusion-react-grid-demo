@@ -1,8 +1,9 @@
-import { type EmployeeTaskPerformance, employeeTaskPerformanceData } from "@/app/data";
+import { type EmployeeTaskPerformance, employeeTaskPerformanceData } from "@/app/models/data";
 import { type ColumnProps, type EditSettings, EditType, Grid } from "@syncfusion/react-grid";
 import { useState } from "react";
+import '../app/styles/grid-pagination.css';
 
-export default function Grid3() {
+export default function GridPagination() {
     const [editSettings] = useState<EditSettings>({ allowEdit: true, allowAdd: true, allowDelete: true });
     const taskIdRules = { required: true, number: true };
     const stringValidationRules = { required: true, minLength: 4 };
@@ -12,20 +13,26 @@ export default function Grid3() {
         { field: "taskId", headerText: "Task ID", width: 150, textAlign: 'Right', validationRules: taskIdRules, isPrimaryKey: true },
         { field: "employeeName", headerText: "Employee Name", width: 180, textAlign: 'Left', validationRules: stringValidationRules },
         { field: "taskName", headerText: "Task Name", width: 200, textAlign: 'Left', validationRules: stringValidationRules },
-        { field: "taskStartDate", headerText: "Start Date", width: 200, format: "yMd", textAlign: 'Right' , edit: { type: EditType.DatePicker } },
-        { field: "taskEndDate", headerText: "End Date", width: 200, format: "yMd", textAlign: 'Right', edit: { type: EditType.DatePicker }  },
+        { field: "taskStartDate", headerText: "Start Date", width: 200, format: "yMd", textAlign: 'Right', edit: { type: EditType.DatePicker } },
+        { field: "taskEndDate", headerText: "End Date", width: 200, format: "yMd", textAlign: 'Right', edit: { type: EditType.DatePicker } },
         { field: "estimatedHours", headerText: "Estimated Hours", width: 200, textAlign: 'Right', validationRules: numberRules },
         { field: "hoursWorked", headerText: "Hours Worked", width: 150, textAlign: 'Right', validationRules: numberRules },
     ]);
     const [sortSettings] = useState({ enabled: true });
     const [aggregateColumns] = useState([{
         columns: [
-        { type: 'Sum', field: 'estimatedHours', footerTemplate: (props?: object) => {
-            return <span>Total: {(props as unknown as { Sum: number | string })?.Sum} hrs</span> }
-        },
-        { type: 'Sum', field: 'hoursWorked', footerTemplate: (props?: object) => {
-            return <span>Total: {(props as unknown as { Sum: number | string })?.Sum} hrs</span> } }
-        ]}
+            {
+                type: 'Sum', field: 'estimatedHours', footerTemplate: (props?: object) => {
+                    return <span>Total: {(props as unknown as { Sum: number | string })?.Sum} hrs</span>
+                }
+            },
+            {
+                type: 'Sum', field: 'hoursWorked', footerTemplate: (props?: object) => {
+                    return <span>Total: {(props as unknown as { Sum: number | string })?.Sum} hrs</span>
+                }
+            }
+        ]
+    }
     ]);
     const [pageSettings] = useState({ enabled: true, pageSize: 10 });
     const [data] = useState(employeeTaskPerformanceData);

@@ -1,0 +1,4 @@
+@import '@syncfusion/react-base/styles/material.css';
+@import '@syncfusion/react-popups/styles/material.css'; /* Spinner */
+@import '@syncfusion/react-pager/styles/material.css'; /* Pager */
+@import '@syncfusion/react-grid/styles/material.css';

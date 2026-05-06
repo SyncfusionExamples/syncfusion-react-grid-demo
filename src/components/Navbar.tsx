@@ -4,8 +4,7 @@ export default function Navbar() {
   const location = useLocation()
 
   const navItems = [
-    { href: '/', label: 'Home' },
-    { href: '/installation', label: 'Setup' },
+    { href: '/', label: 'Setup' },
     { href: '/data-source', label: 'Data Source' },
     { href: '/visual-template', label: 'Core Features' },
     { href: '/pagination', label: 'Paging' },
@@ -14,31 +13,29 @@ export default function Navbar() {
   ]
 
   return (
-    <nav className="sticky top-0 z-50 bg-white shadow-lg border-b-2 border-blue-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          {/* Brand Section */}
-          <div className="flex items-center space-x-2">
-            <div className="w-2 h-8 bg-gradient-to-b from-blue-500 to-blue-600 rounded-full"></div>
-            <span className="text-lg font-bold text-gray-900">React Grid</span>
-          </div>
-          
-          {/* Navigation Items */}
-          <div className="flex items-center space-x-1">
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                to={item.href}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
-                  location.pathname === item.href
-                    ? 'bg-gradient-to-r from-blue-500 to-blue-600 text-white shadow-lg'
-                    : 'text-gray-700 hover:bg-gray-100 hover:text-gray-900'
-                }`}
-              >
-                {item.label}
-              </Link>
-            ))}
-          </div>
+    <nav className="sticky top-0 z-50 bg-white border-b border-gray-200" style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.1)' }}>
+      <div className="w-full h-12 flex items-center">
+        {/* Brand Section */}
+        <div className="flex items-center gap-2 flex-shrink-0 px-3">
+          <div className="w-1.5 h-4 bg-gradient-to-b from-blue-600 to-blue-500 rounded-sm"></div>
+          <span className="text-xs font-600 text-gray-900 tracking-tight whitespace-nowrap">Syncfusion React Grid</span>
+        </div>
+        
+        {/* Navigation Items - Full Width */}
+        <div className="flex items-center flex-1 overflow-x-auto overflow-y-hidden">
+          {navItems.map((item) => (
+            <Link
+              key={item.href}
+              to={item.href}
+              className={`px-3 py-3 text-xs font-500 transition-all duration-150 whitespace-nowrap flex-shrink-0 border-b-2 ${
+                location.pathname === item.href
+                  ? 'border-blue-600 text-blue-600 bg-blue-50'
+                  : 'border-transparent text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+              }`}
+            >
+              {item.label}
+            </Link>
+          ))}
         </div>
       </div>
     </nav>
