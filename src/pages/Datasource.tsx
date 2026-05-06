@@ -1,89 +1,469 @@
 import GridDataAPI from "@/components/GridDataAPI";
+import SectionTabLayout from "@/components/SectionTabLayout"
+import CodeViewer from "@/components/CodeViewer"
 
 export default function DataSource() {
-    return (
-        <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 py-16 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-6xl mx-auto">
-            <div className="mb-12">
-              <div className="inline-block bg-teal-100 text-teal-700 px-4 py-2 rounded-full text-sm font-semibold mb-6">
-                High-Scale Data Management
-              </div>
-              <h1 className="text-5xl font-bold text-gray-900 mb-6">Server-Side Virtualization</h1>
-              <p className="text-lg text-gray-700 max-w-4xl mb-8 leading-relaxed">
-                Powerfully handles extremely large datasets (millions of rows) by loading only visible data from the server. The grid detects scroll position, calculates required row range, sends a request, and renders received rows without re-fetching previously viewed data when caching is enabled.
-              </p>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-teal-500">
-                  <h3 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
-                    <span className="text-xl">⚡</span> Performance Benefits
-                  </h3>
-                  <ul className="text-sm text-gray-600 space-y-2">
-                    <li>• Manages only page size rows in memory at any time</li>
-                    <li>• Scales regardless of backend capacity</li>
-                    <li>• Supports live data streams & real-time updates</li>
-                    <li>• Handles datasets exceeding browser DOM limits</li>
-                  </ul>
-                </div>
-                <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-teal-400">
-                  <h3 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
-                    <span className="text-xl">🔍</span> Key Features
-                  </h3>
-                  <ul className="text-sm text-gray-600 space-y-2">
-                    <li>• Intelligent scroll detection</li>
-                    <li>• Automatic row range calculation</li>
-                    <li>• Smart server request batching</li>
-                    <li>• Optional caching mechanism</li>
-                  </ul>
-                </div>
-              </div>
+  const content = {
+    description: (
+      <div className="space-y-4">
+        <div className="space-y-2">
+          <h3 className="text-2xl font-bold text-gray-900 tracking-tight">Server-Side Data with Virtual Scrolling</h3>
+          <p className="text-base text-gray-600 leading-relaxed font-medium">Handle 100,000+ records with paging and virtualization</p>
+        </div>
+        
+        <p className="text-gray-700 text-base leading-relaxed border-l-4 border-teal-500 pl-4 py-3 bg-teal-50 rounded-r-lg">
+          Demonstrates loading data from an external API with server-side virtualization. The grid fetches paginated data on demand, displaying only visible rows. Custom templates showcase rich data visualization with status badges, progress bars, and performance ratings.
+        </p>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div className="bg-gradient-to-br from-teal-50 to-cyan-50 border-2 border-teal-300 rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow">
+            <div className="flex items-center gap-2 mb-3">
+              <span className="text-2xl">⚡</span>
+              <h4 className="font-semibold text-teal-900 text-base">Features Enabled</h4>
             </div>
-
-            {/* Divider */}
-            <div className="h-1 bg-gradient-to-r from-teal-200 via-teal-400 to-teal-200 rounded-full mb-8"></div>
-
-            {/* Grid Preview Area */}
-            <div className="bg-white rounded-2xl shadow-2xl overflow-hidden border border-teal-100 hover:shadow-3xl transition-shadow duration-300">
-              <div className="p-8">
-                <div className="mb-6">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-1 h-8 bg-gradient-to-b from-teal-400 to-teal-600 rounded"></div>
-                    <div>
-                      <h2 className="text-2xl font-bold text-gray-900">Live Server-Side Virtualization Demo</h2>
-                    </div>
-                  </div>
-                </div>
-                <style>{`
-                  /* Color-coded Avatar Backgrounds */
-                  .leads .avatar-red {
-                    background-color: #fce8e6;
-                    color: #d93025;
-                  }
-    
-                  .leads .avatar-blue {
-                    background-color: #e8f0fe;
-                    color: #1a73e8;
-                  }
-    
-                  .leads .avatar-green {
-                    background-color: #e6f4ea;
-                    color: #137333;
-                  }
-    
-                  .leads .avatar-orange {
-                    background-color: #fef7e0;
-                    color: #ea8600;
-                  }
-    
-                  .leads .avatar-purple {
-                    background-color: #f3e8ff;
-                    color: #9333ea;
-                  }
-                `}</style>
-                <GridDataAPI />
-              </div>
+            <ul className="space-y-2 text-teal-800 text-sm">
+              <li className="flex items-center gap-2"><span className="text-teal-600 font-bold">✓</span> <span>Server-side paging (100K records)</span></li>
+              <li className="flex items-center gap-2"><span className="text-teal-600 font-bold">✓</span> <span>Virtual scrolling with cache</span></li>
+              <li className="flex items-center gap-2"><span className="text-teal-600 font-bold">✓</span> <span>Custom column templates</span></li>
+              <li className="flex items-center gap-2"><span className="text-teal-600 font-bold">✓</span> <span>Status badges & ratings</span></li>
+            </ul>
+          </div>
+          
+          <div className="bg-gradient-to-br from-cyan-50 to-blue-50 border-2 border-cyan-300 rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow">
+            <div className="flex items-center gap-2 mb-3">
+              <span className="text-2xl">🚀</span>
+              <h4 className="font-semibold text-cyan-900 text-base">Performance Benefits</h4>
             </div>
+            <ul className="space-y-2 text-cyan-800 text-sm">
+              <li className="flex items-center gap-2"><span className="text-blue-600 font-bold">→</span> <span>Only 50 rows in memory</span></li>
+              <li className="flex items-center gap-2"><span className="text-blue-600 font-bold">→</span> <span>Smooth scrolling experience</span></li>
+              <li className="flex items-center gap-2"><span className="text-blue-600 font-bold">→</span> <span>Smart data loading</span></li>
+            </ul>
           </div>
         </div>
-      )
+      </div>
+    ),
+    steps: (
+      <div className="space-y-2">
+        <h3 className="text-sm font-bold text-gray-900 mb-2">Implementation Steps</h3>
+        
+        <div className="bg-white rounded p-2 border-l-4 border-teal-500">
+          <h4 className="font-semibold text-gray-900 mb-1 text-xs">Step 1: Import Shimmer/Skeleton dependency styles</h4>
+          <pre className="bg-gray-900 text-gray-100 p-2 rounded text-xs overflow-auto text-left font-mono leading-tight">
+{`@import '@syncfusion/react-base/styles/material.css';
+@import '@syncfusion/react-notifications/styles/material.css'; // skeleton
+@import '@syncfusion/react-grid/styles/material.css';`}
+          </pre>
+        </div>
+
+        <div className="bg-white rounded p-2 border-l-4 border-teal-500">
+          <h4 className="font-semibold text-gray-900 mb-1 text-xs">Step 2: Create Data Service</h4>
+          <pre className="bg-gray-900 text-gray-100 p-2 rounded text-xs overflow-auto text-left font-mono leading-tight">
+{`import { DataManager, Query, UrlAdaptor } from '@syncfusion/react-data';
+
+// Initializes DataManager with UrlAdaptor and service URL.
+const data = new DataManager({
+  url: 'https://services.syncfusion.com/js/production/api/UrlDataSource',
+  adaptor: new UrlAdaptor()
+});`}
+          </pre>
+        </div>
+
+        <div className="bg-white rounded p-2 border-l-4 border-teal-500">
+          <h4 className="font-semibold text-gray-900 mb-1 text-xs">Step 3: Configure Grid for Server-Side Data</h4>
+          <pre className="bg-gray-900 text-gray-100 p-2 rounded text-xs overflow-auto text-left font-mono leading-tight">
+{`import { Grid, Columns, Column, ScrollMode, type VirtualizationSettings } from '@syncfusion/react-grid';
+
+const [virtualizationSettings] = useState<VirtualizationSettings>({
+  scrollMode: ScrollMode.Virtual
+});
+<Grid<EmployeeServerData> dataSource={data} height='100%' virtualizationSettings={virtualizationSettings}/>`}
+          </pre>
+        </div>
+      </div>
+    ),
+    sample: (
+      <div className="h-full w-full flex flex-col">
+        <div className="flex-1 overflow-hidden w-full">
+          <GridDataAPI />
+        </div>
+      </div>
+    ),
+    code: (
+      <div className="space-y-2 h-full flex flex-col">
+        <CodeViewer
+          files={[
+            {
+              filename: "GridDataAPI.tsx",
+              language: "typescript",
+              description: "Grid with server-side virtualization using DataManager",
+              code: `import { useState, useCallback } from 'react';
+import { Grid, Columns, Column, ScrollMode, type PageSettings, type VirtualizationSettings, TextAlign, ClipMode, type ColumnTemplateProps } from '@syncfusion/react-grid';
+import { DataManager, Query, UrlAdaptor } from '@syncfusion/react-data';
+import styles from '../app/styles/grid-data-api.module.css';
+import { Skeleton } from '@syncfusion/react-notifications';
+import '../app/styles/grid-data-api.css';
+type EmployeeServerData = {
+  EmployeeID: number;
+  Employees: string;
+  Designation: string;
+  Mail: string;
+  Address: string;
+  Location: string;
+  Status: string;
+  Trustworthiness: string;
+  Software: number;
+  Rating: number;
+  CurrentSalary: number;
+};
+export default function GridDataAPI() {
+    const totalRecords = 100000;
+  const pageSize = 50;
+
+  // Initializes DataManager with UrlAdaptor and service URL.
+  const data = new DataManager({
+    url: 'https://services.syncfusion.com/js/production/api/UrlDataSource',
+    adaptor: new UrlAdaptor()
+  });
+  const [pageSettings] = useState<PageSettings>({
+    pageSize: pageSize
+  });
+  const [virtualizationSettings] = useState<VirtualizationSettings>({
+    enabled: true,
+    scrollMode: ScrollMode.Virtual,
+    enableCache: true,
+    viewPortBuffer: { rows: 5, columns: 5 }
+  });
+  const [query] = useState<Query>(new Query().addParams('dataCount', totalRecords.toString()));
+
+  // Template functions for employee data display
+  const employeeIdTemplate = useCallback((args: ColumnTemplateProps<EmployeeServerData>) => (
+    <div className={styles.iconWrapper} style={{ justifyContent: 'flex-end' }}>
+      {args.data ? <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#6366f1" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+        <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" /><circle cx="12" cy="7" r="4" />
+      </svg> : <Skeleton width={'13px'} height={'10px'} />}
+      {args.data ? <span>{args.data?.EmployeeID}</span> : <Skeleton width={'100%'} height={'10px'} />}
+    </div>
+  ), []);
+
+  const employeeNameTemplate = useCallback((args: ColumnTemplateProps<EmployeeServerData>) => (
+    <div className={styles.iconWrapper}>
+      {args.data ? <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#059669" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+        <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2M16 7a4 4 0 11-8 0 4 4 0 018 0z" />
+      </svg> : <Skeleton width={'12px'} height={'10px'} />}
+      {args.data ? <span className={styles.textEllipsis}>{args.data?.Employees}</span> : <Skeleton width={'100%'} height={'10px'} />}
+    </div>
+  ), []);;
+
+  const designationTemplate = useCallback((args: ColumnTemplateProps<EmployeeServerData>) => (
+    <div className={styles.iconWrapper}>
+      {args.data ? <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0284c7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+        <rect x="2" y="7" width="20" height="14" rx="2" ry="2" /><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16" />
+      </svg> : <Skeleton width={'20px'} height={'10px'} />}
+      {args.data ? <span className={styles.textEllipsis}>{args.data?.Designation}</span> : <Skeleton width={'100%'} height={'10px'} />}
+    </div>
+  ), []);
+
+  const locationTemplate = useCallback((args: ColumnTemplateProps<EmployeeServerData>) => (
+    <div className={styles.iconWrapper} style={{ justifyContent: 'center' }}>
+      {args.data ? <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0369a1" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" />
+      </svg> : <Skeleton width={'12px'} height={'10px'} />}
+      {args.data ? <span className={styles.textEllipsis}>{args.data?.Location}</span> : <Skeleton width={'100%'} height={'10px'} />}
+    </div>
+  ), []);
+
+  const statusTemplate = useCallback((args: ColumnTemplateProps<EmployeeServerData>) => {
+    const statusConfig: { [key: string]: { className: string; icon: string } } = {
+      'Active': { className: styles.statusActive, icon: '●' },
+      'Inactive': { className: styles.statusInactive, icon: '○' },
+      'On Leave': { className: styles.statusOnLeave, icon: '⊘' },
+      'Retired': { className: styles.statusRetired, icon: '✕' }
+    };
+    const config = statusConfig[args.data?.Status] || statusConfig['Active'];
+    return (
+      <div className={{styles.statusBadge} {config.className}}>
+        {args.data ? <span>{config.icon}</span> : <Skeleton width={'10px'} height={'10px'} />}
+        {args.data ? <span style={{ textOverflow: 'ellipsis', overflow: 'hidden', fontSize: '14px' }}>{args.data?.Status}</span> : <Skeleton width={'100%'} height={'10px'} />}
+      </div>
+    );
+  }, []);
+
+  const salaryTemplate = useCallback((args: ColumnTemplateProps<EmployeeServerData>) => {
+    const salary = args.data?.CurrentSalary || 0;
+    const formattedSalary = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(salary);
+    return <>
+      {args.data ? <span className={styles.salaryText}>{formattedSalary}</span> : <Skeleton width={'100%'} height={'10px'} />}
+    </>;
+  }, []);
+
+  const trustworthinessTemplate = useCallback((args: ColumnTemplateProps<EmployeeServerData>) => {
+    const trustLevel = args.data?.Trustworthiness || 'Unknown';
+    const config: { [key: string]: { className: string } } = {
+      'High': { className: styles.trustHigh },
+      'Medium': { className: styles.trustMedium },
+      'Low': { className: styles.trustLow }
+    };
+    const className = config[trustLevel] ? config[trustLevel].className : styles.trustDefault;
+
+    return (
+      <div className={{styles.trustworthinessBadge} {className}}>
+        {args.data ? <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+        </svg> : <Skeleton width={'11px'} height={'10px'} />}
+        {args.data ? <span>{trustLevel}</span> : <Skeleton width={'100%'} height={'10px'} />}
+      </div>
+    );
+  }, []);
+
+  const softwareSkillsTemplate = useCallback((args: ColumnTemplateProps<EmployeeServerData>) => {
+    let skills = Number(args.data?.Software ?? 0);
+    skills = Math.min(100, Math.max(0, skills));
+
+    if (args.data?.Trustworthiness === 'Perfect') {
+      if (skills < 70) skills = 70;
+    } else if (args.data?.Trustworthiness === 'Sufficient') {
+      if (skills < 40) skills = 40;
+      if (skills > 69) skills = 69;
+    } else if (args.data?.Trustworthiness === 'Insufficient') {
+      if (skills > 39) skills = 39;
+      if (skills < 0) skills = 0;
+    }
+
+    const displaySkills = Math.round(skills);
+    const color = displaySkills < 40 ? '#dc2626' : displaySkills < 70 ? '#f59e0b' : '#059669';
+
+    return (
+      <div className={styles.progressContainer}>
+        <div className={styles.progressBar}>
+          <div className={styles.progressFill} style={{ width: {displaySkills}%, backgroundColor: color }} />
+        </div>
+        {args.data ? <span className={styles.progressText}>{displaySkills}%</span> : <Skeleton width={'100%'} height={'10px'} />}
+      </div>
+    );
+  }, []);
+
+  const performanceRatingTemplate = useCallback((args: ColumnTemplateProps<EmployeeServerData>) => {
+    let rating = Number(args.data?.Rating ?? 0);
+    rating = Math.min(5, Math.max(0, rating));
+
+    if (args.data?.Trustworthiness === 'Perfect') {
+      if (rating < 4) rating = 4;
+      if (rating > 5) rating = 5;
+    } else if (args.data?.Trustworthiness === 'Sufficient') {
+      rating = 3;
+    } else if (args.data?.Trustworthiness === 'Insufficient') {
+      if (rating < 1) rating = 1;
+      if (rating > 2) rating = 2;
+    }
+
+    const color = rating >= 4 ? '#059669' : rating >= 3 ? '#f59e0b' : '#dc2626';
+
+    return (
+      <div className={styles.iconWrapper} style={{ justifyContent: 'center' }}>
+        {args.data ? <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+          <polygon points="12 2 15.09 10.26 24 10.26 17.55 16.61 19.64 24.87 12 19.52 4.36 24.87 6.45 16.61 0 10.26 8.91 10.26" />
+        </svg> : <Skeleton width={'11px'} height={'10px'} />}
+        {args.data ? <span className={{styles.ratingText} {rating >= 4 ? styles.ratingHigh : rating >= 3 ? styles.ratingMedium : styles.ratingLow}}>{rating.toFixed(1)}</span> : <Skeleton width={'100%'} height={'10px'} />}
+      </div>
+    );
+  }, []);
+
+  return (
+    <div style={{ height: '500px' }}>
+      <Grid<EmployeeServerData>
+        dataSource={data}
+        height='100%'
+        virtualizationSettings={virtualizationSettings}
+        pageSettings={pageSettings}
+        query={query}
+        clipMode={ClipMode.EllipsisWithTooltip}
+      >
+        <Columns>
+          {/* Identifier Column */}
+          <Column field="EmployeeID" headerText="Employee ID" width='110px' textAlign={TextAlign.Right} type='number' template={employeeIdTemplate} />
+
+          {/* Personal Information */}
+          <Column field="Employees" headerText="Employee Name" width='160px' textAlign={TextAlign.Left} clipMode={ClipMode.EllipsisWithTooltip} template={employeeNameTemplate} />
+          <Column field="Designation" headerText="Designation" width='130px' textAlign={TextAlign.Left} clipMode={ClipMode.EllipsisWithTooltip} template={designationTemplate} />
+          <Column field="Mail" headerText="Email" width='180px' textAlign={TextAlign.Left} clipMode={ClipMode.EllipsisWithTooltip} />
+          <Column field="Address" headerText="Address" width='180px' textAlign={TextAlign.Left} clipMode={ClipMode.EllipsisWithTooltip} />
+
+          {/* Organizational & Status */}
+          <Column field="Location" headerText="Location" width='120px' textAlign={TextAlign.Center} clipMode={ClipMode.EllipsisWithTooltip} template={locationTemplate} />
+          <Column field="Status" headerText="Status" width='110px' textAlign={TextAlign.Center} clipMode={ClipMode.EllipsisWithTooltip} template={statusTemplate} />
+          <Column field="Trustworthiness" headerText="Trustworthiness" width='130px' textAlign={TextAlign.Center} clipMode={ClipMode.EllipsisWithTooltip} template={trustworthinessTemplate} />
+
+          {/* Performance & Compensation */}
+          <Column field="Software" headerText="Software Skills" width='120px' textAlign={TextAlign.Right} type='number' template={softwareSkillsTemplate} />
+          <Column field="Rating" headerText="Performance Rating" width='130px' textAlign={TextAlign.Center} type='number' template={performanceRatingTemplate} />
+          <Column field="CurrentSalary" headerText="Current Salary" width='130px' textAlign={TextAlign.Right} type='number' template={salaryTemplate} />
+        </Columns>
+      </Grid>
+    </div>
+  );
+}`
+            },
+            {
+              filename: "grid-data-api.css",
+              language: "css",
+              description: "Grid with shimmer/skeleton styling",
+              code: `@import '@syncfusion/react-base/styles/material.css';
+@import '@syncfusion/react-notifications/styles/material.css';
+@import '@syncfusion/react-grid/styles/material.css';`
+            },
+            {
+              filename: "grid-data-api.module.css",
+              language: "css",
+              description: "Grid with template styling",
+              code: `/* Template Container Styles */
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  line-height: 1.4;
+  font-size: 14px;
+}
+
+.textEllipsis {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.statusBadge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.statusActive {
+  background-color: #dcfce7;
+  color: #059669;
+}
+
+.statusInactive {
+  background-color: #f1f5f9;
+  color: #94a3b8;
+}
+
+.statusOnLeave {
+  background-color: #fefce8;
+  color: #d97706;
+}
+
+.statusRetired {
+  background-color: #f8fafc;
+  color: #64748b;
+}
+
+.trustworthinessBadge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.trustHigh {
+  background-color: #dcfce7;
+  color: #059669;
+}
+
+.trustMedium {
+  background-color: #fefce8;
+  color: #f59e0b;
+}
+
+.trustLow {
+  background-color: #fee2e2;
+  color: #dc2626;
+}
+
+.trustDefault {
+  background-color: #f3f4f6;
+  color: #6b7280;
+}
+
+.progressContainer {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  line-height: 1.4;
+}
+
+.progressBar {
+  flex: 1;
+  height: 4px;
+  background-color: #e5e7eb;
+  border-radius: 2px;
+  overflow: hidden;
+  min-width: 50px;
+}
+
+.progressFill {
+  height: 100%;
+  transition: width 0.3s ease;
+}
+
+.progressText {
+  font-weight: 600;
+  color: #374151;
+  font-size: 14px;
+  min-width: 28px;
+  text-align: right;
+}
+
+.ratingText {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.ratingHigh {
+  color: #059669;
+}
+
+.ratingMedium {
+  color: #f59e0b;
+}
+
+.ratingLow {
+  color: #dc2626;
+}
+
+.salaryText {
+  color: #059669;
+  font-weight: bold;
+  font-size: 14px;
+}
+`
+            }
+          ]}
+        />
+      </div>
+    ),
+  }
+
+  return (
+    <SectionTabLayout
+      title="Server-Side Data Management"
+      subtitle="Handle large datasets efficiently"
+      badge={{
+        text: "Data Management",
+        className: "bg-teal-100 text-teal-700"
+      }}
+      content={content}
+    />
+  )
 }

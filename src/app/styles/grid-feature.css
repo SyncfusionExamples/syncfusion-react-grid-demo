@@ -1,0 +1,9 @@
+@import '@syncfusion/react-base/styles/material.css';
+@import '@syncfusion/react-buttons/styles/material.css'; /* Toolbar */
+@import '@syncfusion/react-calendars/styles/material.css'; /* DatePicker */
+@import '@syncfusion/react-dropdowns/styles/material.css'; /* Dropdownlist */
+@import '@syncfusion/react-inputs/styles/material.css'; /* Editing inputs - TextBox, NumericTextBox, DatePicker, etc., */
+@import '@syncfusion/react-navigations/styles/material.css'; /* Toolbar */
+@import '@syncfusion/react-popups/styles/material.css'; /* Spinner, DatePicker(Calendar) */
+@import '@syncfusion/react-lists/styles/material.css'; /* Dropdownlist */
+@import '@syncfusion/react-grid/styles/material.css';

@@ -1,167 +1,206 @@
 import { useState, useCallback } from 'react';
-import { Grid, Columns, Column, TextAlign, ClipMode, type ColumnTemplateProps, type FilterSettings, type SortSettings, ColumnType, VirtualDomType } from '@syncfusion/react-grid';
-import { type EmployeeData, generateEmployeeData } from '@/app/data2';
-import styles from '@/app/scrolling-basic.module.css';
+import { Grid, Columns, Column, ScrollMode, type PageSettings, type VirtualizationSettings, TextAlign, ClipMode, type ColumnTemplateProps } from '@syncfusion/react-grid';
+import { DataManager, Query, UrlAdaptor } from '@syncfusion/react-data';
+import styles from '../app/styles/grid-data-api.module.css';
+import { Skeleton } from '@syncfusion/react-notifications';
+import '../app/styles/grid-data-api.css';
+type EmployeeServerData = {
+  EmployeeID: number;
+  Employees: string;
+  Designation: string;
+  Mail: string;
+  Address: string;
+  Location: string;
+  Status: string;
+  Trustworthiness: string;
+  Software: number;
+  Rating: number;
+  CurrentSalary: number;
+};
+export default function GridDataAPI() {
+    const totalRecords = 100000;
+  const pageSize = 50;
 
-export default function Grid5() {
-  const [data] = useState(() => generateEmployeeData());
+  // Initializes DataManager with UrlAdaptor and service URL.
+  const data = new DataManager({
+    url: 'https://services.syncfusion.com/js/production/api/UrlDataSource',
+    adaptor: new UrlAdaptor()
+  });
+  const [pageSettings] = useState<PageSettings>({
+    pageSize: pageSize
+  });
+  const [virtualizationSettings] = useState<VirtualizationSettings>({
+    enabled: true,
+    scrollMode: ScrollMode.Virtual,
+    enableCache: true,
+    viewPortBuffer: { rows: 5, columns: 5 }
+  });
+  const [query] = useState<Query>(new Query().addParams('dataCount', totalRecords.toString()));
 
-  const [gridHeight] = useState(400);
-  const [gridWidth] = useState(100);
-  const [sortSettings] = useState<SortSettings>({enabled: true});
-  const [virtualizationSettings] = useState({ type: VirtualDomType.Row });
-
-  // Template functions for real-world employee data display
-  const employeeIdTemplate = useCallback((args: ColumnTemplateProps<EmployeeData>) => (
-    <div className={styles.iconWrapper}>
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6366f1" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={styles.icon12px}>
-        <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/>
-      </svg>
-      <span className={styles.textEllipsis}>{args.data.EmployeeID}</span>
-    </div>
-  ), []);
-
-  const fullNameTemplate = useCallback((args: ColumnTemplateProps<EmployeeData>) => (
-    <div className={styles.iconWrapper}>
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#059669" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={styles.icon12px}>
-        <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/>
-      </svg>
-      <span className={styles.textEllipsis}>{args.data.FullName}</span>
-    </div>
-  ), []);
-
-  const departmentTemplate = useCallback((args: ColumnTemplateProps<EmployeeData>) => (
-    <div className={`${styles.badge} ${styles.departmentBadge}`}>
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0369a1" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={styles.icon12px}>
-        <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
-      </svg>
-      <span>{args.data.Department}</span>
-    </div>
-  ), []);
-
-  const statusTemplate = useCallback((args: ColumnTemplateProps<EmployeeData>) => {
-    const statusConfig: { [key: string]: { className: string; icon: string } } = {
-      'Active': { className: styles.statusActive, icon: '✓' },
-      'On Leave': { className: styles.statusOnLeave, icon: '⏸' },
-      'Inactive': { className: styles.statusInactive, icon: '○' }
-    };
-    const config = statusConfig[args.data.Status] || statusConfig['Inactive'];
-    return (
-      <div className={`${styles.statusBadgeBg} ${config.className}`}>
-        <span style={{ fontSize: '14px' }}>{config.icon}</span>
-        <span>{args.data.Status}</span>
-      </div>
-    );
-  }, []);
-
-  const positionTemplate = useCallback((args: ColumnTemplateProps<EmployeeData>) => (
-    <div className={styles.iconWrapper}>
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0284c7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={styles.icon12px}>
-        <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 7v-2a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/>
-      </svg>
-      <span className={styles.textEllipsis}>{args.data.Position}</span>
-    </div>
-  ), []);
-
-  const hireDateTemplate = useCallback((args: ColumnTemplateProps<EmployeeData>) => (
+  // Template functions for employee data display
+  const employeeIdTemplate = useCallback((args: ColumnTemplateProps<EmployeeServerData>) => (
     <div className={styles.iconWrapper} style={{ justifyContent: 'flex-end' }}>
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6366f1" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={styles.icon12px}>
-        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
-      </svg>
-      <span className={styles.textEllipsis}>{args.data.HireDate}</span>
+      {args.data ? <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#6366f1" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+        <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" /><circle cx="12" cy="7" r="4" />
+      </svg> : <Skeleton width={'13px'} height={'10px'} />}
+      {args.data ? <span>{args.data?.EmployeeID}</span> : <Skeleton width={'100%'} height={'10px'} />}
     </div>
   ), []);
 
-  const salaryTemplate = useCallback((args: ColumnTemplateProps<EmployeeData>) => (
-    <span className={styles.salaryText}>$ {parseFloat(args.data.Salary).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
-  ), []);
-
-  const performanceRatingTemplate = useCallback((args: ColumnTemplateProps<EmployeeData>) => {
-    const rating = parseFloat(args.data.PerformanceRating);
-    const ratingClass = rating >= 4 ? styles.ratingHigh : rating >= 3 ? styles.ratingMedium : styles.ratingLow;
-    const color = rating >= 4 ? '#059669' : rating >= 3 ? '#f59e0b' : '#dc2626';
-    
-    return (
-      <div className={styles.ratingContainer}>
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={styles.icon12px}>
-          <polygon points="12 2 15.09 10.26 24 10.26 17.55 16.61 19.64 24.87 12 19.52 4.36 24.87 6.45 16.61 0 10.26 8.91 10.26"/>
-        </svg>
-        <span className={ratingClass}>{rating.toFixed(1)}</span>
-      </div>
-    );
-  }, []);
-
-  const emailTemplate = useCallback((args: ColumnTemplateProps<EmployeeData>) => (
+  const employeeNameTemplate = useCallback((args: ColumnTemplateProps<EmployeeServerData>) => (
     <div className={styles.iconWrapper}>
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0284c7" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={styles.icon12px}>
-        <rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 6l10 7.5L22 6"/>
-      </svg>
-      <span className={styles.textEllipsis}>{args.data.Email}</span>
+      {args.data ? <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#059669" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+        <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2M16 7a4 4 0 11-8 0 4 4 0 018 0z" />
+      </svg> : <Skeleton width={'12px'} height={'10px'} />}
+      {args.data ? <span className={styles.textEllipsis}>{args.data?.Employees}</span> : <Skeleton width={'100%'} height={'10px'} />}
+    </div>
+  ), []);;
+
+  const designationTemplate = useCallback((args: ColumnTemplateProps<EmployeeServerData>) => (
+    <div className={styles.iconWrapper}>
+      {args.data ? <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0284c7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+        <rect x="2" y="7" width="20" height="14" rx="2" ry="2" /><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16" />
+      </svg> : <Skeleton width={'20px'} height={'10px'} />}
+      {args.data ? <span className={styles.textEllipsis}>{args.data?.Designation}</span> : <Skeleton width={'100%'} height={'10px'} />}
     </div>
   ), []);
 
-  const phoneTemplate = useCallback((args: ColumnTemplateProps<EmployeeData>) => (
-    <div className={styles.iconWrapper + ' ' + styles.phone}>
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#059669" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={styles.icon12px}>
-        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-      </svg>
-      <span className={styles.textEllipsis}>{args.data.Phone}</span>
+  const locationTemplate = useCallback((args: ColumnTemplateProps<EmployeeServerData>) => (
+    <div className={styles.iconWrapper} style={{ justifyContent: 'center' }}>
+      {args.data ? <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0369a1" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" />
+      </svg> : <Skeleton width={'12px'} height={'10px'} />}
+      {args.data ? <span className={styles.textEllipsis}>{args.data?.Location}</span> : <Skeleton width={'100%'} height={'10px'} />}
     </div>
   ), []);
 
-  const employmentTypeTemplate = useCallback((args: ColumnTemplateProps<EmployeeData>) => {
-    const typeConfig: { [key: string]: string } = {
-      'Full-time': styles.employmentFullTime,
-      'Part-time': styles.employmentPartTime,
-      'Contract': styles.employmentContract,
-      'Intern': styles.employmentIntern
+  const statusTemplate = useCallback((args: ColumnTemplateProps<EmployeeServerData>) => {
+    const statusConfig: { [key: string]: { className: string; icon: string } } = {
+      'Active': { className: styles.statusActive, icon: '●' },
+      'Inactive': { className: styles.statusInactive, icon: '○' },
+      'On Leave': { className: styles.statusOnLeave, icon: '⊘' },
+      'Retired': { className: styles.statusRetired, icon: '✕' }
     };
-    const badgeClass = typeConfig[args.data.EmploymentType] || styles.employmentDefault;
-    
+    const config = statusConfig[args.data?.Status] || statusConfig['Active'];
     return (
-      <div className={`${styles.employmentBadge} ${badgeClass}`}>
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={styles.icon12px}>
-          <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/>
-        </svg>
-        <span>{args.data.EmploymentType}</span>
+      <div className={`${styles.statusBadge} ${config.className}`}>
+        {args.data ? <span>{config.icon}</span> : <Skeleton width={'10px'} height={'10px'} />}
+        {args.data ? <span style={{ textOverflow: 'ellipsis', overflow: 'hidden', fontSize: '14px' }}>{args.data?.Status}</span> : <Skeleton width={'100%'} height={'10px'} />}
       </div>
     );
   }, []);
 
-  const reportsToTemplate = useCallback((args: ColumnTemplateProps<EmployeeData>) => (
-    <div className={styles.iconWrapper}>
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6366f1" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={styles.icon12px}>
-        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-      </svg>
-      <span className={styles.textEllipsis}>{args.data.ReportsTo}</span>
-    </div>
-  ), []);
+  const salaryTemplate = useCallback((args: ColumnTemplateProps<EmployeeServerData>) => {
+    const salary = args.data?.CurrentSalary || 0;
+    const formattedSalary = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(salary);
+    return <>
+      {args.data ? <span className={styles.salaryText}>{formattedSalary}</span> : <Skeleton width={'100%'} height={'10px'} />}
+    </>;
+  }, []);
+
+  const trustworthinessTemplate = useCallback((args: ColumnTemplateProps<EmployeeServerData>) => {
+    const trustLevel = args.data?.Trustworthiness || 'Unknown';
+    const config: { [key: string]: { className: string } } = {
+      'High': { className: styles.trustHigh },
+      'Medium': { className: styles.trustMedium },
+      'Low': { className: styles.trustLow }
+    };
+    const className = config[trustLevel] ? config[trustLevel].className : styles.trustDefault;
+
+    return (
+      <div className={`${styles.trustworthinessBadge} ${className}`}>
+        {args.data ? <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+        </svg> : <Skeleton width={'11px'} height={'10px'} />}
+        {args.data ? <span>{trustLevel}</span> : <Skeleton width={'100%'} height={'10px'} />}
+      </div>
+    );
+  }, []);
+
+  const softwareSkillsTemplate = useCallback((args: ColumnTemplateProps<EmployeeServerData>) => {
+    let skills = Number(args.data?.Software ?? 0);
+    skills = Math.min(100, Math.max(0, skills));
+
+    if (args.data?.Trustworthiness === 'Perfect') {
+      if (skills < 70) skills = 70;
+    } else if (args.data?.Trustworthiness === 'Sufficient') {
+      if (skills < 40) skills = 40;
+      if (skills > 69) skills = 69;
+    } else if (args.data?.Trustworthiness === 'Insufficient') {
+      if (skills > 39) skills = 39;
+      if (skills < 0) skills = 0;
+    }
+
+    const displaySkills = Math.round(skills);
+    const color = displaySkills < 40 ? '#dc2626' : displaySkills < 70 ? '#f59e0b' : '#059669';
+
+    return (
+      <div className={styles.progressContainer}>
+        <div className={styles.progressBar}>
+          <div className={styles.progressFill} style={{ width: `${displaySkills}%`, backgroundColor: color }} />
+        </div>
+        {args.data ? <span className={styles.progressText}>{displaySkills}%</span> : <Skeleton width={'100%'} height={'10px'} />}
+      </div>
+    );
+  }, []);
+
+  const performanceRatingTemplate = useCallback((args: ColumnTemplateProps<EmployeeServerData>) => {
+    let rating = Number(args.data?.Rating ?? 0);
+    rating = Math.min(5, Math.max(0, rating));
+
+    if (args.data?.Trustworthiness === 'Perfect') {
+      if (rating < 4) rating = 4;
+      if (rating > 5) rating = 5;
+    } else if (args.data?.Trustworthiness === 'Sufficient') {
+      rating = 3;
+    } else if (args.data?.Trustworthiness === 'Insufficient') {
+      if (rating < 1) rating = 1;
+      if (rating > 2) rating = 2;
+    }
+
+    const color = rating >= 4 ? '#059669' : rating >= 3 ? '#f59e0b' : '#dc2626';
+
+    return (
+      <div className={styles.iconWrapper} style={{ justifyContent: 'center' }}>
+        {args.data ? <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+          <polygon points="12 2 15.09 10.26 24 10.26 17.55 16.61 19.64 24.87 12 19.52 4.36 24.87 6.45 16.61 0 10.26 8.91 10.26" />
+        </svg> : <Skeleton width={'11px'} height={'10px'} />}
+        {args.data ? <span className={`${styles.ratingText} ${rating >= 4 ? styles.ratingHigh : rating >= 3 ? styles.ratingMedium : styles.ratingLow}`}>{rating.toFixed(1)}</span> : <Skeleton width={'100%'} height={'10px'} />}
+      </div>
+    );
+  }, []);
 
   return (
-    <>
-      <Grid<EmployeeData>
+    <div style={{ height: '500px' }}>
+      <Grid<EmployeeServerData>
         dataSource={data}
-        height={`${gridHeight}px`}
-        width={`${gridWidth}%`}
-        clipMode={ClipMode.EllipsisWithTooltip}
+        height='100%'
         virtualizationSettings={virtualizationSettings}
-        sortSettings={sortSettings}
+        pageSettings={pageSettings}
+        query={query}
+        clipMode={ClipMode.EllipsisWithTooltip}
       >
         <Columns>
-          <Column field='EmployeeID' headerText='Employee ID' width='150px' textAlign={TextAlign.Left} template={employeeIdTemplate} />
-          <Column field='FullName' headerText='Full Name' width='120px' textAlign={TextAlign.Left} template={fullNameTemplate} />
-          <Column field='Email' headerText='Email' width='215px' textAlign={TextAlign.Left} template={emailTemplate} />
-          <Column field='Phone' headerText='Phone' width='110px' textAlign={TextAlign.Right} template={phoneTemplate} />
-          <Column field='Department' headerText='Department' width='130px' textAlign={TextAlign.Center} template={departmentTemplate} />
-          <Column field='Position' headerText='Position' width='110px'  template={positionTemplate} />
-          <Column field='EmploymentType' headerText='Employment Type' width='140px' textAlign={TextAlign.Center} template={employmentTypeTemplate} />
-          <Column field='Status' headerText='Status' width='110px' textAlign={TextAlign.Center} template={statusTemplate} />
-          <Column field='HireDate' headerText='Hire Date' width='120px' textAlign={TextAlign.Right} template={hireDateTemplate} type={ColumnType.Date} />
-          <Column field='ReportsTo' headerText='Reports To' width='120px' textAlign={TextAlign.Left} template={reportsToTemplate} />
-          <Column field='Salary' headerText='Salary' width='110px' textAlign={TextAlign.Right} template={salaryTemplate} />
-          <Column field='PerformanceRating' headerText='Impact Rating' width='130px' textAlign={TextAlign.Center} template={performanceRatingTemplate} />
+          {/* Identifier Column */}
+          <Column field="EmployeeID" headerText="Employee ID" width='110px' textAlign={TextAlign.Right} type='number' template={employeeIdTemplate} />
+
+          {/* Personal Information */}
+          <Column field="Employees" headerText="Employee Name" width='160px' textAlign={TextAlign.Left} clipMode={ClipMode.EllipsisWithTooltip} template={employeeNameTemplate} />
+          <Column field="Designation" headerText="Designation" width='130px' textAlign={TextAlign.Left} clipMode={ClipMode.EllipsisWithTooltip} template={designationTemplate} />
+          <Column field="Mail" headerText="Email" width='180px' textAlign={TextAlign.Left} clipMode={ClipMode.EllipsisWithTooltip} />
+          <Column field="Address" headerText="Address" width='180px' textAlign={TextAlign.Left} clipMode={ClipMode.EllipsisWithTooltip} />
+
+          {/* Organizational & Status */}
+          <Column field="Location" headerText="Location" width='120px' textAlign={TextAlign.Center} clipMode={ClipMode.EllipsisWithTooltip} template={locationTemplate} />
+          <Column field="Status" headerText="Status" width='110px' textAlign={TextAlign.Center} clipMode={ClipMode.EllipsisWithTooltip} template={statusTemplate} />
+          <Column field="Trustworthiness" headerText="Trustworthiness" width='130px' textAlign={TextAlign.Center} clipMode={ClipMode.EllipsisWithTooltip} template={trustworthinessTemplate} />
+
+          {/* Performance & Compensation */}
+          <Column field="Software" headerText="Software Skills" width='120px' textAlign={TextAlign.Right} type='number' template={softwareSkillsTemplate} />
+          <Column field="Rating" headerText="Performance Rating" width='130px' textAlign={TextAlign.Center} type='number' template={performanceRatingTemplate} />
+          <Column field="CurrentSalary" headerText="Current Salary" width='130px' textAlign={TextAlign.Right} type='number' template={salaryTemplate} />
         </Columns>
       </Grid>
-    </>
+    </div>
   );
 }

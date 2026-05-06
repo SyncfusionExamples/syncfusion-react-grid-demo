@@ -1,88 +1,171 @@
 import LiveData from "@/components/LiveData";
+import SectionTabLayout from "@/components/SectionTabLayout"
+import CodeViewer from "@/components/CodeViewer"
 
 export default function TradeView() {
-    return (
-        <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 py-16 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-6xl mx-auto">
-            <div className="mb-12">
-              <div className="inline-block bg-amber-100 text-amber-700 px-4 py-2 rounded-full text-sm font-semibold mb-6">
-                Real-Time Data Streaming
-              </div>
-              <h1 className="text-5xl font-bold text-gray-900 mb-6">Streaming Trade View</h1>
-              <p className="text-lg text-gray-700 max-w-4xl mb-8 leading-relaxed">
-                Showcases the React Data Grid component's capability to handle real-time data updates with high performance. The grid continuously refreshes to display live data changes, ensuring a current view. Designed for scalability, it efficiently manages large datasets while maintaining smooth and responsive interactions.
-              </p>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-amber-500">
-                  <h3 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
-                    <span className="text-xl">📊</span> Live Updates
-                  </h3>
-                  <ul className="text-sm text-gray-600 space-y-2">
-                    <li>• Real-time data streaming integration</li>
-                    <li>• Automatic refresh on data changes</li>
-                    <li>• Smooth continuous updates</li>
-                    <li>• High-frequency data handling</li>
-                  </ul>
-                </div>
-                <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-amber-400">
-                  <h3 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
-                    <span className="text-xl">⚙️</span> Capabilities
-                  </h3>
-                  <ul className="text-sm text-gray-600 space-y-2">
-
-                    <li>• Responsive interactions</li>
-                    <li>• Scalable architecture</li>
-                  </ul>
-                </div>
-              </div>
+  const content = {
+    description: (
+      <div className="space-y-4">
+        <div className="space-y-2">
+          <h3 className="text-2xl font-bold text-gray-900 tracking-tight">Live Trade Data Dashboard</h3>
+          <p className="text-base text-gray-600 leading-relaxed font-medium">Real-time streaming with interactive controls</p>
+        </div>
+        
+        <p className="text-gray-700 text-base leading-relaxed border-l-4 border-amber-500 pl-4 py-3 bg-amber-50 rounded-r-lg">
+          Displays live trading data with color-coded change indicators and custom templates. Features start/stop controls, configurable feed delays, and dynamic row coloring based on price movements. Perfect for monitoring dashboards and real-time analytics.
+        </p>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div className="bg-gradient-to-br from-amber-50 to-orange-50 border-2 border-amber-300 rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow">
+            <div className="flex items-center gap-2 mb-3">
+              <span className="text-2xl">📈</span>
+              <h4 className="font-semibold text-amber-900 text-base">Features Enabled</h4>
             </div>
-    
-            {/* Divider */}
-            <div className="h-1 bg-gradient-to-r from-amber-200 via-amber-400 to-amber-200 rounded-full mb-8"></div>
-    
-            {/* Grid Preview Area */}
-            <div className="bg-white rounded-2xl shadow-2xl overflow-hidden border border-amber-100 hover:shadow-3xl transition-shadow duration-300">
-              <div className="p-8">
-                <div className="mb-6">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-1 h-8 bg-gradient-to-b from-amber-400 to-amber-600 rounded"></div>
-                    <div>
-                      <h2 className="text-2xl font-bold text-gray-900">Live Trade Data Stream</h2>
-                    </div>
-                  </div>
-                </div>
-                <style>{`
-                  /* Color-coded Avatar Backgrounds */
-                  .leads .avatar-red {
-                    background-color: #fce8e6;
-                    color: #d93025;
-                  }
-    
-                  .leads .avatar-blue {
-                    background-color: #e8f0fe;
-                    color: #1a73e8;
-                  }
-    
-                  .leads .avatar-green {
-                    background-color: #e6f4ea;
-                    color: #137333;
-                  }
-    
-                  .leads .avatar-orange {
-                    background-color: #fef7e0;
-                    color: #ea8600;
-                  }
-    
-                  .leads .avatar-purple {
-                    background-color: #f3e8ff;
-                    color: #9333ea;
-                  }
-                `}</style>
-                <LiveData />
-              </div>
+            <ul className="space-y-2 text-amber-800 text-sm">
+              <li className="flex items-center gap-2"><span className="text-amber-600 font-bold">✓</span> <span>Live data updates</span></li>
+              <li className="flex items-center gap-2"><span className="text-amber-600 font-bold">✓</span> <span>Custom templates</span></li>
+              <li className="flex items-center gap-2"><span className="text-amber-600 font-bold">✓</span> <span>Interactive controls</span></li>
+              <li className="flex items-center gap-2"><span className="text-amber-600 font-bold">✓</span> <span>Paging support</span></li>
+            </ul>
+          </div>
+          
+          <div className="bg-gradient-to-br from-yellow-50 to-orange-50 border-2 border-yellow-300 rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow">
+            <div className="flex items-center gap-2 mb-3">
+              <span className="text-2xl">💡</span>
+              <h4 className="font-semibold text-yellow-900 text-base">Key Capabilities</h4>
             </div>
+            <ul className="space-y-2 text-yellow-800 text-sm">
+              <li className="flex items-center gap-2"><span className="text-orange-700 font-bold">→</span> <span>Start/stop data feed</span></li>
+              <li className="flex items-center gap-2"><span className="text-orange-700 font-bold">→</span> <span>Adjustable feed delay</span></li>
+              <li className="flex items-center gap-2"><span className="text-orange-700 font-bold">→</span> <span>Color-coded indicators</span></li>
+            </ul>
           </div>
         </div>
-      )
+      </div>
+    ),
+    steps: (
+      <div className="space-y-2">
+        <h3 className="text-sm font-bold text-gray-900 mb-2">Implementation Steps</h3>
+        
+        <div className="bg-white rounded p-2 border-l-4 border-amber-500">
+          <h4 className="font-semibold text-gray-900 mb-1 text-xs">Step 1: Create Live Data Hook</h4>
+          <pre className="bg-gray-900 text-gray-100 p-2 rounded text-xs overflow-auto text-left font-mono leading-tight">
+{`import { useState, useEffect } from 'react';
+
+export function useLiveData() {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setData(prev => [newRow(), ...prev].slice(0, 100));
+    }, 1000);
+    
+    return () => clearInterval(interval);
+  }, []);
+
+  return data;
+}`}
+          </pre>
+        </div>
+
+        <div className="bg-white rounded p-2 border-l-4 border-amber-500">
+          <h4 className="font-semibold text-gray-900 mb-1 text-xs">Step 2: Connect to Grid</h4>
+          <pre className="bg-gray-900 text-gray-100 p-2 rounded text-xs overflow-auto text-left font-mono leading-tight">
+{`import { Grid } from '@syncfusion/react-grid';
+
+<Grid dataSource={liveData}>
+  <Columns>
+    <Column field='ticker' headerText='Ticker' width='80' />
+    <Column field='price' headerText='Price' width='100' />
+  </Columns>
+</Grid>`}
+          </pre>
+        </div>
+      </div>
+    ),
+    sample: (
+      <div className="h-full w-full flex flex-col">
+        <div className="flex-1 overflow-hidden w-full">
+          <LiveData />
+        </div>
+      </div>
+    ),
+    code: (
+      <div className="space-y-2 h-full flex flex-col">
+        <CodeViewer
+          files={[
+            {
+              filename: "LiveData.tsx",
+              language: "typescript",
+              description: "Grid with real-time trade data streaming",
+              code: `import { Grid, Columns, Column, type GridRef, type ColumnTemplateProps, TextAlign } from '@syncfusion/react-grid';
+import { Button, type IButton } from '@syncfusion/react-buttons';
+import { type INumericTextBox, NumericTextBox } from '@syncfusion/react-inputs';
+import '../app/styles/live-data.css';
+import { useMemo, useRef, useState, useEffect, useCallback } from 'react';
+import { tradeTickerData, type Trade, type TradeRow } from '../app/models/tradeDetails';
+
+export default function TradeView() {
+  const gridRef = useRef<GridRef>(null);
+  const updateButtonRef = useRef<IButton | null>(null);
+  const feedDelayInputRef = useRef<INumericTextBox | null>(null);
+  const [timerID, setTimerID] = useState<ReturnType<typeof setInterval> | undefined>(undefined);
+  const [isUpdating, setIsUpdating] = useState(false);
+  const initial = useRef<boolean>(true);
+
+  const ChangeTemplate = useCallback((props?: ColumnTemplateProps): React.ReactElement => {
+    const change = (props?.data as Trade)?.change ?? 0;
+    const className = change < 0 ? 'below-0' : 'above-0';
+    return <div className={className}><span>{change.toFixed(2)}</span></div>;
+  }, []);
+
+  const ChangePercentTemplate = useCallback((props?: ColumnTemplateProps): React.ReactElement => {
+    const changePercent = (props?.data as Trade)?.change_percent ?? 0;
+    const className = changePercent < 0 ? 'below-0' : 'above-0';
+    return <div className={className}><span>{changePercent.toFixed(2)}%</span></div>;
+  }, []);
+
+  return (
+    <div style={{ height: '100%', width: '100%', display: 'flex', flexDirection: 'column' }}>
+      <div style={{ padding: '8px', borderBottom: '1px solid #e5e7eb', display: 'flex', gap: '8px', alignItems: 'center', flexWrap: 'wrap' }}>
+        <Button ref={(btn) => { updateButtonRef.current = btn; }} id="update1" onClick={() => setIsUpdating(!isUpdating)}>
+          {isUpdating ? 'Stop Update' : 'Start Update'}
+        </Button>
+        <Button onClick={() => gridRef.current?.clearSelection()}>Clear</Button>
+        <span>Feed Delay (ms):</span>
+        <NumericTextBox ref={(inp) => { feedDelayInputRef.current = inp; }} value={300} />
+      </div>
+      <div style={{ flex: 1, overflow: 'hidden' }}>
+        <Grid<Trade> dataSource={tradeTickerData} ref={gridRef} pageSettings={{ pageSize: 12 }} columns={[
+          { field: 'ticker', headerText: 'Ticker', width: 80, textAlign: TextAlign.Left },
+          { field: 'change_percent', headerText: 'Change %', width: 120, template: ChangePercentTemplate },
+          { field: 'change', headerText: 'Change', width: 100, template: ChangeTemplate },
+          { field: 'price', headerText: 'Price', width: 100, textAlign: TextAlign.Right },
+          { field: 'high', headerText: 'High', width: 100, textAlign: TextAlign.Right },
+          { field: 'low', headerText: 'Low', width: 100, textAlign: TextAlign.Right },
+          { field: 'tech_rating', headerText: 'Tech Rating', width: 120 },
+        ]} />
+      </div>
+    </div>
+  );
+}`
+            }
+          ]}
+        />
+      </div>
+    ),
+  }
+
+  return (
+    <SectionTabLayout
+      title="Live Data"
+      subtitle="Real-time data streaming"
+      badge={{
+        text: "Real-Time",
+        className: "bg-amber-100 text-amber-700"
+      }}
+      content={content}
+    />
+  )
 }
+  

@@ -35,7 +35,6 @@ This application showcases six distinct grid implementations, each demonstrating
 - ✅ Editing capabilities
 - ✅ Custom column templates
 - ✅ Summary aggregation
-- ✅ Export capabilities
 - ✅ Responsive design
 - ✅ Shadow DOM support
 
@@ -236,7 +235,7 @@ const data = new DataManager({
 
 ## 📚 Resources
 
-- [Syncfusion React Grid Documentation](https://www.syncfusion.com/react-components/react-data-grid)
+- [Syncfusion React Grid Documentation](https://react.syncfusion.com/react-ui/data-grid/)
 - [Vite Documentation](https://vitejs.dev)
 - [React Documentation](https://react.dev)
 - [Tailwind CSS Documentation](https://tailwindcss.com)

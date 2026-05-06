@@ -1,6 +1,7 @@
 import { Grid } from "@syncfusion/react-grid";
-import { employeeTaskPerformanceData } from '@/app/data';
+import { employeeTaskPerformanceData } from '@/app/models/data';
 import { useState } from "react";
+import '../app/styles/grid.css';
 
 export default function Grid1() {
     const [columns] = useState([
@@ -13,5 +14,9 @@ export default function Grid1() {
         { field: "hoursWorked", headerText: "Hours Worked", width: 150, textAlign: 'Right' },
     ]);
     const [data] = useState(employeeTaskPerformanceData.slice(0, 5));
-    return (<Grid dataSource={data} columns={columns} />)
+    return (
+        <div style={{ height: '100%', width: '100%' }}>
+            <Grid dataSource={data} columns={columns} />
+        </div>
+    )
 }
