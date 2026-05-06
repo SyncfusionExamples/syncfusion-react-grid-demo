@@ -10,12 +10,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@syncfusion/react-grid": "*",
+    "@types/react-syntax-highlighter": "^15.5.13",
+    "autoprefixer": "^10.4.0",
+    "postcss": "^8.4.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.20.0",
-    "@syncfusion/react-grid": "*",
-    "autoprefixer": "^10.4.0",
-    "postcss": "^8.4.0",
+    "react-syntax-highlighter": "^16.1.1",
     "tailwindcss": "^3.4.0"
   },
   "devDependencies": {
@@ -23,9 +25,9 @@
     "@types/node": "^20.0.0",
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",
-    "@vitejs/plugin-react": "^4.0.0",
     "@typescript-eslint/eslint-plugin": "^7.0.0",
     "@typescript-eslint/parser": "^7.0.0",
+    "@vitejs/plugin-react": "^4.0.0",
     "eslint": "^8.0.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",

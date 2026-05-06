@@ -1,6 +1,6 @@
 import { useState, useCallback } from 'react';
 import { Grid, Columns, Column, TextAlign, ClipMode, type ColumnTemplateProps, type SortSettings, ColumnType, VirtualDomType } from '@syncfusion/react-grid';
-import { type EmployeeData, generateEmployeeData } from '@/app/models/data2';
+import { type EmployeeData, generateEmployeeData } from '@/app/models/performance-data';
 import styles from '@/app/styles/grid-performance.module.css';
 
 export default function GridPerformance() {

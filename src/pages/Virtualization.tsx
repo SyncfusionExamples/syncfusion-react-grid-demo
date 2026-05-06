@@ -100,7 +100,7 @@ height={gridHeight}/>`}
               language: "typescript",
               code: `import { useState, useCallback } from 'react';
 import { Grid, Columns, Column, TextAlign, ClipMode, type ColumnTemplateProps, type FilterSettings, type SortSettings, ColumnType, VirtualDomType } from '@syncfusion/react-grid';
-import { type EmployeeData, generateEmployeeData } from '@/app/models/data2';
+import { type EmployeeData, generateEmployeeData } from '@/app/models/performance-data';
 import styles from '@/app/styles/grid-performance.module.css';
 
 export default function GridPerformance() {
@@ -422,7 +422,7 @@ export default function GridPerformance() {
 }`
             },
             {
-              filename: "grid-performance-data.ts",
+              filename: "performance-data.ts",
               language: "typescript",
               code: `export type EmployeeData = {
   EmployeeID: string;

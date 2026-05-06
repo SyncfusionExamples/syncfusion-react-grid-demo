@@ -101,7 +101,7 @@ return (
               filename: "Grid.tsx",
               language: "typescript",
               code: `import { Grid } from "@syncfusion/react-grid";
-import { employeeTaskPerformanceData } from '@/app/models/data';
+import { employeeTaskPerformanceData } from '@/app/models/grid-data';
 import { useState } from "react";
 import '../app/styles/grid.css';
 
@@ -132,7 +132,7 @@ export default function Grid1() {
 `
             },
             {
-              filename: "data.ts",
+              filename: "grid-data.ts",
               language: "ts",
               code: `export interface EmployeeTaskPerformance {
   taskId: number;

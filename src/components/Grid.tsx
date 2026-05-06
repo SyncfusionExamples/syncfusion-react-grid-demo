@@ -1,5 +1,5 @@
 import { Grid } from "@syncfusion/react-grid";
-import { employeeTaskPerformanceData } from '@/app/models/data';
+import { employeeTaskPerformanceData } from '@/app/models/grid-data';
 import { useState } from "react";
 import '../app/styles/grid.css';
 

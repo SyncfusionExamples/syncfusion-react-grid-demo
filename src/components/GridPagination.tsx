@@ -1,4 +1,4 @@
-import { type EmployeeTaskPerformance, employeeTaskPerformanceData } from "@/app/models/data";
+import { type EmployeeTaskPerformance, employeeTaskPerformanceData } from "@/app/models/grid-data";
 import { type ColumnProps, type EditSettings, EditType, Grid } from "@syncfusion/react-grid";
 import { useState } from "react";
 import '../app/styles/grid-pagination.css';
