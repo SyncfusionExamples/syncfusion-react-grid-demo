@@ -1,5 +1,5 @@
 import { employeeTaskPerformanceData, type EmployeeTaskPerformance } from "../app/models/data1";
-import { type ColumnProps, type ColumnTemplateProps, type EditSettings, EditType, type FilterSettings, Grid } from "@syncfusion/react-grid";
+import { ClipMode, type ColumnProps, type ColumnTemplateProps, type EditSettings, EditType, type FilterSettings, Grid } from "@syncfusion/react-grid";
 import { useState } from "react";
 import '../app/styles/grid-feature.css';
 
@@ -10,20 +10,20 @@ export default function GridFeature() {
     const numberRules = { required: true, min: 10, max: 500 };
     const [toolbarSettings] = useState<string[]>(['Edit', 'Delete', 'Update', 'Cancel']);
     const [columns] = useState<ColumnProps[]>([
-        { field: "taskId", headerText: "Task ID", width: 150, textAlign: 'Right', validationRules: taskIdRules, isPrimaryKey: true },
+        { field: "taskId", headerText: "Task ID", width: 95, textAlign: 'Right', validationRules: taskIdRules, isPrimaryKey: true },
         {
             field: 'imgId', template: (data?: ColumnTemplateProps) => {
                 return <div style={{ display: 'inline-flex', gap: '5px', justifyContent: 'center', alignItems: 'center', width: '100%', height: '100%' }}>
                     <img src={`https://react.syncfusion.com/react-ui/images/grid/avatar/avatar-${(data?.data as EmployeeTaskPerformance).imgId}.jpg`} alt="avatar" className="w-6 h-6 rounded-full" />
                 </div>;
             },
-            headerText: "Employee Image", width: 150, allowEdit: false, allowFilter: false, allowSort: false
+            headerText: "Employee Image", width: 140, allowEdit: false, allowFilter: false, allowSort: false
         },
-        { field: "employeeName", headerText: "Employee Name", width: 180, textAlign: 'Left', validationRules: stringValidationRules, edit: { type: EditType.DropDownList } },
-        { field: "taskName", headerText: "Task Name", width: 170, textAlign: 'Left', validationRules: stringValidationRules, edit: { type: EditType.DropDownList } },
-        { field: "taskStartDate", headerText: "Start Date", width: 200, format: "yMd", textAlign: 'Right', edit: { type: EditType.DatePicker } },
-        { field: "taskEndDate", headerText: "End Date", width: 200, format: "yMd", textAlign: 'Right', edit: { type: EditType.DatePicker } },
-        { field: "estimatedHours", headerText: "Estimated Hours", width: 200, textAlign: 'Right', clipMode: 'EllipsisWithTooltip', validationRules: numberRules },
+        { field: "employeeName", headerText: "Employee Name", width: 160, textAlign: 'Left', validationRules: stringValidationRules, edit: { type: EditType.DropDownList } },
+        { field: "taskName", headerText: "Task Name", width: 150, textAlign: 'Left', validationRules: stringValidationRules, edit: { type: EditType.DropDownList } },
+        { field: "taskStartDate", headerText: "Start Date", width: 115, format: "yMd", textAlign: 'Right', edit: { type: EditType.DatePicker } },
+        { field: "taskEndDate", headerText: "End Date", width: 115, format: "yMd", textAlign: 'Right', edit: { type: EditType.DatePicker } },
+        { field: "estimatedHours", headerText: "Estimated Hours", width: 155, textAlign: 'Right', clipMode: 'EllipsisWithTooltip', validationRules: numberRules },
         { field: "hoursWorked", headerText: "Hours Worked", width: 150, textAlign: 'Right', validationRules: numberRules },
     ]);
     const [data] = useState(employeeTaskPerformanceData);
@@ -46,7 +46,7 @@ export default function GridFeature() {
     const [filterSettings] = useState<FilterSettings>({ enabled: true, type: 'CheckBox' });
     return (
         <div style={{ width: '100%' }}>
-            <Grid<EmployeeTaskPerformance> dataSource={data} columns={columns} toolbar={toolbarSettings} editSettings={editSettings} sortSettings={sortSettings} filterSettings={filterSettings} aggregates={aggregateColumns} height={550} />
+            <Grid<EmployeeTaskPerformance> dataSource={data} columns={columns} toolbar={toolbarSettings} editSettings={editSettings} sortSettings={sortSettings} filterSettings={filterSettings} aggregates={aggregateColumns} height={550} clipMode={ClipMode.EllipsisWithTooltip}/>
         </div>
     )
 }

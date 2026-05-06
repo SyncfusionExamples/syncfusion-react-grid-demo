@@ -227,41 +227,40 @@ function TradeView() {
 
   return (
     <>
-        <div className='row'>
-          <div className='col gap-10'>
-            <label style={{ display: 'inline-block', fontSize: '14px', padding: '0 7px 0 5px', fontWeight: 700 }}>
-              Feed Delay(ms):
-            </label>
+        <div className="flex items-center gap-3 mb-4">
+          <label style={{ fontSize: '13px', fontWeight: 600, whiteSpace: 'nowrap' }}>
+            Feed Delay (ms):
+          </label>
+          <div style={{ minWidth: '150px' }}>
             <NumericTextBox
               format="N0"
               defaultValue={300}
               min={10}
               max={5000}
-              width="150px"
-              style={{ margin: '5px' }}
+              width="100%"
               ref={feedDelayInputRef}
               aria-label="Feed delay"
               disabled={isUpdating}
             />
-            <Button
-              id="update1"
-              ref={updateButtonRef}
-              onClick={updateClick}
-              style={{ margin: '5px' }}
-              disabled={isUpdating}
-            >
-              Start Data Update
-            </Button>
-            <Button
-              id="clear"
-              ref={clearButtonRef}
-              onClick={clearClick}
-              style={{ margin: '5px' }}
-              disabled={!isUpdating}
-            >
-              Stop Data Update
-            </Button>
           </div>
+          <Button
+            id="update1"
+            ref={updateButtonRef}
+            onClick={updateClick}
+            disabled={isUpdating}
+            style={{ padding: '6px 12px', fontSize: '13px' }}
+          >
+            Start Data Update
+          </Button>
+          <Button
+            id="clear"
+            ref={clearButtonRef}
+            onClick={clearClick}
+            disabled={!isUpdating}
+            style={{ padding: '6px 12px', fontSize: '13px' }}
+          >
+            Stop Data Update
+          </Button>
         </div>
       <div className="control-pane">
         <div className="control-section">
