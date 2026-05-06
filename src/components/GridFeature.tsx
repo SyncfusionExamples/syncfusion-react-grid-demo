@@ -44,5 +44,9 @@ export default function GridFeature() {
     }
     ]);
     const [filterSettings] = useState<FilterSettings>({ enabled: true, type: 'CheckBox' });
-    return (<Grid<EmployeeTaskPerformance> dataSource={data} columns={columns} height={600} toolbar={toolbarSettings} editSettings={editSettings} sortSettings={sortSettings} filterSettings={filterSettings} aggregates={aggregateColumns} />)
+    return (
+        <div style={{ width: '100%' }}>
+            <Grid<EmployeeTaskPerformance> dataSource={data} columns={columns} toolbar={toolbarSettings} editSettings={editSettings} sortSettings={sortSettings} filterSettings={filterSettings} aggregates={aggregateColumns} height={550} />
+        </div>
+    )
 }

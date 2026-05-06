@@ -10,13 +10,13 @@ export default function GridPagination() {
     const numberRules = { required: true, min: 10, max: 500 };
     const [toolbarSettings] = useState<string[]>(['Add', 'Edit', 'Delete', 'Update', 'Cancel']);
     const [columns] = useState<ColumnProps[]>([
-        { field: "taskId", headerText: "Task ID", width: 150, textAlign: 'Right', validationRules: taskIdRules, isPrimaryKey: true },
-        { field: "employeeName", headerText: "Employee Name", width: 180, textAlign: 'Left', validationRules: stringValidationRules },
-        { field: "taskName", headerText: "Task Name", width: 200, textAlign: 'Left', validationRules: stringValidationRules },
-        { field: "taskStartDate", headerText: "Start Date", width: 200, format: "yMd", textAlign: 'Right', edit: { type: EditType.DatePicker } },
-        { field: "taskEndDate", headerText: "End Date", width: 200, format: "yMd", textAlign: 'Right', edit: { type: EditType.DatePicker } },
-        { field: "estimatedHours", headerText: "Estimated Hours", width: 200, textAlign: 'Right', validationRules: numberRules },
-        { field: "hoursWorked", headerText: "Hours Worked", width: 150, textAlign: 'Right', validationRules: numberRules },
+        { field: "taskId", headerText: "Task ID", width: 120, textAlign: 'Right', validationRules: taskIdRules, isPrimaryKey: true },
+        { field: "employeeName", headerText: "Employee Name", width: 150, textAlign: 'Left', validationRules: stringValidationRules },
+        { field: "taskName", headerText: "Task Name", width: 180, textAlign: 'Left', validationRules: stringValidationRules },
+        { field: "taskStartDate", headerText: "Start Date", width: 180, format: "yMd", textAlign: 'Right', edit: { type: EditType.DatePicker } },
+        { field: "taskEndDate", headerText: "End Date", width: 180, format: "yMd", textAlign: 'Right', edit: { type: EditType.DatePicker } },
+        { field: "estimatedHours", headerText: "Estimated Hours", width: 160, textAlign: 'Right', validationRules: numberRules },
+        { field: "hoursWorked", headerText: "Hours Worked", width: 120, textAlign: 'Right', validationRules: numberRules },
     ]);
     const [sortSettings] = useState({ enabled: true });
     const [aggregateColumns] = useState([{
@@ -34,7 +34,11 @@ export default function GridPagination() {
         ]
     }
     ]);
-    const [pageSettings] = useState({ enabled: true, pageSize: 10 });
+    const [pageSettings] = useState({ enabled: true, pageSize: 6 });
     const [data] = useState(employeeTaskPerformanceData);
-    return (<Grid<EmployeeTaskPerformance> dataSource={data} columns={columns} toolbar={toolbarSettings} editSettings={editSettings} sortSettings={sortSettings} aggregates={aggregateColumns} pageSettings={pageSettings} />)
+    return (
+        <div style={{ width: '100%' }}>
+            <Grid<EmployeeTaskPerformance> dataSource={data} columns={columns} toolbar={toolbarSettings} editSettings={editSettings} sortSettings={sortSettings} aggregates={aggregateColumns} pageSettings={pageSettings} />
+        </div>
+    )
 }

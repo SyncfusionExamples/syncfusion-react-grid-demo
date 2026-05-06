@@ -19,11 +19,11 @@ interface SectionTabLayoutProps {
 
 type TabType = 'description' | 'steps' | 'sample' | 'code'
 
-const tabs: { id: TabType; label: string; icon: string }[] = [
-  { id: 'description', label: 'Description', icon: '📝' },
-  { id: 'steps', label: 'Steps', icon: '👣' },
-  { id: 'sample', label: 'Sample', icon: '▶️' },
-  { id: 'code', label: 'Code', icon: '</>' },
+const tabs: { id: TabType; label: string }[] = [
+  { id: 'description', label: 'Description' },
+  { id: 'steps', label: 'Steps' },
+  { id: 'sample', label: 'Sample' },
+  { id: 'code', label: 'Code' },
 ]
 
 export default function SectionTabLayout({
@@ -50,42 +50,32 @@ export default function SectionTabLayout({
   }
 
   return (
-    <div className="fixed top-12 left-0 right-0 bottom-0 bg-white overflow-hidden flex flex-col">
-      {/* Ultra-Compact Header - Minimal Space */}
-      <div className="px-3 py-1 flex-shrink-0 bg-white border-b border-gray-200 flex items-center gap-2 h-8">
-        <div className={`inline-block ${badge.className} px-1.5 py-0 rounded text-xs font-600 flex-shrink-0`}>
-          {badge.text}
-        </div>
-        <h1 className="text-base font-600 text-gray-900 truncate">{title}</h1>
-      </div>
+    <div className="fixed top-12 left-0 right-0 bottom-0 bg-white flex flex-col" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" }}>
 
       {/* Main Content Area */}
-      <div className="flex flex-1 overflow-hidden">
-        {/* Vertical Tabs Sidebar - Wider for Better UX */}
-        <div className="w-32 bg-gray-50 border-r border-gray-200 p-1 flex flex-col gap-0.5 overflow-y-auto flex-shrink-0">
+      <div className="flex flex-1">
+        {/* Vertical Tabs Sidebar - Text Only */}
+        <div className="w-32 bg-gray-50 border-r border-gray-200 py-2 flex flex-col gap-0 flex-shrink-0">
           {tabs.map((tab) => (
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`px-2 py-2 rounded text-xs font-500 transition-all duration-150 flex items-center gap-1.5 flex-shrink-0 whitespace-nowrap ${
+              className={`px-4 py-3 text-sm font-500 transition-colors duration-150 text-left border-l-4 ${
                 activeTab === tab.id
-                  ? 'bg-blue-600 text-white shadow-sm'
-                  : 'text-gray-700 hover:bg-gray-100'
+                  ? 'bg-blue-50 text-blue-700 border-l-blue-600'
+                  : 'text-gray-600 border-l-transparent hover:bg-gray-100'
               }`}
               title={tab.label}
             >
-              <span className="text-sm flex-shrink-0">{tab.icon}</span>
-              <span className="text-xs font-500">{tab.label}</span>
+              {tab.label}
             </button>
           ))}
         </div>
 
-        {/* Main Content - Full Height with Optimized Padding */}
-        <div className="flex-1 overflow-hidden flex flex-col">
-          <div className="flex-1 overflow-y-auto overflow-x-hidden bg-white">
-            <div className="p-3">
-              {getTabContent()}
-            </div>
+        {/* Main Content with Scrolling */}
+        <div className="flex-1 bg-white px-6 py-4 overflow-y-auto" style={{ boxShadow: 'inset 0 0 0 1px rgba(0, 0, 0, 0.05)', background: 'linear-gradient(135deg, rgba(255,255,255,0.98) 0%, rgba(248,250,255,0.98) 100%)' }}>
+          <div className="flex flex-col min-h-full">
+            {getTabContent()}
           </div>
         </div>
       </div>

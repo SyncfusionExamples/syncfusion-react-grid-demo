@@ -5,40 +5,30 @@ import CodeViewer from "@/components/CodeViewer"
 export default function TradeView() {
   const content = {
     description: (
-      <div className="space-y-4">
-        <div className="space-y-2">
-          <h3 className="text-2xl font-bold text-gray-900 tracking-tight">Live Trade Data Dashboard</h3>
-          <p className="text-base text-gray-600 leading-relaxed font-medium">Real-time streaming with interactive controls</p>
-        </div>
+      <div className="space-y-3 text-left">
+        <h2 className="text-xl font-bold text-gray-900">Live Trade Data Dashboard</h2>
         
-        <p className="text-gray-700 text-base leading-relaxed border-l-4 border-amber-500 pl-4 py-3 bg-amber-50 rounded-r-lg">
-          Displays live trading data with color-coded change indicators and custom templates. Features start/stop controls, configurable feed delays, and dynamic row coloring based on price movements. Perfect for monitoring dashboards and real-time analytics.
+        <p className="text-gray-700 text-sm leading-relaxed">
+          Real-time trading data streaming with custom templates for financial metrics. Includes start/stop controls, configurable feed delay, color-coded indicators for price movements, and pagination (12 records per page).
         </p>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-          <div className="bg-gradient-to-br from-amber-50 to-orange-50 border-2 border-amber-300 rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow">
-            <div className="flex items-center gap-2 mb-3">
-              <span className="text-2xl">📈</span>
-              <h4 className="font-semibold text-amber-900 text-base">Features Enabled</h4>
-            </div>
-            <ul className="space-y-2 text-amber-800 text-sm">
-              <li className="flex items-center gap-2"><span className="text-amber-600 font-bold">✓</span> <span>Live data updates</span></li>
-              <li className="flex items-center gap-2"><span className="text-amber-600 font-bold">✓</span> <span>Custom templates</span></li>
-              <li className="flex items-center gap-2"><span className="text-amber-600 font-bold">✓</span> <span>Interactive controls</span></li>
-              <li className="flex items-center gap-2"><span className="text-amber-600 font-bold">✓</span> <span>Paging support</span></li>
+        <div className="space-y-3">
+          <div>
+            <h3 className="font-semibold text-gray-900 text-sm mb-2">Implementation</h3>
+            <ul className="list-disc list-inside space-y-1 text-gray-700 text-xs">
+              <li>Real-time data streaming</li>
+              <li>Custom column templates</li>
+              <li>Feed control buttons (start, stop, clear)</li>
+              <li>Configurable refresh interval</li>
+              <li>Color-coded change indicators</li>
             </ul>
           </div>
           
-          <div className="bg-gradient-to-br from-yellow-50 to-orange-50 border-2 border-yellow-300 rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow">
-            <div className="flex items-center gap-2 mb-3">
-              <span className="text-2xl">💡</span>
-              <h4 className="font-semibold text-yellow-900 text-base">Key Capabilities</h4>
-            </div>
-            <ul className="space-y-2 text-yellow-800 text-sm">
-              <li className="flex items-center gap-2"><span className="text-orange-700 font-bold">→</span> <span>Start/stop data feed</span></li>
-              <li className="flex items-center gap-2"><span className="text-orange-700 font-bold">→</span> <span>Adjustable feed delay</span></li>
-              <li className="flex items-center gap-2"><span className="text-orange-700 font-bold">→</span> <span>Color-coded indicators</span></li>
-            </ul>
+          <div>
+            <h3 className="font-semibold text-gray-900 text-sm mb-2">Capabilities</h3>
+            <p className="text-gray-700 text-xs">
+              Monitor financial data streams with pause/resume capability. Adjustable feed delay for network adaptation. Color indicators for market direction changes.
+            </p>
           </div>
         </div>
       </div>
@@ -48,7 +38,7 @@ export default function TradeView() {
         <h3 className="text-sm font-bold text-gray-900 mb-2">Implementation Steps</h3>
         
         <div className="bg-white rounded p-2 border-l-4 border-amber-500">
-          <h4 className="font-semibold text-gray-900 mb-1 text-xs">Step 1: Create Live Data Hook</h4>
+          <h4 className="text-left font-semibold text-gray-900 mb-1 text-xs">Step 1: Create Live Data Hook</h4>
           <pre className="bg-gray-900 text-gray-100 p-2 rounded text-xs overflow-auto text-left font-mono leading-tight">
 {`import { useState, useEffect } from 'react';
 
@@ -69,7 +59,7 @@ export function useLiveData() {
         </div>
 
         <div className="bg-white rounded p-2 border-l-4 border-amber-500">
-          <h4 className="font-semibold text-gray-900 mb-1 text-xs">Step 2: Connect to Grid</h4>
+          <h4 className="text-left font-semibold text-gray-900 mb-1 text-xs">Step 2: Connect to Grid</h4>
           <pre className="bg-gray-900 text-gray-100 p-2 rounded text-xs overflow-auto text-left font-mono leading-tight">
 {`import { Grid } from '@syncfusion/react-grid';
 
@@ -84,10 +74,8 @@ export function useLiveData() {
       </div>
     ),
     sample: (
-      <div className="h-full w-full flex flex-col">
-        <div className="flex-1 overflow-hidden w-full">
-          <LiveData />
-        </div>
+      <div className="w-full">
+        <LiveData />
       </div>
     ),
     code: (
@@ -97,7 +85,6 @@ export function useLiveData() {
             {
               filename: "LiveData.tsx",
               language: "typescript",
-              description: "Grid with real-time trade data streaming",
               code: `import { Grid, Columns, Column, type GridRef, type ColumnTemplateProps, TextAlign } from '@syncfusion/react-grid';
 import { Button, type IButton } from '@syncfusion/react-buttons';
 import { type INumericTextBox, NumericTextBox } from '@syncfusion/react-inputs';

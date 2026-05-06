@@ -8,7 +8,7 @@ export default function Navbar() {
     { href: '/data-source', label: 'Data Source' },
     { href: '/visual-template', label: 'Core Features' },
     { href: '/pagination', label: 'Paging' },
-    { href: '/virtualization', label: 'Virtual Scroll' },
+    { href: '/virtualization', label: 'Virtual Scrolling' },
     { href: '/livedata', label: 'Live Data' },
   ]
 

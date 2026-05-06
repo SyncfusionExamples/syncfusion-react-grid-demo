@@ -5,63 +5,31 @@ import CodeViewer from "@/components/CodeViewer"
 export default function VisualTemplate() {
   const content = {
     description: (
-      <div className="space-y-4">
-        <div className="space-y-2">
-          <h3 className="text-2xl font-bold text-gray-900 tracking-tight">Advanced Grid Features</h3>
-          <p className="text-base text-gray-600 leading-relaxed font-medium">Sorting, filtering, editing with employee avatars</p>
-        </div>
+      <div className="space-y-3 text-left">
+        <h2 className="text-xl font-bold text-gray-900">Advanced Grid Features</h2>
         
-        <p className="text-gray-700 text-base leading-relaxed border-l-4 border-purple-500 pl-4 py-3 bg-purple-50 rounded-r-lg">
-          Comprehensive demonstration of core grid features including multi-column sorting, checkbox filtering, inline editing with date pickers, and custom column templates with employee avatars. Includes toolbar actions and footer aggregates.
+        <p className="text-gray-700 text-sm leading-relaxed">
+          Comprehensive data management with multi-column sorting, checkbox filtering, inline editing, custom templates with avatars, field validation, and footer aggregates.
         </p>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-          <div className="bg-gradient-to-br from-blue-50 to-indigo-50 border-2 border-blue-300 rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow">
-            <div className="flex items-center gap-2 mb-3">
-              <span className="text-2xl">📊</span>
-              <h4 className="font-semibold text-blue-900 text-base">Sorting & Filtering</h4>
-            </div>
-            <p className="text-blue-800 text-sm leading-relaxed mb-2.5">Sort by one or multiple columns. Filter with checkboxes for efficient data discovery.</p>
-            <ul className="space-y-1.5 text-blue-800 text-sm">
-              <li className="flex items-center gap-2"><span className="text-blue-600 font-bold">✓</span> <span>Multi-column sorting</span></li>
-              <li className="flex items-center gap-2"><span className="text-blue-600 font-bold">✓</span> <span>Checkbox filtering</span></li>
+        <div className="space-y-3">
+          <div>
+            <h3 className="font-semibold text-gray-900 text-sm mb-2">Features</h3>
+            <ul className="list-disc list-inside space-y-1 text-gray-700 text-xs">
+              <li>Multi-column sorting</li>
+              <li>Checkbox filtering</li>
+              <li>Inline editing with validation</li>
+              <li>CRUD toolbar</li>
+              <li>Avatar templates</li>
+              <li>Footer aggregates</li>
             </ul>
           </div>
           
-          <div className="bg-gradient-to-br from-green-50 to-emerald-50 border-2 border-green-300 rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow">
-            <div className="flex items-center gap-2 mb-3">
-              <span className="text-2xl">✏️</span>
-              <h4 className="font-semibold text-green-900 text-base">Editing & CRUD</h4>
-            </div>
-            <p className="text-green-800 text-sm leading-relaxed mb-2.5">Edit records with validation. Add, delete with toolbar controls.</p>
-            <ul className="space-y-1.5 text-green-800 text-sm">
-              <li className="flex items-center gap-2"><span className="text-green-600 font-bold">✓</span> <span>Inline editing</span></li>
-              <li className="flex items-center gap-2"><span className="text-green-600 font-bold">✓</span> <span>Field validation</span></li>
-            </ul>
-          </div>
-          
-          <div className="bg-gradient-to-br from-purple-50 to-pink-50 border-2 border-purple-300 rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow">
-            <div className="flex items-center gap-2 mb-3">
-              <span className="text-2xl">🖼️</span>
-              <h4 className="font-semibold text-purple-900 text-base">Custom Templates</h4>
-            </div>
-            <p className="text-purple-800 text-sm leading-relaxed mb-2.5">Employee avatars and rich data formatting in columns.</p>
-            <ul className="space-y-1.5 text-purple-800 text-sm">
-              <li className="flex items-center gap-2"><span className="text-purple-600 font-bold">✓</span> <span>Avatar templates</span></li>
-              <li className="flex items-center gap-2"><span className="text-purple-600 font-bold">✓</span> <span>Date pickers</span></li>
-            </ul>
-          </div>
-          
-          <div className="bg-gradient-to-br from-orange-50 to-amber-50 border-2 border-orange-300 rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow">
-            <div className="flex items-center gap-2 mb-3">
-              <span className="text-2xl">📈</span>
-              <h4 className="font-semibold text-orange-900 text-base">Aggregates & Summary</h4>
-            </div>
-            <p className="text-orange-800 text-sm leading-relaxed mb-2.5">Footer totals and calculations across the dataset.</p>
-            <ul className="space-y-1.5 text-orange-800 text-sm">
-              <li className="flex items-center gap-2"><span className="text-orange-600 font-bold">✓</span> <span>Sum aggregates</span></li>
-              <li className="flex items-center gap-2"><span className="text-orange-600 font-bold">✓</span> <span>Footer totals</span></li>
-            </ul>
+          <div>
+            <h3 className="font-semibold text-gray-900 text-sm mb-2">Operations</h3>
+            <p className="text-gray-700 text-xs">
+              Multi-criteria filtering for record discovery. Inline editing with type and range validation. Custom templates for complex data. Toolbar actions for CRUD operations. Footer totals for aggregated data.
+            </p>
           </div>
         </div>
       </div>
@@ -71,7 +39,7 @@ export default function VisualTemplate() {
         <h3 className="text-sm font-bold text-gray-900 mb-2">Implementation Steps</h3>
         
         <div className="bg-white rounded p-2 border-l-4 border-blue-500">
-          <h4 className="font-semibold text-gray-900 mb-1 text-xs">Step 1: Import Core Features Dependency Styles</h4>
+          <h4 className="text-left font-semibold text-gray-900 mb-1 text-xs">Step 1: Import Core Features Dependency Styles</h4>
           <pre className="bg-gray-900 text-gray-100 p-2 rounded text-xs overflow-auto text-left font-mono leading-tight">
 {`@import '@syncfusion/react-base/styles/material.css';
 @import '@syncfusion/react-buttons/styles/material.css'; /* Toolbar */
@@ -86,7 +54,7 @@ export default function VisualTemplate() {
         </div>
 
         <div className="bg-white rounded p-2 border-l-4 border-blue-500">
-          <h4 className="font-semibold text-gray-900 mb-1 text-xs">Step 2: Enable Features</h4>
+          <h4 className="text-left font-semibold text-gray-900 mb-1 text-xs">Step 2: Enable Features</h4>
           <pre className="bg-gray-900 text-gray-100 p-2 rounded text-xs overflow-auto text-left font-mono leading-tight">
 {`import { employeeTaskPerformanceData, type EmployeeTaskPerformance } from "../app/models/data1";
 import { type ColumnProps, type EditSettings, EditType, type FilterSettings, Grid } from "@syncfusion/react-grid";
@@ -124,10 +92,8 @@ return (<Grid<EmployeeTaskPerformance> dataSource={data} columns={columns} heigh
       </div>
     ),
     sample: (
-      <div className="h-full w-full flex flex-col">
-        <div className="flex-1 overflow-hidden w-full">
-          <GridFeature />
-        </div>
+      <div className="w-full">
+        <GridFeature />
       </div>
     ),
     code: (
@@ -137,7 +103,6 @@ return (<Grid<EmployeeTaskPerformance> dataSource={data} columns={columns} heigh
             {
               filename: "GridFeature.tsx",
               language: "typescript",
-              description: "Core features Grid with sorting, filtering, and editing",
               code: `import { employeeTaskPerformanceData, type EmployeeTaskPerformance } from "../app/models/data1";
 import { type ColumnProps, type ColumnTemplateProps, type EditSettings, EditType, type FilterSettings, Grid } from "@syncfusion/react-grid";
 import { useState } from "react";
@@ -190,7 +155,6 @@ export default function GridFeature() {
             {
               filename: "grid-feature.css",
               language: "css",
-              description: "Styles of Core features Grid with sorting, filtering, and editing",
               code: `@import '@syncfusion/react-base/styles/material.css';
 @import '@syncfusion/react-buttons/styles/material.css'; /* Toolbar */
 @import '@syncfusion/react-calendars/styles/material.css'; /* DatePicker */
@@ -204,7 +168,6 @@ export default function GridFeature() {
             {
               filename: "data1.ts",
               language: "ts",
-              description: "Model Data of Core features Grid with sorting, filtering, and editing",
               code: `export interface EmployeeTaskPerformance {
   taskId: number;
   employeeName: string;

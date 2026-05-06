@@ -5,36 +5,31 @@ import CodeViewer from "@/components/CodeViewer"
 export default function Installation() {
   const content = {
     description: (
-      <div className="space-y-4">
-        <div className="space-y-2">
-          <h3 className="text-2xl font-bold text-gray-900 tracking-tight">Basic Grid Display</h3>
-          <p className="text-base text-gray-600 leading-relaxed font-medium">Render tabular data with default features</p>
-        </div>
+      <div className="space-y-3 text-left">
+        <h2 className="text-xl font-bold text-gray-900">Data Grid</h2>
         
-        <p className="text-gray-700 text-base leading-relaxed border-l-4 border-blue-500 pl-4 py-3 bg-blue-50 rounded-r-lg">
-          The basic grid component displays tabular data with a clean, professional layout. Perfect for initial setup and understanding Syncfusion Grid fundamentals. This example shows how to quickly render data with minimal configuration.
+        <p className="text-gray-700 text-sm leading-relaxed">
+          A <strong>Data Grid</strong> is a powerful UI component used to display and manage large sets of structured data 
+          in a tabular format (rows and columns). It is widely used in applications where users need to view, sort, filter, 
+          edit, and analyze data efficiently
         </p>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-          <div className="bg-gradient-to-br from-blue-50 to-indigo-50 border-2 border-blue-200 rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow">
-            <div className="flex items-center gap-2 mb-3">
-              <span className="text-2xl">📋</span>
-              <h4 className="font-semibold text-blue-900 text-base">Features Enabled</h4>
-            </div>
-            <ul className="space-y-2 text-blue-800 text-sm">
-              <li className="flex items-center gap-2"><span className="text-indigo-600 font-bold">✓</span> <span>Tabular data rendering</span></li>
-              <li className="flex items-center gap-2"><span className="text-indigo-600 font-bold">✓</span> <span>Column-based layout</span></li>
-              <li className="flex items-center gap-2"><span className="text-indigo-600 font-bold">✓</span> <span>Default selection (DOM)</span></li>
+        <div className="space-y-3">
+          <div>
+            <h3 className="font-semibold text-gray-900 text-sm mb-2">Key Characteristics:</h3>
+            <ul className="list-disc list-inside space-y-1 text-gray-700 text-xs">
+              <li><strong>Tabular Display:</strong> Organizes data into rows and columns for easy readability.</li>
+              <li><strong>High Performance:</strong> Handles large datasets with optimized rendering techniques.</li>
+              <li><strong>Interactive Features:</strong> Supports sorting, filtering, grouping, and editing.</li>
+              <li><strong>Data Binding:</strong> Connects to arrays, APIs, or databases.</li>
+              <li><strong>Customizable UI:</strong> Allows styling and templating of grid elements.</li>
             </ul>
           </div>
           
-          <div className="bg-gradient-to-br from-indigo-50 to-purple-50 border-2 border-indigo-200 rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow">
-            <div className="flex items-center gap-2 mb-3">
-              <span className="text-2xl">⚙️</span>
-              <h4 className="font-semibold text-indigo-900 text-base">Use Case</h4>
-            </div>
-            <p className="text-indigo-800 text-sm leading-relaxed">
-              Start here to understand Grid basics. Build a foundation before exploring advanced features like pagination, editing, and filtering.
+          <div>
+            <h3 className="font-semibold text-gray-900 text-sm mb-2">Use</h3>
+            <p className="text-gray-700 text-xs">
+              Foundation for Grid implementation. Prerequisite before advanced features like pagination, editing, and filtering.
             </p>
           </div>
         </div>
@@ -45,14 +40,14 @@ export default function Installation() {
         <h3 className="text-sm font-bold text-gray-900 mb-2">Installation Steps</h3>
         
         <div className="bg-white rounded p-2 border-l-4 border-green-500">
-          <h4 className="font-semibold text-gray-900 mb-1 text-xs">📥 Install Grid Package</h4>
+          <h4 className="text-left font-semibold text-gray-900 mb-1 text-xs">Install Grid Package</h4>
           <pre className="bg-gray-900 text-gray-100 p-2 rounded text-xs overflow-auto text-left font-mono leading-tight">
 {`npm install @syncfusion/react-grid`}
           </pre>
         </div>
 
         <div className="bg-white rounded p-2 border-l-4 border-purple-500">
-          <h4 className="font-semibold text-gray-900 mb-1 text-xs">🎨 Import Grid Styles</h4>
+          <h4 className="text-left font-semibold text-gray-900 mb-1 text-xs">Import Grid Styles</h4>
           <pre className="bg-gray-900 text-gray-100 p-2 rounded text-xs overflow-auto text-left font-mono leading-tight">
 {`@import '@syncfusion/react-base/styles/material.css';
 @import '@syncfusion/react-popups/styles/material.css'; // Spinner
@@ -62,7 +57,7 @@ export default function Installation() {
         </div>
 
         <div className="bg-white rounded p-2 border-l-4 border-orange-500">
-          <h4 className="font-semibold text-gray-900 mb-1 text-xs">📝 Create Your First Grid</h4>
+          <h4 className="text-left font-semibold text-gray-900 mb-1 text-xs">Create Your First Grid</h4>
           <pre className="bg-gray-900 text-gray-100 p-2 rounded text-xs overflow-auto text-left font-mono leading-tight">
 {`import { Grid } from "@syncfusion/react-grid";
 import { employeeTaskPerformanceData } from '@/app/models/data';
@@ -87,10 +82,8 @@ return (
       </div>
     ),
     sample: (
-      <div className="h-full w-full flex flex-col">
-        <div className="flex-1 overflow-hidden w-full">
-          <Grid />
-        </div>
+      <div className="w-full">
+        <Grid />
       </div>
     ),
     code: (
@@ -100,7 +93,6 @@ return (
             {
               filename: "Grid.tsx",
               language: "typescript",
-              description: "Basic Grid component setup with sample data",
               code: `import { Grid } from "@syncfusion/react-grid";
 import { employeeTaskPerformanceData } from '@/app/models/data';
 import { useState } from "react";
@@ -127,7 +119,6 @@ export default function Grid1() {
             {
               filename: "grid.css",
               language: "css",
-              description: "Grid styling for layout",
               code: `@import '@syncfusion/react-base/styles/material.css';
 @import '@syncfusion/react-popups/styles/material.css';
 @import '@syncfusion/react-grid/styles/material.css';
@@ -136,7 +127,6 @@ export default function Grid1() {
             {
               filename: "data.ts",
               language: "ts",
-              description: "Grid Model Data",
               code: `export interface EmployeeTaskPerformance {
   taskId: number;
   employeeName: string;
