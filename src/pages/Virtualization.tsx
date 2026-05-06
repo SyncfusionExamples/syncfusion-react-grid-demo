@@ -9,15 +9,15 @@ export default function Virtualization() {
         <div>
           <h2 className="text-2xl font-bold text-gray-900 mb-3" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "-0.3px", lineHeight: "1.4" }}>Virtual Scrolling for Large Datasets</h2>
           
-          <p className="text-gray-700 text-base leading-relaxed" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.3px", lineHeight: "1.6", fontWeight: "400" }}>
+          <p className="text-gray-700 text-sm leading-relaxed" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.3px", lineHeight: "1.6", fontWeight: "400" }}>
             Virtual scrolling enables efficient rendering of large datasets (10,000+ records) through DOM virtualization. Only the rows visible within the viewport, along with a small buffer, are rendered in the DOM, ensuring smooth and seamless scrolling performance. Multi‑column sorting is supported without impacting responsiveness.
           </p>
         </div>
         
         <div className="space-y-4 pt-2">
           <div>
-            <h2 className="font-semibold text-gray-900 text-base mb-3" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.2px", fontWeight: "700" }}>Architecture:</h2>
-            <ul className="list-disc list-inside space-y-2 text-gray-700 text-base" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.2px", lineHeight: "1.6" }}>
+            <h2 className="font-semibold text-gray-900 text-sm mb-3" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.2px", fontWeight: "700" }}>Architecture:</h2>
+            <ul className="list-disc list-inside space-y-2 text-gray-700 text-sm" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.2px", lineHeight: "1.6" }}>
               <li><span className="font-semibold text-gray-900">Row Virtualization:</span> Implements DOM virtualization at the row level to minimize rendering overhead.</li>
               <li><span className="font-semibold text-gray-900">Viewport Rendering:</span> Dynamically renders rows based on the visible viewport for optimal performance.</li>
               <li><span className="font-semibold text-gray-900">Sorting:</span> Supports sorting across multiple columns with consistent responsiveness.</li>
@@ -27,8 +27,8 @@ export default function Virtualization() {
           </div>
           
           <div>
-            <h2 className="font-semibold text-gray-900 text-base mb-3" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.2px", fontWeight: "700" }}>Performance Characteristics</h2>
-            <p className="text-gray-700 text-base" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.2px", lineHeight: "1.6", fontWeight: "400" }}>
+            <h2 className="font-semibold text-gray-900 text-sm mb-3" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.2px", fontWeight: "700" }}>Performance Characteristics</h2>
+            <p className="text-gray-700 text-sm" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.2px", lineHeight: "1.6", fontWeight: "400" }}>
               This approach maintains constant memory usage regardless of dataset size by keeping only the visible rows and a small buffer in the DOM, resulting in a minimal DOM footprint. As a result, scrolling remains smooth and responsive, delivering consistent performance even at high scroll velocities without any noticeable degradation.
             </p>
           </div>
@@ -40,10 +40,10 @@ export default function Virtualization() {
         <h2 className="text-base font-bold text-gray-900 mb-2">Implementation Steps</h2>
         
         <div className="bg-white rounded p-2 border-l-4 border-red-500">
-          <h4 className="text-left font-semibold text-gray-900 mb-1 text-base">Step 1: Configure Virtual Scrolling</h4>
-          <p className="text-base text-gray-600 mt-1">To enable row virtualization for smooth scrolling with large datasets, set <strong>virtualizationSettings.type</strong> as VirtualDomType.Row.</p>
+          <h4 className="text-left font-semibold text-gray-900 mb-1 text-sm">Step 1: Configure Virtual Scrolling</h4>
+          <p className="text-sm text-gray-600 mt-1 text-left">To enable row virtualization for smooth scrolling with large datasets, set "virtualizationSettings.type" as "VirtualDomType.Row".</p>
           <br/>
-          <pre className="bg-gray-900 text-gray-100 p-4 rounded text-base overflow-auto flex-1 border border-gray-700 leading-relaxed text-left font-mono whitespace-pre-wrap break-words">
+          <pre className="bg-gray-900 text-gray-100 p-4 rounded text-sm overflow-auto flex-1 border border-gray-700 leading-relaxed text-left font-mono whitespace-pre-wrap break-words">
 {`import { useState, useCallback } from 'react';
 import { Grid, Columns, Column, ColumnType, VirtualDomType } from '@syncfusion/react-grid';
 import { type EmployeeData, generateEmployeeData } from '@/app/models/data2';
@@ -63,10 +63,10 @@ height={gridHeight}/>`}
         </div>
 
         <div className="bg-white rounded p-2 border-l-4 border-red-500">
-          <h4 className="text-left font-semibold text-gray-900 mb-1 text-base">Step 2: Enable Column Virtualization</h4>
-          <p className="text-base text-gray-600 mt-1">To enable row virtualization for smooth scrolling with large datasets, set <strong>virtualizationSettings.type</strong> as <strong>VirtualDomType.Column.</strong></p>
+          <h4 className="text-left font-semibold text-gray-900 mb-1 text-sm">Step 2: Enable Column Virtualization</h4>
+          <p className="text-sm text-gray-600 mt-1 text-left">To enable row virtualization for smooth scrolling with large datasets, set "virtualizationSettings.type" as "VirtualDomType.Column"."</p>
           <br/>
-          <pre className="bg-gray-900 text-gray-100 p-4 rounded text-base overflow-auto flex-1 border border-gray-700 leading-relaxed text-left font-mono whitespace-pre-wrap break-words">
+          <pre className="bg-gray-900 text-gray-100 p-4 rounded text-sm overflow-auto flex-1 border border-gray-700 leading-relaxed text-left font-mono whitespace-pre-wrap break-words">
 {`import { useState, useCallback } from 'react';
 import { Grid, Columns, Column, ColumnType, VirtualDomType } from '@syncfusion/react-grid';
 import { type EmployeeData, generateEmployeeData } from '@/app/models/data2';

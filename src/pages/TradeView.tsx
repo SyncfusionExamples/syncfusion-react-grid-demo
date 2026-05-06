@@ -9,15 +9,15 @@ export default function TradeView() {
         <div>
           <h2 className="text-2xl font-bold text-gray-900 mb-3" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "-0.3px", lineHeight: "1.4" }}>Live Trade Data</h2>
           
-          <p className="text-gray-700 text-base leading-relaxed" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.3px", lineHeight: "1.6", fontWeight: "400" }}>
+          <p className="text-gray-700 text-sm leading-relaxed" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.3px", lineHeight: "1.6", fontWeight: "400" }}>
             The Live Trade Data Grid displays real‑time trading data using custom templates designed for financial metrics. It includes controls to start, stop, and clear the data feed, along with a configurable refresh delay. Color‑coded indicators visually highlight price movements.
           </p>
         </div>
         
         <div className="space-y-4 pt-2">
           <div>
-            <h2 className="font-semibold text-gray-900 text-base mb-3" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.2px", fontWeight: "700" }}>Configurable Data Actions and Insights:</h2>
-            <ul className="list-disc list-inside space-y-2 text-gray-700 text-base" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.2px", lineHeight: "1.6" }}>
+            <h2 className="font-semibold text-gray-900 text-sm mb-3" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.2px", fontWeight: "700" }}>Configurable Data Actions and Insights:</h2>
+            <ul className="list-disc list-inside space-y-2 text-gray-700 text-sm" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.2px", lineHeight: "1.6" }}>
               <li><span className="font-semibold text-gray-900">Real-time Streaming:</span> Live data streaming capabilities.</li>
               <li><span className="font-semibold text-gray-900">Custom Templates:</span> Financial metric templates.</li>
               <li><span className="font-semibold text-gray-900">Control Buttons:</span> Start, stop, and clear actions.</li>
@@ -27,8 +27,8 @@ export default function TradeView() {
           </div>
           
           <div>
-            <h2 className="font-semibold text-gray-900 text-base mb-3" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.2px", fontWeight: "700" }}>Capabilities</h2>
-            <p className="text-gray-700 text-base" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.2px", lineHeight: "1.6", fontWeight: "400" }}>
+            <h2 className="font-semibold text-gray-900 text-sm mb-3" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.2px", fontWeight: "700" }}>Functional Overview</h2>
+            <p className="text-gray-700 text-sm" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.2px", lineHeight: "1.6", fontWeight: "400" }}>
               Enables effective monitoring of live trade data with pause and resume functionality. Visual indicators provide immediate insight into market direction and price movement trends.
             </p>
           </div>
@@ -40,8 +40,9 @@ export default function TradeView() {
         <h2 className="text-base font-bold text-gray-900 mb-2">Implementation Steps</h2>
         
         <div className="bg-white rounded p-2 border-l-4 border-amber-500">
-          <h4 className="text-left font-semibold text-gray-900 mb-1 text-base">Step 1: Create Live Data Hook</h4>
-          <pre className="bg-gray-900 text-gray-100 p-4 rounded text-base overflow-auto flex-1 border border-gray-700 leading-relaxed text-left font-mono whitespace-pre-wrap break-words">
+          <h4 className="text-left font-semibold text-gray-900 mb-1 text-sm">Step 1: Create a live data hook and dynamically update cell values using the Data Grid.</h4>
+          <br/>
+          <pre className="bg-gray-900 text-gray-100 p-4 rounded text-sm overflow-auto flex-1 border border-gray-700 leading-relaxed text-left font-mono whitespace-pre-wrap break-words">
 {`import { useState, useEffect } from 'react';
 
 export function useLiveData() {
@@ -49,7 +50,8 @@ export function useLiveData() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setData(prev => [newRow(), ...prev].slice(0, 100));
+      // Updates a specific cell’s value in a row identified by its primary key.
+      gridRef.current?.setCellValue?.(row.id, 'change', newChange, true);
     }, 1000);
     
     return () => clearInterval(interval);
@@ -61,11 +63,12 @@ export function useLiveData() {
         </div>
 
         <div className="bg-white rounded p-2 border-l-4 border-amber-500">
-          <h4 className="text-left font-semibold text-gray-900 mb-1 text-base">Step 2: Connect to Grid</h4>
-          <pre className="bg-gray-900 text-gray-100 p-4 rounded text-base overflow-auto flex-1 border border-gray-700 leading-relaxed text-left font-mono whitespace-pre-wrap break-words">
+          <h4 className="text-left font-semibold text-gray-900 mb-1 text-sm">Step 2: Bind live data to the Data Grid using the "dataSource" property.</h4>
+          <br/>
+          <pre className="bg-gray-900 text-gray-100 p-4 rounded text-sm overflow-auto flex-1 border border-gray-700 leading-relaxed text-left font-mono whitespace-pre-wrap break-words">
 {`import { Grid } from '@syncfusion/react-grid';
 
-<Grid dataSource={liveData}>
+<Grid ref={gridRef} dataSource={liveData}>
   <Columns>
     <Column field='ticker' headerText='Ticker' width='80' />
     <Column field='price' headerText='Price' width='100' />

@@ -18,7 +18,7 @@ export default function Navbar() {
         {/* Brand Section */}
         <div className="flex items-center gap-2 flex-shrink-0 px-3">
           <div className="w-1.5 h-4 bg-gradient-to-b from-blue-600 to-blue-500 rounded-sm"></div>
-          <span className="text-base font-600 text-gray-900 tracking-tight whitespace-nowrap">Syncfusion React Grid</span>
+          <span className="text-base font-600 text-gray-900 tracking-tight whitespace-nowrap font-bold">Syncfusion React Grid</span>
         </div>
         
         {/* Navigation Items - Full Width */}
@@ -27,7 +27,7 @@ export default function Navbar() {
             <Link
               key={item.href}
               to={item.href}
-              className={`px-3 py-3 text-base font-500 transition-all duration-150 whitespace-nowrap flex-shrink-0 border-b-2 ${
+              className={`px-3 py-3 text-sm font-500 transition-all duration-150 whitespace-nowrap flex-shrink-0 border-b-2 ${
                 location.pathname === item.href
                   ? 'border-blue-600 text-blue-600 bg-blue-50'
                   : 'border-transparent text-gray-600 hover:text-gray-900 hover:bg-gray-50'

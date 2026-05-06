@@ -164,6 +164,6 @@ body::-webkit-scrollbar {
   }
 
   .code-block {
-    @apply bg-gray-900 text-gray-100 p-4 rounded-lg text-base overflow-auto font-mono leading-relaxed text-left;
+    @apply bg-gray-900 text-gray-100 p-4 rounded-lg text-sm overflow-auto font-mono leading-relaxed text-left;
   }
 }
