@@ -5,28 +5,30 @@ import CodeViewer from "@/components/CodeViewer"
 export default function TradeView() {
   const content = {
     description: (
-      <div className="space-y-3 text-left">
-        <h2 className="text-xl font-bold text-gray-900">Live Trade Data Dashboard</h2>
+      <div className="space-y-5 text-left">
+        <div>
+          <h2 className="text-2xl font-bold text-gray-900 mb-3" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "-0.3px", lineHeight: "1.4" }}>Live Trade Data Dashboard</h2>
+          
+          <p className="text-gray-700 text-base leading-relaxed" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.3px", lineHeight: "1.6", fontWeight: "400" }}>
+            Real-time trading data streaming with custom templates for financial metrics. Includes start/stop controls, configurable feed delay, color-coded indicators for price movements, and pagination (12 records per page).
+          </p>
+        </div>
         
-        <p className="text-gray-700 text-sm leading-relaxed">
-          Real-time trading data streaming with custom templates for financial metrics. Includes start/stop controls, configurable feed delay, color-coded indicators for price movements, and pagination (12 records per page).
-        </p>
-        
-        <div className="space-y-3">
+        <div className="space-y-4 pt-2">
           <div>
-            <h3 className="font-semibold text-gray-900 text-sm mb-2">Implementation</h3>
-            <ul className="list-disc list-inside space-y-1 text-gray-700 text-xs">
-              <li>Real-time data streaming</li>
-              <li>Custom column templates</li>
-              <li>Feed control buttons (start, stop, clear)</li>
-              <li>Configurable refresh interval</li>
-              <li>Color-coded change indicators</li>
+            <h2 className="font-semibold text-gray-900 text-base mb-3" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.2px", fontWeight: "700" }}>Implementation:</h2>
+            <ul className="list-disc list-inside space-y-2 text-gray-700 text-base" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.2px", lineHeight: "1.6" }}>
+              <li><span className="font-semibold text-gray-900">Real-time Streaming:</span> Live data streaming capabilities</li>
+              <li><span className="font-semibold text-gray-900">Custom Templates:</span> Financial metric templates</li>
+              <li><span className="font-semibold text-gray-900">Control Buttons:</span> Start, stop, and clear actions</li>
+              <li><span className="font-semibold text-gray-900">Configurable Delay:</span> Adjustable refresh interval</li>
+              <li><span className="font-semibold text-gray-900">Color Indicators:</span> Price movement visualization</li>
             </ul>
           </div>
           
           <div>
-            <h3 className="font-semibold text-gray-900 text-sm mb-2">Capabilities</h3>
-            <p className="text-gray-700 text-xs">
+            <h2 className="font-semibold text-gray-900 text-base mb-3" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.2px", fontWeight: "700" }}>Capabilities</h2>
+            <p className="text-gray-700 text-base" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.2px", lineHeight: "1.6", fontWeight: "400" }}>
               Monitor financial data streams with pause/resume capability. Adjustable feed delay for network adaptation. Color indicators for market direction changes.
             </p>
           </div>
@@ -35,7 +37,7 @@ export default function TradeView() {
     ),
     steps: (
       <div className="space-y-2">
-        <h3 className="text-sm font-bold text-gray-900 mb-2">Implementation Steps</h3>
+        <h2 className="text-sm font-bold text-gray-900 mb-2">Implementation Steps</h2>
         
         <div className="bg-white rounded p-2 border-l-4 border-amber-500">
           <h4 className="text-left font-semibold text-gray-900 mb-1 text-xs">Step 1: Create Live Data Hook</h4>
