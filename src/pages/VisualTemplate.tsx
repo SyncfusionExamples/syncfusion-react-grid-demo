@@ -28,9 +28,9 @@ export default function VisualTemplate() {
           </div>
           
           <div>
-            <h2 className="font-semibold text-gray-900 text-base mb-3" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.2px", fontWeight: "700" }}>Operations</h2>
+            <h2 className="font-semibold text-gray-900 text-base mb-3" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.2px", fontWeight: "700" }}>Supported Operations</h2>
             <p className="text-gray-700 text-base" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.2px", lineHeight: "1.6", fontWeight: "400" }}>
-              Multi-criteria filtering for record discovery. Inline editing with type and range validation. Custom templates for complex data. Toolbar actions for CRUD operations. Footer totals for aggregated data.
+              The Data Grid supports multi‑criteria filtering for efficient record discovery, inline editing with type and range validation, and custom templates for complex data visualization. Toolbar actions enable full CRUD functionality, while footer aggregates provide summary calculations for enhanced data insights.
             </p>
           </div>
         </div>

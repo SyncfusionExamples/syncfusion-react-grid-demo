@@ -22,16 +22,16 @@ export default function Installation() {
             <ul className="list-disc list-inside space-y-2 text-gray-700 text-base" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.2px", lineHeight: "1.6" }}>
               <li><span className="font-semibold text-gray-900">Tabular Display:</span> Organizes data into rows and columns for easy readability.</li>
               <li><span className="font-semibold text-gray-900">High Performance:</span> Handles large datasets with optimized rendering techniques.</li>
-              <li><span className="font-semibold text-gray-900">Interactive Features:</span> Supports sorting, filtering, grouping, and editing.</li>
+              <li><span className="font-semibold text-gray-900">Interactive Features:</span> Supports sorting, filtering, and editing.</li>
               <li><span className="font-semibold text-gray-900">Data Binding:</span> Connects to arrays, APIs, or databases.</li>
               <li><span className="font-semibold text-gray-900">Customizable UI:</span> Allows styling and templating of grid elements.</li>
             </ul>
           </div>
           
           <div>
-            <h2 className="font-semibold text-gray-900 text-base mb-3" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.2px", fontWeight: "700" }}>Use</h2>
+            <h2 className="font-semibold text-gray-900 text-base mb-3" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.2px", fontWeight: "700" }}>Functional Overview</h2>
             <p className="text-gray-700 text-base" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.2px", lineHeight: "1.6", fontWeight: "400" }}>
-              Foundation for Grid implementation. Prerequisite before advanced features like pagination, editing, and filtering.
+              The Data Grid acts as the foundational component for structured data presentation. It enables consistent and efficient data rendering and serves as a prerequisite for implementing advanced features such as pagination, editing workflows, filtering, sorting, and aggregation.
             </p>
           </div>
         </div>

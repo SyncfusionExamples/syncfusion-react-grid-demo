@@ -18,18 +18,18 @@ export default function DataSource() {
           <div>
             <h2 className="font-semibold text-gray-900 text-base mb-3" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.2px", fontWeight: "700" }}>Key Characteristics:</h2>
             <ul className="list-disc list-inside space-y-2 text-gray-700 text-base" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.2px", lineHeight: "1.6" }}>
-              <li><span className="font-semibold text-gray-900">Tabular Display:</span> Organizes data into rows and columns for easy readability.</li>
-              <li><span className="font-semibold text-gray-900">High Performance:</span> Handles large datasets with optimized rendering techniques.</li>
-              <li><span className="font-semibold text-gray-900">Interactive Features:</span> Supports sorting, filtering, grouping, and editing.</li>
-              <li><span className="font-semibold text-gray-900">Data Binding:</span> Connects to arrays, APIs, or databases.</li>
-              <li><span className="font-semibold text-gray-900">Customizable UI:</span> Allows styling and templating of grid elements.</li>
+              <li><span className="font-semibold text-gray-900">Structured Tabular Layout:</span>  Displays database records in rows and columns for clear and organized data presentation.</li>
+              <li><span className="font-semibold text-gray-900">Scalable Performance:</span> Designed to handle large data volumes through server‑side processing and virtualized rendering.</li>
+              <li><span className="font-semibold text-gray-900">Advanced Interactivity:</span>  Supports server‑side sorting, filtering, grouping, and editing operations.</li>
+              <li><span className="font-semibold text-gray-900">Backend and Database Support:</span>  Integrates seamlessly with any backend technology and database through APIs.</li>
+              <li><span className="font-semibold text-gray-900">Customizable UI:</span> Enables flexible UI customization using templates for badges, metrics, and computed values.</li>
             </ul>
           </div>
           
           <div>
-            <h2 className="font-semibold text-gray-900 text-base mb-3" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.2px", fontWeight: "700" }}>Use</h2>
+            <h2 className="font-semibold text-gray-900 text-base mb-3" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.2px", fontWeight: "700" }}>Server‑Side Data Management</h2>
             <p className="text-gray-700 text-base" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.2px", lineHeight: "1.6", fontWeight: "400" }}>
-              Foundation for Grid implementation. Prerequisite before advanced features like pagination, editing, and filtering.
+              The Data Grid can integrate with all backend services and databases, enabling efficient server‑side data retrieval and processing. It forms the foundation for advanced grid capabilities such as pagination, editing workflows, filtering, sorting, and aggregations, ensuring consistent behavior and scalability across diverse data sources.
             </p>
           </div>
         </div>
@@ -49,7 +49,7 @@ export default function DataSource() {
         </div>
 
         <div className="bg-white rounded p-2 border-l-4 border-teal-500">
-          <h4 className="text-left font-semibold text-gray-900 mb-1 text-base">Step 2: Create Data Service</h4>
+          <h4 className="text-left font-semibold text-gray-900 mb-1 text-base">Step 2: Connect the backend API using the DataManager to enable seamless server‑side data operations.</h4>
           <pre className="bg-gray-900 text-gray-100 p-4 rounded text-base overflow-auto flex-1 border border-gray-700 leading-relaxed text-left font-mono whitespace-pre-wrap break-words" style={{ fontFamily: 'monospace' }}>
 {`import { DataManager, Query, UrlAdaptor } from '@syncfusion/react-data';
 
@@ -62,7 +62,7 @@ const data = new DataManager({
         </div>
 
         <div className="bg-white rounded p-2 border-l-4 border-teal-500">
-          <h4 className="text-left font-semibold text-gray-900 mb-1 text-base">Step 3: Configure Grid for Server-Side Data</h4>
+          <h4 className="text-left font-semibold text-gray-900 mb-1 text-base">Step 3: Configure the Data Grid for server‑side data using the <strong>dataSource</strong> property, and enable virtual scrolling by setting <strong>virtualizationSettings.scrollMode</strong> to <strong>"Virtual" </strong>for improved performance.</h4>
           <pre className="bg-gray-900 text-gray-100 p-4 rounded text-base overflow-auto flex-1 border border-gray-700 leading-relaxed text-left font-mono whitespace-pre-wrap break-words" style={{ fontFamily: 'monospace' }}>
 {`import { Grid, Columns, Column, ScrollMode, type VirtualizationSettings } from '@syncfusion/react-grid';
 

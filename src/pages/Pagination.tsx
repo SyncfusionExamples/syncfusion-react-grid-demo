@@ -10,7 +10,7 @@ export default function Pagination() {
           <h2 className="text-2xl font-bold text-gray-900 mb-3" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "-0.3px", lineHeight: "1.4" }}>Pagination with Editing and Aggregates</h2>
           
           <p className="text-gray-700 text-base leading-relaxed" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.3px", lineHeight: "1.6", fontWeight: "400" }}>
-            Integrates client-side pagination with CRUD operations and data aggregation. 10 records per page with inline editing, field validation, toolbar actions, and footer sum aggregates.
+            This Data Grid configuration combines client‑side pagination with full CRUD functionality and data aggregation. By default, the grid displays 12 records per page, and the page size can be customized based on application requirements. In this demo, the grid is configured to display 30 records per page. It supports inline editing with built‑in validation, provides toolbar actions for data operations, and includes footer‑level aggregate calculations to deliver meaningful summary insights.
           </p>
         </div>
         
@@ -18,7 +18,7 @@ export default function Pagination() {
           <div>
             <h2 className="font-semibold text-gray-900 text-base mb-3" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.2px", fontWeight: "700" }}>Key Features:</h2>
             <ul className="list-disc list-inside space-y-2 text-gray-700 text-base" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.2px", lineHeight: "1.6" }}>
-              <li><span className="font-semibold text-gray-900">Pagination:</span> 10 records per page with navigation controls</li>
+              <li><span className="font-semibold text-gray-900">Pagination:</span> 30 records per page with navigation controls</li>
               <li><span className="font-semibold text-gray-900">Inline Editing:</span> Edit data directly in grid cells with validation</li>
               <li><span className="font-semibold text-gray-900">CRUD Operations:</span> Add, Edit, Delete toolbar actions</li>
               <li><span className="font-semibold text-gray-900">Data Aggregation:</span> Footer sum aggregates and calculations</li>
@@ -27,9 +27,9 @@ export default function Pagination() {
           </div>
           
           <div>
-            <h2 className="font-semibold text-gray-900 text-base mb-3" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.2px", fontWeight: "700" }}>Validation</h2>
+            <h2 className="font-semibold text-gray-900 text-base mb-3" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.2px", fontWeight: "700" }}>Data Validation</h2>
             <p className="text-gray-700 text-base" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.2px", lineHeight: "1.6", fontWeight: "400" }}>
-              Type enforcement, range constraints, primary key uniqueness, minimum length requirements, date picker for temporal fields.
+              The Data Grid enforces comprehensive validation rules, including data type enforcement, range constraints, primary key uniqueness, and minimum length requirements. Date fields are validated using date picker editors to ensure accurate and consistent temporal data entry.
             </p>
           </div>
         </div>

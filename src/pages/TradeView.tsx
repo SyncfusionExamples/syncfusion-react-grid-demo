@@ -7,10 +7,10 @@ export default function TradeView() {
     description: (
       <div className="space-y-5 text-left">
         <div>
-          <h2 className="text-2xl font-bold text-gray-900 mb-3" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "-0.3px", lineHeight: "1.4" }}>Live Trade Data Dashboard</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mb-3" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "-0.3px", lineHeight: "1.4" }}>Live Trade Data</h2>
           
           <p className="text-gray-700 text-base leading-relaxed" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.3px", lineHeight: "1.6", fontWeight: "400" }}>
-            Real-time trading data streaming with custom templates for financial metrics. Includes start/stop controls, configurable feed delay, color-coded indicators for price movements, and pagination (12 records per page).
+            The Live Trade Data Grid displays real‑time trading data using custom templates designed for financial metrics. It includes controls to start, stop, and clear the data feed, along with a configurable refresh delay. Color‑coded indicators visually highlight price movements.
           </p>
         </div>
         
@@ -18,18 +18,18 @@ export default function TradeView() {
           <div>
             <h2 className="font-semibold text-gray-900 text-base mb-3" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.2px", fontWeight: "700" }}>Configurable Data Actions and Insights:</h2>
             <ul className="list-disc list-inside space-y-2 text-gray-700 text-base" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.2px", lineHeight: "1.6" }}>
-              <li><span className="font-semibold text-gray-900">Real-time Streaming:</span> Live data streaming capabilities</li>
-              <li><span className="font-semibold text-gray-900">Custom Templates:</span> Financial metric templates</li>
-              <li><span className="font-semibold text-gray-900">Control Buttons:</span> Start, stop, and clear actions</li>
-              <li><span className="font-semibold text-gray-900">Configurable Delay:</span> Adjustable refresh interval</li>
-              <li><span className="font-semibold text-gray-900">Color Indicators:</span> Price movement visualization</li>
+              <li><span className="font-semibold text-gray-900">Real-time Streaming:</span> Live data streaming capabilities.</li>
+              <li><span className="font-semibold text-gray-900">Custom Templates:</span> Financial metric templates.</li>
+              <li><span className="font-semibold text-gray-900">Control Buttons:</span> Start, stop, and clear actions.</li>
+              <li><span className="font-semibold text-gray-900">Configurable Delay:</span> Adjustable refresh interval.</li>
+              <li><span className="font-semibold text-gray-900">Color Indicators:</span> Price movement visualization.</li>
             </ul>
           </div>
           
           <div>
             <h2 className="font-semibold text-gray-900 text-base mb-3" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.2px", fontWeight: "700" }}>Capabilities</h2>
             <p className="text-gray-700 text-base" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.2px", lineHeight: "1.6", fontWeight: "400" }}>
-              Monitor financial data streams with pause/resume capability. Adjustable feed delay for network adaptation. Color indicators for market direction changes.
+              Enables effective monitoring of live trade data with pause and resume functionality. Visual indicators provide immediate insight into market direction and price movement trends.
             </p>
           </div>
         </div>

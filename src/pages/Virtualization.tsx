@@ -10,7 +10,7 @@ export default function Virtualization() {
           <h2 className="text-2xl font-bold text-gray-900 mb-3" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "-0.3px", lineHeight: "1.4" }}>Virtual Scrolling for Large Datasets</h2>
           
           <p className="text-gray-700 text-base leading-relaxed" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.3px", lineHeight: "1.6", fontWeight: "400" }}>
-            DOM virtualization for efficient rendering of 10,000+ records. Renders only visible rows with buffer rows for seamless scrolling. Multi-column sorting with consistent performance.
+            Virtual scrolling enables efficient rendering of large datasets (10,000+ records) through DOM virtualization. Only the rows visible within the viewport, along with a small buffer, are rendered in the DOM, ensuring smooth and seamless scrolling performance. Multi‑column sorting is supported without impacting responsiveness.
           </p>
         </div>
         
@@ -18,18 +18,18 @@ export default function Virtualization() {
           <div>
             <h2 className="font-semibold text-gray-900 text-base mb-3" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.2px", fontWeight: "700" }}>Architecture:</h2>
             <ul className="list-disc list-inside space-y-2 text-gray-700 text-base" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.2px", lineHeight: "1.6" }}>
-              <li><span className="font-semibold text-gray-900">Row Virtualization:</span> DOM virtualization at row level</li>
-              <li><span className="font-semibold text-gray-900">Viewport Rendering:</span> Smart viewport-based rendering</li>
-              <li><span className="font-semibold text-gray-900">Sorting:</span> Multi-column sorting support</li>
-              <li><span className="font-semibold text-gray-900">Templates:</span> Custom column templates</li>
-              <li><span className="font-semibold text-gray-900">Scroll Handling:</span> Debounced scroll event optimization</li>
+              <li><span className="font-semibold text-gray-900">Row Virtualization:</span> Implements DOM virtualization at the row level to minimize rendering overhead.</li>
+              <li><span className="font-semibold text-gray-900">Viewport Rendering:</span> Dynamically renders rows based on the visible viewport for optimal performance.</li>
+              <li><span className="font-semibold text-gray-900">Sorting:</span> Supports sorting across multiple columns with consistent responsiveness.</li>
+              <li><span className="font-semibold text-gray-900">Templates:</span> Allows flexible column templates for complex and rich data presentation.</li>
+              <li><span className="font-semibold text-gray-900">Scroll Handling:</span> Uses debounced scroll events to reduce unnecessary reflows and improve scroll efficiency.</li>
             </ul>
           </div>
           
           <div>
-            <h2 className="font-semibold text-gray-900 text-base mb-3" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.2px", fontWeight: "700" }}>Performance</h2>
+            <h2 className="font-semibold text-gray-900 text-base mb-3" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.2px", fontWeight: "700" }}>Performance Characteristics</h2>
             <p className="text-gray-700 text-base" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.2px", lineHeight: "1.6", fontWeight: "400" }}>
-              Constant memory usage independent of dataset size. Only viewport rows in DOM. Smooth scrolling at high velocities without degradation.
+              This approach maintains constant memory usage regardless of dataset size by keeping only the visible rows and a small buffer in the DOM, resulting in a minimal DOM footprint. As a result, scrolling remains smooth and responsive, delivering consistent performance even at high scroll velocities without any noticeable degradation.
             </p>
           </div>
         </div>
@@ -64,7 +64,7 @@ height={gridHeight}/>`}
 
         <div className="bg-white rounded p-2 border-l-4 border-red-500">
           <h4 className="text-left font-semibold text-gray-900 mb-1 text-base">Step 2: Enable Column Virtualization</h4>
-          <p className="text-base text-gray-600 mt-1">To enable row virtualization for smooth scrolling with large datasets, set <strong>virtualizationSettings.type</strong> as VirtualDomType.Column.</p>
+          <p className="text-base text-gray-600 mt-1">To enable row virtualization for smooth scrolling with large datasets, set <strong>virtualizationSettings.type</strong> as <strong>VirtualDomType.Column.</strong></p>
           <br/>
           <pre className="bg-gray-900 text-gray-100 p-4 rounded text-base overflow-auto flex-1 border border-gray-700 leading-relaxed text-left font-mono whitespace-pre-wrap break-words">
 {`import { useState, useCallback } from 'react';
