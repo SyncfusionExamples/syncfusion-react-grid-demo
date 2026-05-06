@@ -60,11 +60,12 @@ export default function SectionTabLayout({
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`px-4 py-3 text-sm font-500 transition-colors duration-150 text-left border-l-4 ${
+              className={`px-4 py-3 transition-colors duration-150 text-left border-l-4 ${
                 activeTab === tab.id
                   ? 'bg-blue-50 text-blue-700 border-l-blue-600'
-                  : 'text-gray-600 border-l-transparent hover:bg-gray-100'
+                  : 'text-gray-700 border-l-transparent hover:bg-gray-100'
               }`}
+              style={{ fontSize: 'var(--fs-tab)', fontWeight: 500 }}
               title={tab.label}
             >
               {tab.label}
@@ -72,11 +73,9 @@ export default function SectionTabLayout({
           ))}
         </div>
 
-        {/* Main Content with Scrolling */}
+        {/* Main Content with Scrolling (single scroller) */}
         <div className="flex-1 bg-white px-6 py-4 overflow-y-auto" style={{ boxShadow: 'inset 0 0 0 1px rgba(0, 0, 0, 0.05)', background: 'linear-gradient(135deg, rgba(255,255,255,0.98) 0%, rgba(248,250,255,0.98) 100%)' }}>
-          <div className="flex flex-col min-h-full">
-            {getTabContent()}
-          </div>
+          {getTabContent()}
         </div>
       </div>
     </div>

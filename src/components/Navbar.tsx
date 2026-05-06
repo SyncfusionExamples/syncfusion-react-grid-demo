@@ -22,7 +22,7 @@ export default function Navbar() {
         </div>
         
         {/* Navigation Items - Full Width */}
-        <div className="flex items-center flex-1 overflow-x-auto overflow-y-hidden">
+        <div className="flex items-center justify-end flex-1 overflow-x-auto overflow-y-hidden">
           {navItems.map((item) => (
             <Link
               key={item.href}
