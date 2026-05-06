@@ -78,7 +78,7 @@ return (<Grid<EmployeeTaskPerformance> dataSource={data} columns={columns} pageS
             {
               filename: "GridPagination.tsx",
               language: "typescript",
-              code: `import { type EmployeeTaskPerformance, employeeTaskPerformanceData } from "@/app/models/grid-data";
+              code: `import { type EmployeeTaskPerformance, employeeTaskPerformanceData } from "@/app/models/employee-task-data";
 import { type ColumnProps, type EditSettings, EditType, Grid } from "@syncfusion/react-grid";
 import { useState } from "react";
 import '../app/styles/grid-pagination.css';
@@ -118,7 +118,7 @@ const [data] = useState(employeeTaskPerformanceData);
 return (<Grid<EmployeeTaskPerformance> dataSource={data} columns={columns} toolbar={toolbarSettings} editSettings={editSettings} sortSettings={sortSettings} aggregates={aggregateColumns} pageSettings={pageSettings} />)`
             },
             {
-              filename: "grid-data.ts",
+              filename: "employee-task-data.ts",
               language: "ts",
               code: `export interface EmployeeTaskPerformance {
   taskId: number;

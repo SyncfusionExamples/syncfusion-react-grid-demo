@@ -105,7 +105,7 @@ return (<Grid<EmployeeTaskPerformance> dataSource={data} columns={columns} heigh
             {
               filename: "GridFeature.tsx",
               language: "typescript",
-              code: `import { employeeTaskPerformanceData, type EmployeeTaskPerformance } from "../app/models/feature-data";
+              code: `import { employeeTaskPerformanceData, type EmployeeTaskPerformance } from "../app/models/employee-performance-data";
 import { type ColumnProps, type ColumnTemplateProps, type EditSettings, EditType, type FilterSettings, Grid } from "@syncfusion/react-grid";
 import { useState } from "react";
 import '../app/styles/grid-feature.css';
@@ -168,7 +168,7 @@ export default function GridFeature() {
 @import '@syncfusion/react-grid/styles/material.css';`
             },
             {
-              filename: "feature-data.ts",
+              filename: "employee-performance-data.ts",
               language: "ts",
               code: `export interface EmployeeTaskPerformance {
   taskId: number;
