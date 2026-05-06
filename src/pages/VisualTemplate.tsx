@@ -42,7 +42,7 @@ export default function VisualTemplate() {
         
         <div className="bg-white rounded p-2 border-l-4 border-blue-500">
           <h4 className="text-left font-semibold text-gray-900 mb-1 text-xs">Step 1: Import Core Features Dependency Styles</h4>
-          <pre className="bg-gray-900 text-gray-100 p-2 rounded text-xs overflow-auto text-left font-mono leading-tight">
+          <pre className="bg-gray-900 text-gray-100 p-4 rounded text-xs overflow-auto flex-1 border border-gray-700 leading-relaxed text-left font-mono whitespace-pre-wrap break-words">
 {`@import '@syncfusion/react-base/styles/material.css';
 @import '@syncfusion/react-buttons/styles/material.css'; /* Toolbar */
 @import '@syncfusion/react-calendars/styles/material.css'; /* DatePicker */
@@ -57,7 +57,7 @@ export default function VisualTemplate() {
 
         <div className="bg-white rounded p-2 border-l-4 border-blue-500">
           <h4 className="text-left font-semibold text-gray-900 mb-1 text-xs">Step 2: Enable Features</h4>
-          <pre className="bg-gray-900 text-gray-100 p-2 rounded text-xs overflow-auto text-left font-mono leading-tight">
+          <pre className="bg-gray-900 text-gray-100 p-4 rounded text-xs overflow-auto flex-1 border border-gray-700 leading-relaxed text-left font-mono whitespace-pre-wrap break-words">
 {`import { employeeTaskPerformanceData, type EmployeeTaskPerformance } from "../app/models/data1";
 import { type ColumnProps, type EditSettings, EditType, type FilterSettings, Grid } from "@syncfusion/react-grid";
 import { useState } from "react";

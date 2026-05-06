@@ -43,14 +43,14 @@ export default function Installation() {
         
         <div className="bg-white rounded p-2 border-l-4 border-green-500">
           <h4 className="text-left font-semibold text-gray-900 mb-1 text-xs">Install Grid Package</h4>
-          <pre className="bg-gray-900 text-gray-100 p-2 rounded text-xs overflow-auto text-left font-mono leading-tight">
+          <pre className="bg-gray-900 text-gray-100 p-4 rounded text-xs overflow-auto flex-1 border border-gray-700 leading-relaxed text-left font-mono whitespace-pre-wrap break-words">
 {`npm install @syncfusion/react-grid`}
           </pre>
         </div>
 
         <div className="bg-white rounded p-2 border-l-4 border-purple-500">
           <h4 className="text-left font-semibold text-gray-900 mb-1 text-xs">Import Grid Styles</h4>
-          <pre className="bg-gray-900 text-gray-100 p-2 rounded text-xs overflow-auto text-left font-mono leading-tight">
+          <pre className="bg-gray-900 text-gray-100 p-4 rounded text-xs overflow-auto flex-1 border border-gray-700 leading-relaxed text-left font-mono whitespace-pre-wrap break-words">
 {`@import '@syncfusion/react-base/styles/material.css';
 @import '@syncfusion/react-popups/styles/material.css'; // Spinner
 @import '@syncfusion/react-grid/styles/material.css';
@@ -60,7 +60,7 @@ export default function Installation() {
 
         <div className="bg-white rounded p-2 border-l-4 border-orange-500">
           <h4 className="text-left font-semibold text-gray-900 mb-1 text-xs">Create Your First Grid</h4>
-          <pre className="bg-gray-900 text-gray-100 p-2 rounded text-xs overflow-auto text-left font-mono leading-tight">
+          <pre className="bg-gray-900 text-gray-100 p-4 rounded text-xs overflow-auto flex-1 border border-gray-700 leading-relaxed text-left font-mono whitespace-pre-wrap break-words">
 {`import { Grid } from "@syncfusion/react-grid";
 import { employeeTaskPerformanceData } from '@/app/models/data';
 

@@ -41,7 +41,7 @@ export default function DataSource() {
         
         <div className="bg-white rounded p-2 border-l-4 border-teal-500">
           <h4 className="text-left font-semibold text-gray-900 mb-1 text-xs">Step 1: Import Shimmer/Skeleton dependency styles</h4>
-          <pre className="bg-gray-900 text-gray-100 p-2 rounded text-xs overflow-auto text-left font-mono leading-tight">
+          <pre className="bg-gray-900 text-gray-100 p-4 rounded text-xs overflow-auto flex-1 border border-gray-700 leading-relaxed text-left font-mono whitespace-pre-wrap break-words">
 {`@import '@syncfusion/react-base/styles/material.css';
 @import '@syncfusion/react-notifications/styles/material.css'; // skeleton
 @import '@syncfusion/react-grid/styles/material.css';`}
@@ -50,7 +50,7 @@ export default function DataSource() {
 
         <div className="bg-white rounded p-2 border-l-4 border-teal-500">
           <h4 className="text-left font-semibold text-gray-900 mb-1 text-xs">Step 2: Create Data Service</h4>
-          <pre className="bg-gray-900 text-gray-100 p-2 rounded text-xs overflow-auto text-left font-mono leading-tight">
+          <pre className="bg-gray-900 text-gray-100 p-4 rounded text-xs overflow-auto flex-1 border border-gray-700 leading-relaxed text-left font-mono whitespace-pre-wrap break-words">
 {`import { DataManager, Query, UrlAdaptor } from '@syncfusion/react-data';
 
 // Initializes DataManager with UrlAdaptor and service URL.
@@ -63,7 +63,7 @@ const data = new DataManager({
 
         <div className="bg-white rounded p-2 border-l-4 border-teal-500">
           <h4 className="text-left font-semibold text-gray-900 mb-1 text-xs">Step 3: Configure Grid for Server-Side Data</h4>
-          <pre className="bg-gray-900 text-gray-100 p-2 rounded text-xs overflow-auto text-left font-mono leading-tight">
+          <pre className="bg-gray-900 text-gray-100 p-4 rounded text-xs overflow-auto flex-1 border border-gray-700 leading-relaxed text-left font-mono whitespace-pre-wrap break-words">
 {`import { Grid, Columns, Column, ScrollMode, type VirtualizationSettings } from '@syncfusion/react-grid';
 
 const [virtualizationSettings] = useState<VirtualizationSettings>({

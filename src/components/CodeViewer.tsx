@@ -49,7 +49,7 @@ export default function CodeViewer({ files, defaultFile = 0 }: CodeViewerProps) 
       )}
 
       {/* Code Content - Left Aligned */}
-      <pre className="bg-gray-900 text-gray-100 p-3 rounded text-xs overflow-auto flex-1 border border-gray-700 leading-relaxed text-left font-mono whitespace-pre-wrap break-words">
+      <pre className="bg-gray-900 text-gray-100 p-4 rounded text-xs overflow-auto flex-1 border border-gray-700 leading-relaxed text-left font-mono whitespace-pre-wrap break-words">
         <code className="text-left">{activeFileData.code}</code>
       </pre>
     </div>
