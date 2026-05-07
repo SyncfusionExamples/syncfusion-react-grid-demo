@@ -6,12 +6,12 @@ A comprehensive demonstration of Syncfusion React Grid capabilities with multipl
 
 This application showcases six distinct grid implementations, each demonstrating specific use cases and performance optimization strategies for handling data at scale:
 
-- **Grid** - Basic data binding with sorting, filtering, and paging
-- **GridFeature** - Core features with custom templates and styling
-- **GridPagination** - Pagination with configurable page sizes
-- **GridDataAPI** - Server-side virtualization for millions of rows
-- **GridPerformance** - Virtual scrolling with dynamic row loading
-- **LiveData** - Real-time data streaming with live updates
+- **SetupGrid** - Basic data binding with sorting, filtering, and paging
+- **CoreFeaturesGrid** - Core features with custom templates and styling
+- **PagingGrid** - Pagination with configurable page sizes
+- **DataSourceGrid** - Server-side virtualization for millions of rows
+- **PerformanceGrid** - Virtual scrolling with dynamic row loading
+- **LiveDataGrid** - Real-time data streaming with live updates
 
 ## 🎯 Key Features
 

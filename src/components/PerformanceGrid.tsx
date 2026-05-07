@@ -1,9 +1,9 @@
 import { useState, useCallback } from 'react';
 import { Grid, Columns, Column, TextAlign, ClipMode, type ColumnTemplateProps, type SortSettings, ColumnType, VirtualDomType } from '@syncfusion/react-grid';
-import { type EmployeeData, generateEmployeeData } from '@/app/models/employee-data';
-import styles from '@/app/styles/grid-performance.module.css';
+import { type EmployeeData, generateEmployeeData } from '@/app/models/employeeListData';
+import styles from '@/app/styles/performance-grid.module.css';
 
-export default function GridPerformance() {
+export default function PerformanceGrid() {
   const [data] = useState(() => generateEmployeeData());
 
   const [gridHeight] = useState('100%');

@@ -1,69 +1,69 @@
-import GridPagination from "@/components/GridPagination"
+import PagingGrid from "@/components/PagingGrid"
 import SectionTabLayout from "@/components/SectionTabLayout"
 import CodeViewer from "@/components/CodeViewer"
 import CodeSnippet from "@/components/CodeSnippet"
-import gridCode from '@/components/GridPagination.tsx?raw';
-import gridCss from '@/app/styles/grid-pagination.css?raw';
-import gridData from '@/app/models/employee-task-data.ts?raw';
+import gridCode from '@/components/PagingGrid.tsx?raw';
+import gridCss from '@/app/styles/paging-grid.css?raw';
+import gridData from '@/app/models/taskPerformanceData.ts?raw';
 
-export default function Pagination() {
+export default function Paging() {
   const content = {
     description: (
       <div className="space-y-5 text-left">
         <div>
-          <h2 className="text-2xl font-bold text-gray-900 mb-3" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "-0.3px", lineHeight: "1.4" }}>Pagination with Editing and Aggregates</h2>
+          <h2 className="text-lg font-medium text-on-surface mb-3" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0px", lineHeight: "1.4" }}>Pagination with Editing and Aggregates</h2>
           
-          <p className="text-gray-700 text-sm leading-relaxed" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.3px", lineHeight: "1.6", fontWeight: "400" }}>
+          <p className="text-sm text-on-surface leading-relaxed" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.25px", lineHeight: "1.6", fontWeight: "400" }}>
             This Data Grid configuration combines client‑side pagination with full CRUD functionality and data aggregation. By default, the grid displays 12 records per page, and the page size can be customized based on application requirements. In this demo, the grid is configured to display 30 records per page. It supports inline editing with built‑in validation, provides toolbar actions for data operations, and includes footer‑level aggregate calculations to deliver meaningful summary insights.
           </p>
         </div>
         
         <div className="space-y-4 pt-2">
           <div>
-            <h2 className="font-semibold text-gray-900 text-sm mb-3" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.2px", fontWeight: "700" }}>Key Features:</h2>
-            <ul className="list-disc list-inside space-y-2 text-gray-700 text-sm" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.2px", lineHeight: "1.6" }}>
-              <li><span className="font-semibold text-gray-900">Pagination:</span> 30 records per page with navigation controls</li>
-              <li><span className="font-semibold text-gray-900">Inline Editing:</span> Edit data directly in grid cells with validation</li>
-              <li><span className="font-semibold text-gray-900">CRUD Operations:</span> Add, Edit, Delete toolbar actions</li>
-              <li><span className="font-semibold text-gray-900">Data Aggregation:</span> Footer sum aggregates and calculations</li>
-              <li><span className="font-semibold text-gray-900">Date Picker:</span> Temporal field editor support</li>
+            <h2 className="font-medium text-on-surface text-sm mb-3" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.25px", fontWeight: "500" }}>Key Features:</h2>
+            <ul className="list-disc list-inside space-y-2 text-on-surface text-sm" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.25px", lineHeight: "1.6" }}>
+              <li><span className="font-medium text-on-surface">Pagination:</span> 30 records per page with navigation controls</li>
+              <li><span className="font-medium text-on-surface">Inline Editing:</span> Edit data directly in grid cells with validation</li>
+              <li><span className="font-medium text-on-surface">CRUD Operations:</span> Add, Edit, Delete toolbar actions</li>
+              <li><span className="font-medium text-on-surface">Data Aggregation:</span> Footer sum aggregates and calculations</li>
+              <li><span className="font-medium text-on-surface">Date Picker:</span> Temporal field editor support</li>
             </ul>
           </div>
           
           <div>
-            <h2 className="font-semibold text-gray-900 text-sm mb-3" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.2px", fontWeight: "700" }}>Data Validation</h2>
-            <p className="text-gray-700 text-sm" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.2px", lineHeight: "1.6", fontWeight: "400" }}>
+            <h2 className="font-medium text-on-surface text-sm mb-3" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.25px", fontWeight: "500" }}>Data Validation</h2>
+            <p className="text-on-surface text-sm" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.25px", lineHeight: "1.6", fontWeight: "400" }}>
               The Data Grid enforces comprehensive validation rules, including data type enforcement, range constraints, primary key uniqueness, and minimum length requirements. Date fields are validated using date picker editors to ensure accurate and consistent temporal data entry.
             </p>
           </div>
 
           <div>
             <h2
-              className="font-semibold text-gray-900 text-sm mb-3"
+              className="font-medium text-on-surface text-sm mb-3"
               style={{
                 fontFamily:
                   "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
-                letterSpacing: "0.2px",
-                fontWeight: "700",
+                letterSpacing: "0.25px",
+                fontWeight: "500",
               }}
             >
               Using the DataSource
             </h2>
 
             <p
-              className="text-gray-700 text-sm"
+              className="text-on-surface text-sm"
               style={{
                 fontFamily:
                   "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
-                letterSpacing: "0.2px",
+                letterSpacing: "0.25px",
                 lineHeight: "1.6",
                 fontWeight: "400",
               }}
             >
               By default, the Data Grid supports data binding using{" "}
-              <span className="font-semibold text-gray-900">JSON‑formatted data</span>.
+              <span className="font-medium text-on-surface">JSON‑formatted data</span>.
               This demo demonstrates{" "}
-              <span className="font-semibold text-gray-900">
+              <span className="font-medium text-on-surface">
                 client‑side data binding
               </span>{" "}
               by assigning a JSON array as the data source for pagination scenarios.
@@ -72,11 +72,11 @@ export default function Pagination() {
             <br />
 
             <ul
-              className="list-disc list-inside space-y-2 text-gray-700 text-sm"
+              className="list-disc list-inside space-y-2 text-on-surface text-sm"
               style={{
                 fontFamily:
                   "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
-                letterSpacing: "0.2px",
+                letterSpacing: "0.25px",
                 lineHeight: "1.6",
               }}
             >
@@ -88,7 +88,7 @@ export default function Pagination() {
               <li>
                 Sample data is available in the{" "}
                 <code>employee-task-data.ts</code> file (see the{" "}
-                <span className="font-semibold text-gray-900">Code</span> section).
+                <span className="font-medium text-on-surface">Code</span> section).
               </li>
             </ul>
 
@@ -114,11 +114,11 @@ export default function Pagination() {
       </div>
     ),
     steps: (
-      <div className="space-y-2">
-        <h2 className="text-base font-bold text-gray-900 mb-2">Implementation Steps</h2>
+      <div className="space-y-3">
+        <h2 className="text-base font-medium text-on-surface mb-4">Implementation Steps</h2>
         
-        <div className="bg-white rounded p-2 border-l-4 border-teal-500">
-          <h4 className="text-left font-semibold text-gray-900 mb-1 text-sm">Step 1: Import Pager dependency styles</h4>
+        <div className="bg-white rounded p-4 border-l-4" style={{ borderLeftColor: '#6750A4', backgroundColor: '#FAFAFA' }}>
+          <h4 className="text-left font-medium text-on-surface mb-2 text-sm">Step 1: Import Pager dependency styles</h4>
           <br/>
           <CodeSnippet code={`@import '@syncfusion/react-base/styles/material.css';
 @import '@syncfusion/react-buttons/styles/material.css'; /* Toolbar */
@@ -130,9 +130,9 @@ export default function Pagination() {
 @import '@syncfusion/react-grid/styles/material.css';`} language="css" />
         </div>
 
-        <div className="bg-white rounded p-2 border-l-4 border-orange-500">
-          <h4 className="text-left font-semibold text-gray-900 mb-1 text-sm">Step 2: Configure Grid with Paging</h4>
-          <p className="text-sm text-gray-600 mt-1 text-left">To enable basic paging feature, set "pageSettings.enabled" as true.</p>
+        <div className="bg-white rounded p-4 border-l-4" style={{ borderLeftColor: '#6750A4', backgroundColor: '#FAFAFA' }}>
+          <h4 className="text-left font-medium text-on-surface mb-2 text-sm">Step 2: Configure Grid with Paging</h4>
+          <p className="text-sm text-on-surface-variant mt-1 text-left">To enable basic paging feature, set "pageSettings.enabled" as true.</p>
           <br/>
           <CodeSnippet code={`import { Grid } from '@syncfusion/react-grid';
 import '../app/styles/grid-pagination.css';
@@ -143,8 +143,8 @@ const [data] = useState(employeeTaskPerformanceData);
 return (<Grid<EmployeeTaskPerformance> dataSource={data} columns={columns} pageSettings={pageSettings} />)`} language="typescript" />
         </div>
 
-        <div className="bg-white rounded p-2 border-l-4 border-orange-500">
-          <h4 className="text-left font-semibold text-gray-900 mb-1 text-sm">Step 3: Advanced Page Configuration</h4>
+        <div className="bg-white rounded p-4 border-l-4" style={{ borderLeftColor: '#6750A4', backgroundColor: '#FAFAFA' }}>
+          <h4 className="text-left font-medium text-on-surface mb-2 text-sm">Step 3: Advanced Page Configuration</h4>
           <br/>
           <CodeSnippet code={`import { Grid } from '@syncfusion/react-grid';
 import '../app/styles/grid-pagination.css';
@@ -158,7 +158,7 @@ return (<Grid<EmployeeTaskPerformance> dataSource={data} columns={columns} pageS
     ),
     sample: (
       <div className="w-full">
-        <GridPagination />
+        <PagingGrid />
       </div>
     ),
     code: (
@@ -166,17 +166,17 @@ return (<Grid<EmployeeTaskPerformance> dataSource={data} columns={columns} pageS
         <CodeViewer
           files={[
             {
-              filename: "GridPagination.tsx",
+              filename: "PagingGrid.tsx",
               language: "typescript",
               code: gridCode
             },
             {
-              filename: "grid-pagination.css",
+              filename: "paging-grid.css",
               language: "css",
               code: gridCss
             },
             {
-              filename: "employee-task-data.ts",
+              filename: "taskPerformanceData.ts",
               language: "ts",
               code: gridData
             }

@@ -1,20 +1,20 @@
-import { type EmployeeTaskPerformance, employeeTaskPerformanceData } from "@/app/models/employee-task-data";
+import { type EmployeeTaskPerformance, employeeTaskPerformanceData } from "@/app/models/taskPerformanceData";
 import { type ColumnProps, type EditSettings, EditType, Grid } from "@syncfusion/react-grid";
 import { useState } from "react";
-import '../app/styles/grid-pagination.css';
+import '../app/styles/paging-grid.css';
 
-export default function GridPagination() {
+export default function PagingGrid() {
     const [editSettings] = useState<EditSettings>({ allowEdit: true, allowAdd: true, allowDelete: true });
     const taskIdRules = { required: true, number: true };
     const stringValidationRules = { required: true, minLength: 4 };
     const numberRules = { required: true, min: 10, max: 500 };
     const [toolbarSettings] = useState<string[]>(['Add', 'Edit', 'Delete', 'Update', 'Cancel']);
     const [columns] = useState<ColumnProps[]>([
-        { field: "taskId", headerText: "Task ID", width: 120, textAlign: 'Right', validationRules: taskIdRules, isPrimaryKey: true },
+        { field: "taskId", headerText: "Task ID", width: 95, textAlign: 'Right', validationRules: taskIdRules, isPrimaryKey: true },
         { field: "employeeName", headerText: "Employee Name", width: 150, textAlign: 'Left', validationRules: stringValidationRules },
-        { field: "taskName", headerText: "Task Name", width: 190, textAlign: 'Left', validationRules: stringValidationRules },
-        { field: "taskStartDate", headerText: "Start Date", width: 140, format: "yMd", textAlign: 'Right', edit: { type: EditType.DatePicker } },
-        { field: "taskEndDate", headerText: "End Date", width: 140, format: "yMd", textAlign: 'Right', edit: { type: EditType.DatePicker } },
+        { field: "taskName", headerText: "Task Name", width: 195, textAlign: 'Left', validationRules: stringValidationRules },
+        { field: "taskStartDate", headerText: "Start Date", width: 130, format: "yMd", textAlign: 'Right', edit: { type: EditType.DatePicker } },
+        { field: "taskEndDate", headerText: "End Date", width: 130, format: "yMd", textAlign: 'Right', edit: { type: EditType.DatePicker } },
         { field: "estimatedHours", headerText: "Estimated Hours", width: 150, textAlign: 'Right', validationRules: numberRules },
         { field: "hoursWorked", headerText: "Hours Worked", width: 120, textAlign: 'Right', validationRules: numberRules },
     ]);

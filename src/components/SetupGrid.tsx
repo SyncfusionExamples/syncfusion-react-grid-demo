@@ -1,7 +1,7 @@
 import { Grid, type FilterSettings } from "@syncfusion/react-grid";
-import { employeeTaskPerformanceData } from '@/app/models/employee-task-data';
+import { employeeTaskPerformanceData } from '@/app/models/taskPerformanceData';
 import { useState } from "react";
-import '../app/styles/grid.css';
+import '../app/styles/setup-grid.css';
 
 export default function Grid1() {
     const [columns] = useState([

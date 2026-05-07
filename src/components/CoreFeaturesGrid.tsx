@@ -1,9 +1,9 @@
-import { employeeTaskPerformanceData, type EmployeeTaskPerformance } from "../app/models/employee-performance-data";
+import { employeeTaskPerformanceData, type EmployeeTaskPerformance } from "../app/models/employeePerformanceData";
 import { ClipMode, type ColumnProps, type ColumnTemplateProps, type EditSettings, EditType, type FilterSettings, Grid, TextAlign } from "@syncfusion/react-grid";
 import { useState } from "react";
-import '../app/styles/grid-feature.css';
+import '../app/styles/core-features-grid.css';
 
-export default function GridFeature() {
+export default function CoreFeaturesGrid() {
     const [editSettings] = useState<EditSettings>({ allowEdit: true, allowAdd: true, allowDelete: true });
     const taskIdRules = { required: true, number: true };
     const stringValidationRules = { required: true, minLength: 4 };
@@ -17,10 +17,10 @@ export default function GridFeature() {
                     <img src={`https://react.syncfusion.com/react-ui/images/grid/avatar/avatar-${(data?.data as EmployeeTaskPerformance).imgId}.jpg`} alt="avatar" className="w-6 h-6 rounded-full" />
                 </div>;
             },
-            headerText: "Image", width: 90, allowEdit: false, allowFilter: false, allowSort: false, textAlign: TextAlign.Center
+            headerText: "Image", width: 70, allowEdit: false, allowFilter: false, allowSort: false, textAlign: TextAlign.Center
         },
-        { field: "employeeName", headerText: "Employee Name", width: 160, textAlign: 'Left', validationRules: stringValidationRules, edit: { type: EditType.DropDownList } },
-        { field: "taskName", headerText: "Task Name", width: 150, textAlign: 'Left', validationRules: stringValidationRules, edit: { type: EditType.DropDownList } },
+        { field: "employeeName", headerText: "Employee Name", width: 155, textAlign: 'Left', validationRules: stringValidationRules, edit: { type: EditType.DropDownList } },
+        { field: "taskName", headerText: "Task Name", width: 145, textAlign: 'Left', validationRules: stringValidationRules, edit: { type: EditType.DropDownList } },
         { field: "taskStartDate", headerText: "Start Date", width: 115, format: "yMd", textAlign: 'Right', edit: { type: EditType.DatePicker } },
         { field: "taskEndDate", headerText: "End Date", width: 115, format: "yMd", textAlign: 'Right', edit: { type: EditType.DatePicker } },
         { field: "estimatedHours", headerText: "Estimated Hours", width: 155, textAlign: 'Right', clipMode: 'EllipsisWithTooltip', validationRules: numberRules },
