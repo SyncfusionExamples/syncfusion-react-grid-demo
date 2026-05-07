@@ -1,12 +1,12 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Navbar from '@/components/Navbar'
-import Installation from '@/pages/Installation'
-import VisualTemplate from '@/pages/VisualTemplate'
-import Pagination from '@/pages/Pagination'
-import Virtualization from '@/pages/Virtualization'
-import Datasource from '@/pages/Datasource'
+import Setup from '@/pages/Setup'
+import CoreFeatures from '@/pages/CoreFeatures'
+import Paging from '@/pages/Paging'
+import VirtualScrolling from '@/pages/VirtualScrolling'
+import DataSource from '@/pages/DataSource'
 import '@/app/globals.css'
-import TradeView from './pages/TradeView'
+import LiveData from './pages/LiveData'
 
 function App() {
   return (
@@ -15,12 +15,12 @@ function App() {
         <Navbar />
         <main className="flex-1 overflow-hidden bg-white">
           <Routes>
-            <Route path="/" element={<Installation />} />
-            <Route path="/data-source" element={<Datasource />} />
-            <Route path="/visual-template" element={<VisualTemplate />} />
-            <Route path="/pagination" element={<Pagination />} />
-            <Route path="/virtualization" element={<Virtualization />} />
-            <Route path="/livedata" element={<TradeView />} />
+            <Route path="/" element={<Setup />} />
+            <Route path="/data-source" element={<DataSource />} />
+            <Route path="/visual-template" element={<CoreFeatures />} />
+            <Route path="/pagination" element={<Paging />} />
+            <Route path="/virtualization" element={<VirtualScrolling />} />
+            <Route path="/livedata" element={<LiveData />} />
           </Routes>
         </main>
       </div>

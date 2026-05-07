@@ -1,9 +1,9 @@
 import { Grid, Columns, Column, type GridRef, type ColumnTemplateProps, TextAlign } from '@syncfusion/react-grid';
 import { Button, type IButton } from '@syncfusion/react-buttons';
 import { type INumericTextBox, NumericTextBox } from '@syncfusion/react-inputs';
-import '../app/styles/live-data.css';
+import '../app/styles/live-data-grid.css';
 import { useMemo, useRef, useState, useEffect, useCallback } from 'react';
-import { tradeTickerData, type Trade, type TradeRow } from '../app/models/tradeDetails';
+import { tradeTickerData, type Trade, type TradeRow } from '../app/models/tradeData';
 
 function TradeView() {
   const gridRef = useRef<GridRef>(null);
@@ -271,7 +271,7 @@ function TradeView() {
              * @returns The Syncfusion Grid component with configured columns and templates.
              */
             () => (
-              <div style={{ width: '100%', height: 'calc(100vh - 120px - 43px - 16px)' }}>
+              <div style={{ width: '100%', height: 'calc(100vh - 120px - 43px - 16px - 1px)' }}>
                 <Grid
                   className="trade"
                   ref={gridRef}
