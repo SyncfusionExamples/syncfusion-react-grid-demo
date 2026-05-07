@@ -18,7 +18,7 @@ type EmployeeServerData = {
   CurrentSalary: number;
 };
 export default function GridDataAPI() {
-    const totalRecords = 100000;
+  const totalRecords = 100000;
   const pageSize = 50;
 
   // Initializes DataManager with UrlAdaptor and service URL.

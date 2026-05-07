@@ -12,10 +12,10 @@ export default function GridPagination() {
     const [columns] = useState<ColumnProps[]>([
         { field: "taskId", headerText: "Task ID", width: 120, textAlign: 'Right', validationRules: taskIdRules, isPrimaryKey: true },
         { field: "employeeName", headerText: "Employee Name", width: 150, textAlign: 'Left', validationRules: stringValidationRules },
-        { field: "taskName", headerText: "Task Name", width: 180, textAlign: 'Left', validationRules: stringValidationRules },
-        { field: "taskStartDate", headerText: "Start Date", width: 180, format: "yMd", textAlign: 'Right', edit: { type: EditType.DatePicker } },
-        { field: "taskEndDate", headerText: "End Date", width: 180, format: "yMd", textAlign: 'Right', edit: { type: EditType.DatePicker } },
-        { field: "estimatedHours", headerText: "Estimated Hours", width: 160, textAlign: 'Right', validationRules: numberRules },
+        { field: "taskName", headerText: "Task Name", width: 190, textAlign: 'Left', validationRules: stringValidationRules },
+        { field: "taskStartDate", headerText: "Start Date", width: 140, format: "yMd", textAlign: 'Right', edit: { type: EditType.DatePicker } },
+        { field: "taskEndDate", headerText: "End Date", width: 140, format: "yMd", textAlign: 'Right', edit: { type: EditType.DatePicker } },
+        { field: "estimatedHours", headerText: "Estimated Hours", width: 150, textAlign: 'Right', validationRules: numberRules },
         { field: "hoursWorked", headerText: "Hours Worked", width: 120, textAlign: 'Right', validationRules: numberRules },
     ]);
 
