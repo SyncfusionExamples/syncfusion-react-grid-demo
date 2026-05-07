@@ -5,7 +5,7 @@ import '../app/styles/live-data-grid.css';
 import { useMemo, useRef, useState, useEffect, useCallback } from 'react';
 import { tradeTickerData, type Trade, type TradeRow } from '../app/models/tradeData';
 
-function TradeView() {
+function LiveDataGrid() {
   const gridRef = useRef<GridRef>(null);
   const updateButtonRef = useRef<IButton | null>(null);
   const clearButtonRef = useRef<IButton | null>(null);
@@ -303,4 +303,4 @@ function TradeView() {
   );
 }
 
-export default TradeView
+export default LiveDataGrid;

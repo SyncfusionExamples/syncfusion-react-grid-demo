@@ -1,10 +1,10 @@
-import PagingGrid from "@/components/PagingGrid"
+import WorkDetailsGrid from "@/components/WorkDetailsGrid"
 import SectionTabLayout from "@/components/SectionTabLayout"
 import CodeViewer from "@/components/CodeViewer"
 import CodeSnippet from "@/components/CodeSnippet"
-import gridCode from '@/components/PagingGrid.tsx?raw';
-import gridCss from '@/app/styles/paging-grid.css?raw';
-import gridData from '@/app/models/taskPerformanceData.ts?raw';
+import gridCode from '@/components/WorkDetailsGrid.tsx?raw';
+import gridCss from '@/app/styles/WorkDetailsGrid.css?raw';
+import gridData from '@/app/models/workDetails.ts?raw';
 
 export default function Paging() {
   const content = {
@@ -83,11 +83,11 @@ export default function Paging() {
               <li>The grid is populated using a flat array from a local data model.</li>
               <li>
                 The data source is defined using{" "}
-                <code>employeeTaskPerformanceData</code>.
+                <code>workDetails</code>.
               </li>
               <li>
                 Sample data is available in the{" "}
-                <code>employee-task-data.ts</code> file (see the{" "}
+                <code>workDetails.ts</code> file (see the{" "}
                 <span className="font-medium text-on-surface">Code</span> section).
               </li>
             </ul>
@@ -135,30 +135,32 @@ export default function Paging() {
           <p className="text-sm text-on-surface-variant mt-1 text-left">To enable basic paging feature, set "pageSettings.enabled" as true.</p>
           <br/>
           <CodeSnippet code={`import { Grid } from '@syncfusion/react-grid';
-import '../app/styles/grid-pagination.css';
+import '../app/styles/WorkDetailsGrid.css';
+import { type IWorkDetails, workDetails } from "@/app/models/workDetails";
 
 // pageSettings: enables pagination
 const [pageSettings] = useState({ enabled: true });
-const [data] = useState(employeeTaskPerformanceData);
-return (<Grid<EmployeeTaskPerformance> dataSource={data} columns={columns} pageSettings={pageSettings} />)`} language="typescript" />
+const [data] = useState(workDetails);
+return (<Grid<IWorkDetails> dataSource={data} columns={columns} pageSettings={pageSettings} />)`} language="typescript" />
         </div>
 
         <div className="bg-white rounded p-4 border-l-4" style={{ borderLeftColor: '#6750A4', backgroundColor: '#FAFAFA' }}>
           <h4 className="text-left font-medium text-on-surface mb-2 text-sm">Step 3: Advanced Page Configuration</h4>
           <br/>
           <CodeSnippet code={`import { Grid } from '@syncfusion/react-grid';
-import '../app/styles/grid-pagination.css';
+import '../app/styles/WorkDetailsGrid.css';
+import { type IWorkDetails, workDetails } from "@/app/models/workDetails";
 
 // pageSettings: enables pagination with 10 records per page
 const [pageSettings] = useState({ enabled: true, pageSize: 10, currentPage: 1, pageCount: 4 });
-const [data] = useState(employeeTaskPerformanceData);
-return (<Grid<EmployeeTaskPerformance> dataSource={data} columns={columns} pageSettings={pageSettings} />)`} language="typescript" />
+const [data] = useState(workDetails);
+return (<Grid<IWorkDetails> dataSource={data} columns={columns} pageSettings={pageSettings} />)`} language="typescript" />
         </div>
       </div>
     ),
     sample: (
       <div className="w-full">
-        <PagingGrid />
+        <WorkDetailsGrid />
       </div>
     ),
     code: (
@@ -166,17 +168,17 @@ return (<Grid<EmployeeTaskPerformance> dataSource={data} columns={columns} pageS
         <CodeViewer
           files={[
             {
-              filename: "PagingGrid.tsx",
+              filename: "WorkDetailsGrid.tsx",
               language: "typescript",
               code: gridCode
             },
             {
-              filename: "paging-grid.css",
+              filename: "WorkDetailsGrid.css",
               language: "css",
               code: gridCss
             },
             {
-              filename: "taskPerformanceData.ts",
+              filename: "workDetails.ts",
               language: "ts",
               code: gridData
             }

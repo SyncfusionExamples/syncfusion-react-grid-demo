@@ -1,9 +1,9 @@
-import PerformanceGrid from "@/components/PerformanceGrid"
+import PerformanceGrid from "@/components/EmployeeListGrid"
 import SectionTabLayout from "@/components/SectionTabLayout"
 import CodeViewer from "@/components/CodeViewer"
 import CodeSnippet from "@/components/CodeSnippet"
-import gridCode from '@/components/PerformanceGrid.tsx?raw';
-import gridCss from '@/app/styles/performance-grid.module.css?raw';
+import gridCode from '@/components/EmployeeListGrid.tsx?raw';
+import gridCss from '@/app/styles/EmployeeListGridIcon.module.css?raw';
 import gridData from '@/app/models/employeeListData.ts?raw';
 
 export default function VirtualScrolling() {
@@ -123,15 +123,15 @@ export default function VirtualScrolling() {
           <br/>
           <CodeSnippet code={`import { useState, useCallback } from 'react';
 import { Grid, Columns, Column, ColumnType, VirtualDomType } from '@syncfusion/react-grid';
-import { type EmployeeData, generateEmployeeData } from '@/app/models/data2';
-import styles from '@/app/styles/grid-performance.module.css';
+import { type IEmployeeListData, generateEmployeeData } from '@/app/models/emplyeeListData';
+import styles from '@/app/styles/EmployeeListGridIcon.module.css';
 
 const [data] = useState(() => generateEmployeeData());
 const [gridHeight] = useState(400);
 const [gridWidth] = useState(100);
 const [virtualizationSettings] = useState({ type: VirtualDomType.Row });
 
-<Grid<EmployeeData>
+<Grid<IEmployeeListData>
 dataSource={data}
 width={{gridWidth}%}
 virtualizationSettings={virtualizationSettings}
@@ -144,15 +144,15 @@ height={gridHeight}/>`} language="typescript" />
           <br/>
           <CodeSnippet code={`import { useState, useCallback } from 'react';
 import { Grid, Columns, Column, ColumnType, VirtualDomType } from '@syncfusion/react-grid';
-import { type EmployeeData, generateEmployeeData } from '@/app/models/data2';
-import styles from '@/app/styles/grid-performance.module.css';
+import { type IEmployeeListData, generateEmployeeData } from '@/app/models/employeeListData';
+import styles from '@/app/styles/EmployeeListGridIcon.module.css';
 
 const [data] = useState(() => generateEmployeeData());
 const [gridHeight] = useState(400);
 const [gridWidth] = useState(100);
 const [virtualizationSettings] = useState({ type: VirtualDomType.Column });
 
-<Grid<EmployeeData>
+<Grid<IEmployeeListData>
 dataSource={data}
 width={{gridWidth}%}
 virtualizationSettings={virtualizationSettings}
@@ -170,17 +170,17 @@ height={gridHeight}/>`} language="typescript" />
         <CodeViewer
           files={[
             {
-              filename: "PerformanceGrid.tsx",
+              filename: "EmployeeListGrid.tsx",
               language: "typescript",
               code: gridCode
             },
             {
-              filename: "performance-grid.module.css",
+              filename: "EmployeeListGridIcon.module.css",
               language: "css",
               code: gridCss
             },
             {
-              filename: "employeeListData.ts",
+              filename: "employeeListDataFormat.ts",
               language: "typescript",
               code: `// Sample data source format for demonstration.
 // Represents a flat array of employee records with uniform fields.
@@ -611,7 +611,7 @@ height={gridHeight}/>`} language="typescript" />
 ];`
             },
             {
-              filename: "employee-data.ts",
+              filename: "employeeListData.ts",
               language: "typescript",
               code: gridData
             }

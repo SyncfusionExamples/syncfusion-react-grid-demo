@@ -1,10 +1,10 @@
-import CoreFeaturesGrid from "@/components/CoreFeaturesGrid"
+import TaskDetailsGrid from "@/components/TaskDetailsGrid"
 import SectionTabLayout from "@/components/SectionTabLayout"
 import CodeViewer from "@/components/CodeViewer"
 import CodeSnippet from "@/components/CodeSnippet"
-import gridCode from '@/components/CoreFeaturesGrid.tsx?raw';
-import gridCss from '@/app/styles/core-features-grid.css?raw';
-import gridData from '@/app/models/employeePerformanceData.ts?raw';
+import gridCode from '@/components/TaskDetailsGrid.tsx?raw';
+import gridCss from '@/app/styles/TaskDetailsGrid.css?raw';
+import gridData from '@/app/models/taskDetails.ts?raw';
 
 export default function VisualTemplate() {
   const content = {
@@ -89,8 +89,8 @@ export default function VisualTemplate() {
               </li>
               <li>
                 The data source is defined using{" "}
-                <code>employeeTaskPerformanceData</code> in the{" "}
-                <code>employee-performance-data.ts</code> file (see the{" "}
+                <code>taskDetails</code> in the{" "}
+                <code>taskDetails.ts</code> file (see the{" "}
                 <span className="font-medium text-on-surface">Code</span> section).
               </li>
               <li>
@@ -144,10 +144,10 @@ export default function VisualTemplate() {
           <h4 className="text-left font-medium text-on-surface mb-2 text-sm">Step 2: Enable Features</h4>
           <p className="text-sm text-on-surface-variant mt-1 text-left">To enable basic sorting feature, set "sortSettings.enabled" as true. To enable basic filtering, set "filterSettings.enabled" as true.</p>
           <br/>
-          <CodeSnippet code={`import { employeeTaskPerformanceData, type EmployeeTaskPerformance } from "../app/models/data1";
+          <CodeSnippet code={`import { taskDetails, type ITaskDetails } from "../app/models/taskDetails";
 import { type ColumnProps, type EditSettings, EditType, type FilterSettings, Grid } from "@syncfusion/react-grid";
 import { useState } from "react";
-import '../app/styles/grid-feature.css';
+import '../app/styles/TaskDetailsGrid.css';
 
 const [editSettings] = useState<EditSettings>({ allowEdit: true, allowAdd: true, allowDelete: true });
 const taskIdRules = { required: true, number: true };
@@ -174,13 +174,13 @@ const [aggregateColumns] = useState([{
   }
 ]);
 const [filterSettings] = useState<FilterSettings>({ enabled: true, type: 'CheckBox' });
-return (<Grid<EmployeeTaskPerformance> dataSource={data} columns={columns} height={600} toolbar={toolbarSettings} editSettings={editSettings} sortSettings={sortSettings} filterSettings={filterSettings} aggregates={aggregateColumns} />)`} language="typescript" />
+return (<Grid<ITaskDetails> dataSource={data} columns={columns} height={600} toolbar={toolbarSettings} editSettings={editSettings} sortSettings={sortSettings} filterSettings={filterSettings} aggregates={aggregateColumns} />)`} language="typescript" />
         </div>
       </div>
     ),
     sample: (
       <div className="w-full">
-        <CoreFeaturesGrid />
+        <TaskDetailsGrid />
       </div>
     ),
     code: (
@@ -188,17 +188,17 @@ return (<Grid<EmployeeTaskPerformance> dataSource={data} columns={columns} heigh
         <CodeViewer
           files={[
             {
-              filename: "CoreFeaturesGrid.tsx",
+              filename: "TaskDetailsGrid.tsx",
               language: "typescript",
               code: gridCode
             },
             {
-              filename: "core-features-grid.css",
+              filename: "TaskDetailsGrid.css",
               language: "css",
               code: gridCss
             },
             {
-              filename: "employeePerformanceData.ts",
+              filename: "taskDetails.ts",
               language: "ts",
               code: gridData
             }

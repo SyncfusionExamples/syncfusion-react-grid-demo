@@ -1,9 +1,9 @@
 import { useState, useCallback } from 'react';
 import { Grid, Columns, Column, ScrollMode, type PageSettings, type VirtualizationSettings, TextAlign, ClipMode, type ColumnTemplateProps } from '@syncfusion/react-grid';
 import { DataManager, Query, UrlAdaptor } from '@syncfusion/react-data';
-import styles from '../app/styles/data-source-grid.module.css';
+import styles from '../app/styles/GridIcons.module.css';
 import { Skeleton } from '@syncfusion/react-notifications';
-import '../app/styles/data-source-grid.css';
+import '../app/styles/Grid.css';
 type EmployeeServerData = {
   EmployeeID: number;
   Employees: string;

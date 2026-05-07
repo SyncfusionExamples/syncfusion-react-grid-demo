@@ -1,7 +1,7 @@
-import DataSourceGrid from "@/components/DataSourceGrid";
-import gridCode from '@/components/DataSourceGrid.tsx?raw';
-import gridCss from '@/app/styles/data-source-grid.css?raw';
-import gridCssModule from '@/app/styles/data-source-grid.module.css?raw';
+import Grid from "@/components/Grid";
+import gridCode from '@/components/Grid.tsx?raw';
+import gridCss from '@/app/styles/Grid.css?raw';
+import gridCssModule from '@/app/styles/GridIcons.module.css?raw';
 import SectionTabLayout from "@/components/SectionTabLayout"
 import CodeViewer from "@/components/CodeViewer"
 import CodeSnippet from "@/components/CodeSnippet"
@@ -155,7 +155,7 @@ const [virtualizationSettings] = useState<VirtualizationSettings>({
     ),
     sample: (
       <div className="w-full">
-        <DataSourceGrid />
+        <Grid />
       </div>
     ),
     code: (
@@ -163,17 +163,17 @@ const [virtualizationSettings] = useState<VirtualizationSettings>({
         <CodeViewer
           files={[
             {
-              filename: "DataSourceGrid.tsx",
+              filename: "Grid.tsx",
               language: "typescript",
               code: gridCode
             },
             {
-              filename: "data-source-grid.css",
+              filename: "Grid.css",
               language: "css",
               code: gridCss
             },
             {
-              filename: "data-source-grid.module.css",
+              filename: "GridIcons.module.css",
               language: "css",
               code: gridCssModule
             },
