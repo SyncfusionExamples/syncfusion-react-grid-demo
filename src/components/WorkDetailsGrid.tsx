@@ -1,9 +1,9 @@
-import { type EmployeeTaskPerformance, employeeTaskPerformanceData } from "@/app/models/taskPerformanceData";
+import { type IWorkDetails, workDetails } from "@/app/models/workDetails";
 import { type ColumnProps, type EditSettings, EditType, Grid } from "@syncfusion/react-grid";
 import { useState } from "react";
-import '../app/styles/paging-grid.css';
+import '../app/styles/WorkDetailsGrid.css';
 
-export default function PagingGrid() {
+export default function WorkDetailsGrid() {
     const [editSettings] = useState<EditSettings>({ allowEdit: true, allowAdd: true, allowDelete: true });
     const taskIdRules = { required: true, number: true };
     const stringValidationRules = { required: true, minLength: 4 };
@@ -41,10 +41,10 @@ export default function PagingGrid() {
 
     // pageSettings: enables pagination with 6 records per page
     const [pageSettings] = useState({ enabled: true, pageSize: 30 });
-    const [data] = useState(employeeTaskPerformanceData);
+    const [data] = useState(workDetails);
     return (
         <div style={{ width: '100%', height: 'calc(100vh - 120px)' }}>
-            <Grid<EmployeeTaskPerformance> height={'100%'} dataSource={data} columns={columns} toolbar={toolbarSettings} editSettings={editSettings} sortSettings={sortSettings} aggregates={aggregateColumns} pageSettings={pageSettings} />
+            <Grid<IWorkDetails> height={'100%'} dataSource={data} columns={columns} toolbar={toolbarSettings} editSettings={editSettings} sortSettings={sortSettings} aggregates={aggregateColumns} pageSettings={pageSettings} />
         </div>
     )
 }

@@ -1,7 +1,7 @@
-import SetupGrid from "@/components/SetupGrid"
-import gridCode from '@/components/SetupGrid.tsx?raw';
-import gridCss from '@/app/styles/setup-grid.css?raw';
-import gridData from '@/app/models/taskPerformanceData.ts?raw';
+import EmployeeGrid from "@/components/EmployeeGrid"
+import gridCode from '@/components/EmployeeGrid.tsx?raw';
+import gridCss from '@/app/styles/EmployeeGrid.css?raw';
+import gridData from '@/app/models/employeeTasks.ts?raw';
 import SectionTabLayout from "@/components/SectionTabLayout"
 import CodeViewer from "@/components/CodeViewer"
 import CodeSnippet from "@/components/CodeSnippet"
@@ -48,8 +48,8 @@ export default function Installation() {
             <br/>
             <ul className="list-disc list-inside space-y-2 text-on-surface text-sm" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.25px", lineHeight: "1.6" }}>
               <li>The grid is populated using a flat array from a local data model.</li>
-              <li>The data source is defined using <code>employeeTaskPerformanceData</code>.</li>
-              <li>Sample data is available in the <code>employee-task-data.ts</code> file (see the <span className="font-medium text-on-surface">Code</span> section).</li>
+              <li>The data source is defined using <code>employeeTasks</code>.</li>
+              <li>Sample data is available in the <code>employeeTasks.ts</code> file (see the <span className="font-medium text-on-surface">Code</span> section).</li>
             </ul>
             <br/>
             <p className="text-on-surface text-sm" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.25px", lineHeight: "1.6", fontWeight: "400" }}>
@@ -81,7 +81,7 @@ export default function Installation() {
           <h4 className="text-left font-medium text-on-surface mb-2 text-sm">Create Your First Grid</h4>
           <br/>
           <CodeSnippet code={`import { Grid } from "@syncfusion/react-grid";
-import { employeeTaskPerformanceData } from '@/app/models/data';
+import { employeeTasks } from '@/app/models/employeeTasks';
 
 // Column definition
 const [columns] = useState([
@@ -94,7 +94,7 @@ const [columns] = useState([
     { field: "hoursWorked", headerText: "Hours Worked", width: 150, textAlign: 'Right' },
 ]);
 
-const [data] = useState(employeeTaskPerformanceData.slice(0, 5));
+const [data] = useState(employeeTasks.slice(0, 5));
 return (
     <div style={{ height: '100%', width: '100%' }}>
         <Grid dataSource={data} columns={columns} />
@@ -105,7 +105,7 @@ return (
     ),
     sample: (
       <div className="w-full">
-        <SetupGrid />
+        <EmployeeGrid />
       </div>
     ),
     code: (
@@ -113,17 +113,17 @@ return (
         <CodeViewer
           files={[
             {
-              filename: "SetupGrid.tsx",
+              filename: "EmployeeGrid.tsx",
               language: "typescript",
               code: gridCode
             },
             {
-              filename: "setup-grid.css",
+              filename: "EmployeeGrid.css",
               language: "css",
               code: gridCss
             },
             {
-              filename: "taskPerformanceData.ts",
+              filename: "employeeTasks.ts",
               language: "ts",
               code: gridData
             }

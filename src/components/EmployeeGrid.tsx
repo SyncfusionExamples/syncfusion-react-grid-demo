@@ -1,19 +1,19 @@
 import { Grid, type FilterSettings } from "@syncfusion/react-grid";
-import { employeeTaskPerformanceData } from '@/app/models/taskPerformanceData';
+import { employeeTasks } from '@/app/models/employeeTasks';
 import { useState } from "react";
-import '../app/styles/setup-grid.css';
+import '../app/styles/EmployeeGrid.css';
 
-export default function Grid1() {
+export default function EmployeeGrid() {
     const [columns] = useState([
         { field: "taskId", headerText: "Task ID", width: 90, textAlign: 'Right' },
         { field: "employeeName", headerText: "Employee Name", width: 135, textAlign: 'Left' },
-        { field: "taskName", headerText: "Task Name", width: 170, textAlign: 'Left' },
-        { field: "taskStartDate", headerText: "Start Date", width: 110, format: "yMd", textAlign: 'Right' },
-        { field: "taskEndDate", headerText: "End Date", width: 110, format: "yMd", textAlign: 'Right' },
+        { field: "taskName", headerText: "Task Name", width: 160, textAlign: 'Left' },
+        { field: "taskStartDate", headerText: "Start Date", width: 100, format: "yMd", textAlign: 'Right' },
+        { field: "taskEndDate", headerText: "End Date", width: 95, format: "yMd", textAlign: 'Right' },
         { field: "estimatedHours", headerText: "Estimated Hours", width: 140, textAlign: 'Right' },
-        { field: "hoursWorked", headerText: "Hours Worked", width: 120, textAlign: 'Right' },
+        { field: "hoursWorked", headerText: "Hours Worked", width: 130, textAlign: 'Right' },
     ]);
-    const [data] = useState(employeeTaskPerformanceData.slice(0, 30));
+    const [data] = useState(employeeTasks.slice(0, 30));
 
     // sortSettings: enables multi-column sorting for arranging data
     const [sortSettings] = useState({ enabled: true });

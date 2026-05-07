@@ -1,4 +1,4 @@
-export type EmployeeData = {
+export type IEmployeeListData = {
   EmployeeID: string;
   FullName: string;
   Department: string;
@@ -13,11 +13,11 @@ export type EmployeeData = {
   Status: string;
 };
 
-export const generateEmployeeData = (): EmployeeData[] => {
+export const generateEmployeeData = (): IEmployeeListData[] => {
   const departments = ['Engineering', 'Sales', 'Marketing', 'Finance', 'HR', 'Operations'];
   const statuses = ['Active', 'On Leave', 'Inactive'];
   
-  const rows: EmployeeData[] = [];
+  const rows: IEmployeeListData[] = [];
   
   // First pass: create all employees with proper positions
   for (let i = 1; i <= 11000; i++) {

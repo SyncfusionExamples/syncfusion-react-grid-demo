@@ -1,4 +1,4 @@
-export interface EmployeeTaskPerformance {
+export interface IWorkDetails {
   taskId: number;
   employeeName: string;
   department: "Engineering" | "Design" | "QA" | string;
@@ -13,7 +13,7 @@ export interface EmployeeTaskPerformance {
   estimatedHours: number;
 }
 
-export const employeeTaskPerformanceData: EmployeeTaskPerformance[] = [
+export const workDetails: IWorkDetails[] = [
   {
     taskId: 5001,
     employeeName: "David Miller",
