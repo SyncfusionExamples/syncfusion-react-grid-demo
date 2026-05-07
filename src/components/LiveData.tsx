@@ -271,7 +271,7 @@ function TradeView() {
              * @returns The Syncfusion Grid component with configured columns and templates.
              */
             () => (
-              <div style={{ width: '100%', height: 'calc(100vh - 120px)' }}>
+              <div style={{ width: '100%', height: 'calc(100vh - 120px - 43px - 16px)' }}>
                 <Grid
                   className="trade"
                   ref={gridRef}
