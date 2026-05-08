@@ -1,69 +1,69 @@
-import GridPerformance from "@/components/GridPerformance"
+import PerformanceGrid from "@/components/EmployeeListGrid"
 import SectionTabLayout from "@/components/SectionTabLayout"
 import CodeViewer from "@/components/CodeViewer"
 import CodeSnippet from "@/components/CodeSnippet"
-import gridCode from '@/components/GridPerformance.tsx?raw';
-import gridCss from '@/app/styles/grid-performance.module.css?raw';
-import gridData from '@/app/models/employee-data.tsx?raw';
+import gridCode from '@/components/EmployeeListGrid.tsx?raw';
+import gridCss from '@/app/styles/EmployeeListGridIcon.module.css?raw';
+import gridData from '@/app/models/employeeListData.ts?raw';
 
-export default function Virtualization() {
+export default function VirtualScrolling() {
   const content = {
     description: (
       <div className="space-y-5 text-left">
         <div>
-          <h2 className="text-2xl font-bold text-gray-900 mb-3" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "-0.3px", lineHeight: "1.4" }}>Virtual Scrolling for Large Datasets</h2>
+          <h2 className="text-lg font-medium text-on-surface mb-3" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0px", lineHeight: "1.4" }}>Virtual Scrolling for Large Datasets</h2>
           
-          <p className="text-gray-700 text-sm leading-relaxed" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.3px", lineHeight: "1.6", fontWeight: "400" }}>
+          <p className="text-sm text-on-surface leading-relaxed" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.25px", lineHeight: "1.6", fontWeight: "400" }}>
             Virtual scrolling enables efficient rendering of large datasets (10,000+ records) through DOM virtualization. Only the rows visible within the viewport, along with a small buffer, are rendered in the DOM, ensuring smooth and seamless scrolling performance. Multi‑column sorting is supported without impacting responsiveness.
           </p>
         </div>
         
         <div className="space-y-4 pt-2">
           <div>
-            <h2 className="font-semibold text-gray-900 text-sm mb-3" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.2px", fontWeight: "700" }}>Architecture:</h2>
-            <ul className="list-disc list-inside space-y-2 text-gray-700 text-sm" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.2px", lineHeight: "1.6" }}>
-              <li><span className="font-semibold text-gray-900">Row Virtualization:</span> Implements DOM virtualization at the row level to minimize rendering overhead.</li>
-              <li><span className="font-semibold text-gray-900">Viewport Rendering:</span> Dynamically renders rows based on the visible viewport for optimal performance.</li>
-              <li><span className="font-semibold text-gray-900">Sorting:</span> Supports sorting across multiple columns with consistent responsiveness.</li>
-              <li><span className="font-semibold text-gray-900">Templates:</span> Allows flexible column templates for complex and rich data presentation.</li>
-              <li><span className="font-semibold text-gray-900">Scroll Handling:</span> Uses debounced scroll events to reduce unnecessary reflows and improve scroll efficiency.</li>
+            <h2 className="font-medium text-on-surface text-sm mb-3" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.25px", fontWeight: "500" }}>Architecture:</h2>
+            <ul className="list-disc list-inside space-y-2 text-on-surface text-sm" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.25px", lineHeight: "1.6" }}>
+              <li><span className="font-medium text-on-surface">Row Virtualization:</span> Implements DOM virtualization at the row level to minimize rendering overhead.</li>
+              <li><span className="font-medium text-on-surface">Viewport Rendering:</span> Dynamically renders rows based on the visible viewport for optimal performance.</li>
+              <li><span className="font-medium text-on-surface">Sorting:</span> Supports sorting across multiple columns with consistent responsiveness.</li>
+              <li><span className="font-medium text-on-surface">Templates:</span> Allows flexible column templates for complex and rich data presentation.</li>
+              <li><span className="font-medium text-on-surface">Scroll Handling:</span> Uses debounced scroll events to reduce unnecessary reflows and improve scroll efficiency.</li>
             </ul>
           </div>
           
           <div>
-            <h2 className="font-semibold text-gray-900 text-sm mb-3" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.2px", fontWeight: "700" }}>Performance Characteristics</h2>
-            <p className="text-gray-700 text-sm" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.2px", lineHeight: "1.6", fontWeight: "400" }}>
+            <h2 className="font-medium text-on-surface text-sm mb-3" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.25px", fontWeight: "500" }}>Performance Characteristics</h2>
+            <p className="text-on-surface text-sm" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.25px", lineHeight: "1.6", fontWeight: "400" }}>
               This approach maintains constant memory usage regardless of dataset size by keeping only the visible rows and a small buffer in the DOM, resulting in a minimal DOM footprint. As a result, scrolling remains smooth and responsive, delivering consistent performance even at high scroll velocities without any noticeable degradation.
             </p>
           </div>
 
           <div>
             <h2
-              className="font-semibold text-gray-900 text-sm mb-3"
+              className="font-medium text-on-surface text-sm mb-3"
               style={{
                 fontFamily:
                   "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
-                letterSpacing: "0.2px",
-                fontWeight: "700",
+                letterSpacing: "0.25px",
+                fontWeight: "500",
               }}
             >
               Using the DataSource
             </h2>
 
             <p
-              className="text-gray-700 text-sm"
+              className="text-on-surface text-sm"
               style={{
                 fontFamily:
                   "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
-                letterSpacing: "0.2px",
+                letterSpacing: "0.25px",
                 lineHeight: "1.6",
                 fontWeight: "400",
               }}
             >
               By default, the Data Grid supports data binding using{" "}
-              <span className="font-semibold text-gray-900">JSON‑formatted data</span>.
+              <span className="font-medium text-on-surface">JSON‑formatted data</span>.
               This demo demonstrates{" "}
-              <span className="font-semibold text-gray-900">
+              <span className="font-medium text-on-surface">
                 client‑side data binding
               </span>{" "}
               to support virtual scrolling for large datasets.
@@ -72,11 +72,11 @@ export default function Virtualization() {
             <br />
 
             <ul
-              className="list-disc list-inside space-y-2 text-gray-700 text-sm"
+              className="list-disc list-inside space-y-2 text-on-surface text-sm"
               style={{
                 fontFamily:
                   "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
-                letterSpacing: "0.2px",
+                letterSpacing: "0.25px",
                 lineHeight: "1.6",
               }}
             >
@@ -114,45 +114,45 @@ export default function Virtualization() {
       </div>
     ),
     steps: (
-      <div className="space-y-2">
-        <h2 className="text-base font-bold text-gray-900 mb-2">Implementation Steps</h2>
+      <div className="space-y-3">
+        <h2 className="text-base font-medium text-on-surface mb-4">Implementation Steps</h2>
         
-        <div className="bg-white rounded p-2 border-l-4 border-red-500">
-          <h4 className="text-left font-semibold text-gray-900 mb-1 text-sm">Step 1: Configure Virtual Scrolling</h4>
-          <p className="text-sm text-gray-600 mt-1 text-left">To enable row virtualization for smooth scrolling with large datasets, set "virtualizationSettings.type" as "VirtualDomType.Row".</p>
+        <div className="bg-white rounded p-4 border-l-4" style={{ borderLeftColor: '#6750A4', backgroundColor: '#FAFAFA' }}>
+          <h4 className="text-left font-medium text-on-surface mb-2 text-sm">Step 1: Configure Virtual Scrolling</h4>
+          <p className="text-sm text-on-surface-variant mt-1 text-left">To enable row virtualization for smooth scrolling with large datasets, set "virtualizationSettings.type" as "VirtualDomType.Row".</p>
           <br/>
           <CodeSnippet code={`import { useState, useCallback } from 'react';
 import { Grid, Columns, Column, ColumnType, VirtualDomType } from '@syncfusion/react-grid';
-import { type EmployeeData, generateEmployeeData } from '@/app/models/data2';
-import styles from '@/app/styles/grid-performance.module.css';
+import { type IEmployeeListData, generateEmployeeData } from '@/app/models/emplyeeListData';
+import styles from '@/app/styles/EmployeeListGridIcon.module.css';
 
 const [data] = useState(() => generateEmployeeData());
 const [gridHeight] = useState(400);
 const [gridWidth] = useState(100);
 const [virtualizationSettings] = useState({ type: VirtualDomType.Row });
 
-<Grid<EmployeeData>
+<Grid<IEmployeeListData>
 dataSource={data}
 width={{gridWidth}%}
 virtualizationSettings={virtualizationSettings}
 height={gridHeight}/>`} language="typescript" />
         </div>
 
-        <div className="bg-white rounded p-2 border-l-4 border-red-500">
-          <h4 className="text-left font-semibold text-gray-900 mb-1 text-sm">Step 2: Enable Column Virtualization</h4>
-          <p className="text-sm text-gray-600 mt-1 text-left">To enable row virtualization for smooth scrolling with large datasets, set "virtualizationSettings.type" as "VirtualDomType.Column"."</p>
+        <div className="bg-white rounded p-4 border-l-4" style={{ borderLeftColor: '#6750A4', backgroundColor: '#FAFAFA' }}>
+          <h4 className="text-left font-medium text-on-surface mb-2 text-sm">Step 2: Enable Column Virtualization</h4>
+          <p className="text-sm text-on-surface-variant mt-1 text-left">To enable row virtualization for smooth scrolling with large datasets, set "virtualizationSettings.type" as "VirtualDomType.Column"."</p>
           <br/>
           <CodeSnippet code={`import { useState, useCallback } from 'react';
 import { Grid, Columns, Column, ColumnType, VirtualDomType } from '@syncfusion/react-grid';
-import { type EmployeeData, generateEmployeeData } from '@/app/models/data2';
-import styles from '@/app/styles/grid-performance.module.css';
+import { type IEmployeeListData, generateEmployeeData } from '@/app/models/employeeListData';
+import styles from '@/app/styles/EmployeeListGridIcon.module.css';
 
 const [data] = useState(() => generateEmployeeData());
 const [gridHeight] = useState(400);
 const [gridWidth] = useState(100);
 const [virtualizationSettings] = useState({ type: VirtualDomType.Column });
 
-<Grid<EmployeeData>
+<Grid<IEmployeeListData>
 dataSource={data}
 width={{gridWidth}%}
 virtualizationSettings={virtualizationSettings}
@@ -162,7 +162,7 @@ height={gridHeight}/>`} language="typescript" />
     ),
     sample: (
       <div className="w-full">
-        <GridPerformance />
+        <PerformanceGrid />
       </div>
     ),
     code: (
@@ -170,17 +170,17 @@ height={gridHeight}/>`} language="typescript" />
         <CodeViewer
           files={[
             {
-              filename: "GridPerformance.tsx",
+              filename: "EmployeeListGrid.tsx",
               language: "typescript",
               code: gridCode
             },
             {
-              filename: "grid-performance.module.css",
+              filename: "EmployeeListGridIcon.module.css",
               language: "css",
               code: gridCss
             },
             {
-              filename: "employee-data-format.ts",
+              filename: "employeeListDataFormat.ts",
               language: "typescript",
               code: `// Sample data source format for demonstration.
 // Represents a flat array of employee records with uniform fields.
@@ -611,7 +611,7 @@ height={gridHeight}/>`} language="typescript" />
 ];`
             },
             {
-              filename: "employee-data.ts",
+              filename: "employeeListData.ts",
               language: "typescript",
               code: gridData
             }

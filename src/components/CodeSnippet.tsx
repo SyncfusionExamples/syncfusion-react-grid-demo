@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { oneLight } from 'react-syntax-highlighter/dist/esm/styles/prism'
+import { CopyIcon } from '@syncfusion/react-icons'
 
 interface CodeSnippetProps {
   code: string
@@ -8,8 +9,28 @@ interface CodeSnippetProps {
 }
 
 const CodeSnippet: React.FC<CodeSnippetProps> = ({ code, language = 'bash' }) => {
+  const [copied, setCopied] = useState(false)
+
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(code)
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
+    } catch (err) {
+      console.error('Failed to copy:', err)
+    }
+  }
+
   return (
-    <div className="w-full overflow-auto border border-gray-200 rounded">
+    <div className="w-full overflow-auto rounded" style={{ border: '1px solid #E0E0E0', borderRadius: '8px', position: 'relative' }}>
+      <button
+        onClick={handleCopy}
+        className="absolute top-3 right-3 p-2 rounded hover:bg-gray-100 transition-colors"
+        style={{ zIndex: 10, background: 'transparent', border: 'none', cursor: 'pointer', color: '#6750A4' }}
+        title={copied ? "Copied!" : "Copy code"}
+      >
+        <CopyIcon />
+      </button>
       <SyntaxHighlighter
         language={language}
         style={oneLight}

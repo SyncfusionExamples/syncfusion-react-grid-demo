@@ -20,13 +20,13 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #ffffff;
+  background: #FFFFFF;
   overflow: hidden;
-  color: #2d3748;
+  color: #1C1B1F;
   font-weight: 400;
   line-height: 1.5;
   font-size: 14px;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.25px;
 }
 
 a {
@@ -49,26 +49,26 @@ pre code {
   direction: ltr;
 }
 
-/* Scrollbar Styling - Minimal */
+/* Scrollbar Styling - Material Design */
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 8px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f5f9;
+  background: #F5F5F5;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
-  border-radius: 3px;
+  background: #BDBDBD;
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
+  background: #9E9E9E;
 }
 
-/* Grid & Component Styles */
+/* Grid & Component Styles - Material Design */
 .sf-grid {
   height: 100% !important;
   width: 100% !important;
@@ -76,6 +76,8 @@ pre code {
     Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif !important;
   font-size: 14px !important;
+  background: #FFFFFF !important;
+  color: #1C1B1F !important;
 }
 
 .e-grid {
@@ -85,28 +87,55 @@ pre code {
     Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif !important;
   font-size: 14px !important;
+  background: #FFFFFF !important;
+  color: #1C1B1F !important;
 }
 
 .e-gridcontent {
   height: 100% !important;
   overflow: auto !important;
+  background: #FFFFFF !important;
 }
 
 .e-pager {
-  background: #ffffff !important;
-  border-top: 1px solid #e5e7eb !important;
-  padding: 2px 4px !important;
+  background: #F5F5F5 !important;
+  border-top: 1px solid #C4C7C5 !important;
+  padding: 8px 16px !important;
+  color: #1C1B1F !important;
 }
 
 .e-toolbar {
-  background: #f9fafb !important;
-  border-bottom: 1px solid #e5e7eb !important;
-  padding: 2px 4px !important;
+  background: #FAFAFA !important;
+  border-bottom: 1px solid #C4C7C5 !important;
+  padding: 8px 16px !important;
 }
 
 /* Ensure Grid header is visible */
 .e-grid .e-gridheader {
-  border-bottom: 1px solid #e5e7eb;
+  background: #F5F5F5 !important;
+  border-bottom: 1px solid #C4C7C5 !important;
+}
+
+.e-grid .e-headercell {
+  background: #F5F5F5 !important;
+  color: #1C1B1F !important;
+  border-color: #C4C7C5 !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.25px !important;
+}
+
+.e-grid .e-gridrow {
+  background: #FFFFFF !important;
+  border-bottom: 1px solid #EEEEEE !important;
+}
+
+.e-grid .e-gridrow:hover {
+  background: #F5F5F5 !important;
+}
+
+.e-grid .e-rowcell {
+  color: #1C1B1F !important;
+  border-color: #EEEEEE !important;
 }
 
 /* Demo Content Styling */
@@ -120,8 +149,9 @@ h1, h2, h3, h4, h5, h6 {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
     Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  font-weight: 600;
-  letter-spacing: 0.2px;
+  font-weight: 500;
+  letter-spacing: 0px;
+  color: #1C1B1F;
 }
 
 /* Remove unwanted scrollbars */
@@ -137,7 +167,8 @@ main::-webkit-scrollbar {
 
 /* Ensure Grid footer (aggregates) is visible */
 .e-grid .e-gridfooter {
-  border-top: 1px solid #e5e7eb;
+  background: #F5F5F5 !important;
+  border-top: 1px solid #C4C7C5 !important;
 }
 
 /* Prevent external scrollbars */

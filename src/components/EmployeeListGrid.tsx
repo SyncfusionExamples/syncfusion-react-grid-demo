@@ -1,9 +1,9 @@
 import { useState, useCallback } from 'react';
 import { Grid, Columns, Column, TextAlign, ClipMode, type ColumnTemplateProps, type SortSettings, ColumnType, VirtualDomType } from '@syncfusion/react-grid';
-import { type EmployeeData, generateEmployeeData } from '@/app/models/employee-data';
-import styles from '@/app/styles/grid-performance.module.css';
+import { type IEmployeeListData, generateEmployeeData } from '@/app/models/employeeListData';
+import styles from '@/app/styles/EmployeeListGridIcon.module.css';
 
-export default function GridPerformance() {
+export default function EmployeeListGrid() {
   const [data] = useState(() => generateEmployeeData());
 
   const [gridHeight] = useState('100%');
@@ -16,7 +16,7 @@ export default function GridPerformance() {
   const [virtualizationSettings] = useState({ type: VirtualDomType.Row });
 
   // Template functions for real-world employee data display
-  const employeeIdTemplate = useCallback((args: ColumnTemplateProps<EmployeeData>) => (
+  const employeeIdTemplate = useCallback((args: ColumnTemplateProps<IEmployeeListData>) => (
     <div className={styles.iconWrapper}>
       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6366f1" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={styles.icon12px}>
         <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/>
@@ -25,7 +25,7 @@ export default function GridPerformance() {
     </div>
   ), []);
 
-  const fullNameTemplate = useCallback((args: ColumnTemplateProps<EmployeeData>) => (
+  const fullNameTemplate = useCallback((args: ColumnTemplateProps<IEmployeeListData>) => (
     <div className={styles.iconWrapper}>
       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#059669" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={styles.icon12px}>
         <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/>
@@ -34,7 +34,7 @@ export default function GridPerformance() {
     </div>
   ), []);
 
-  const departmentTemplate = useCallback((args: ColumnTemplateProps<EmployeeData>) => (
+  const departmentTemplate = useCallback((args: ColumnTemplateProps<IEmployeeListData>) => (
     <div className={`${styles.badge} ${styles.departmentBadge}`}>
       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0369a1" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={styles.icon12px}>
         <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
@@ -43,7 +43,7 @@ export default function GridPerformance() {
     </div>
   ), []);
 
-  const statusTemplate = useCallback((args: ColumnTemplateProps<EmployeeData>) => {
+  const statusTemplate = useCallback((args: ColumnTemplateProps<IEmployeeListData>) => {
     const statusConfig: { [key: string]: { className: string; icon: string } } = {
       'Active': { className: styles.statusActive, icon: '✓' },
       'On Leave': { className: styles.statusOnLeave, icon: '⏸' },
@@ -58,7 +58,7 @@ export default function GridPerformance() {
     );
   }, []);
 
-  const positionTemplate = useCallback((args: ColumnTemplateProps<EmployeeData>) => (
+  const positionTemplate = useCallback((args: ColumnTemplateProps<IEmployeeListData>) => (
     <div className={styles.iconWrapper}>
       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0284c7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={styles.icon12px}>
         <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 7v-2a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/>
@@ -67,7 +67,7 @@ export default function GridPerformance() {
     </div>
   ), []);
 
-  const hireDateTemplate = useCallback((args: ColumnTemplateProps<EmployeeData>) => (
+  const hireDateTemplate = useCallback((args: ColumnTemplateProps<IEmployeeListData>) => (
     <div className={styles.iconWrapper} style={{ justifyContent: 'flex-end' }}>
       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6366f1" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={styles.icon12px}>
         <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
@@ -76,11 +76,11 @@ export default function GridPerformance() {
     </div>
   ), []);
 
-  const salaryTemplate = useCallback((args: ColumnTemplateProps<EmployeeData>) => (
+  const salaryTemplate = useCallback((args: ColumnTemplateProps<IEmployeeListData>) => (
     <span className={styles.salaryText}>$ {parseFloat(args.data.Salary).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
   ), []);
 
-  const performanceRatingTemplate = useCallback((args: ColumnTemplateProps<EmployeeData>) => {
+  const performanceRatingTemplate = useCallback((args: ColumnTemplateProps<IEmployeeListData>) => {
     const rating = parseFloat(args.data.PerformanceRating);
     const ratingClass = rating >= 4 ? styles.ratingHigh : rating >= 3 ? styles.ratingMedium : styles.ratingLow;
     const color = rating >= 4 ? '#059669' : rating >= 3 ? '#f59e0b' : '#dc2626';
@@ -95,7 +95,7 @@ export default function GridPerformance() {
     );
   }, []);
 
-  const emailTemplate = useCallback((args: ColumnTemplateProps<EmployeeData>) => (
+  const emailTemplate = useCallback((args: ColumnTemplateProps<IEmployeeListData>) => (
     <div className={styles.iconWrapper}>
       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0284c7" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={styles.icon12px}>
         <rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 6l10 7.5L22 6"/>
@@ -104,7 +104,7 @@ export default function GridPerformance() {
     </div>
   ), []);
 
-  const phoneTemplate = useCallback((args: ColumnTemplateProps<EmployeeData>) => (
+  const phoneTemplate = useCallback((args: ColumnTemplateProps<IEmployeeListData>) => (
     <div className={styles.iconWrapper + ' ' + styles.phone}>
       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#059669" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={styles.icon12px}>
         <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
@@ -113,7 +113,7 @@ export default function GridPerformance() {
     </div>
   ), []);
 
-  const employmentTypeTemplate = useCallback((args: ColumnTemplateProps<EmployeeData>) => {
+  const employmentTypeTemplate = useCallback((args: ColumnTemplateProps<IEmployeeListData>) => {
     const typeConfig: { [key: string]: string } = {
       'Full-time': styles.employmentFullTime,
       'Part-time': styles.employmentPartTime,
@@ -132,7 +132,7 @@ export default function GridPerformance() {
     );
   }, []);
 
-  const reportsToTemplate = useCallback((args: ColumnTemplateProps<EmployeeData>) => (
+  const reportsToTemplate = useCallback((args: ColumnTemplateProps<IEmployeeListData>) => (
     <div className={styles.iconWrapper}>
       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6366f1" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={styles.icon12px}>
         <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
@@ -143,7 +143,7 @@ export default function GridPerformance() {
 
   return (
     <div style={{ width: '100%', height: 'calc(100vh - 120px)' }}>
-      <Grid<EmployeeData>
+      <Grid<IEmployeeListData>
         dataSource={data}
         height={gridHeight}
         width={`${gridWidth}%`}

@@ -1,7 +1,7 @@
-import GridDataAPI from "@/components/GridDataAPI";
-import gridCode from '@/components/GridDataAPI.tsx?raw';
-import gridCss from '@/app/styles/grid-data-api.css?raw';
-import gridCssModule from '@/app/styles/grid-data-api.module.css?raw';
+import Grid from "@/components/Grid";
+import gridCode from '@/components/Grid.tsx?raw';
+import gridCss from '@/app/styles/Grid.css?raw';
+import gridCssModule from '@/app/styles/GridIcons.module.css?raw';
 import SectionTabLayout from "@/components/SectionTabLayout"
 import CodeViewer from "@/components/CodeViewer"
 import CodeSnippet from "@/components/CodeSnippet"
@@ -11,61 +11,61 @@ export default function DataSource() {
     description: (
       <div className="space-y-5 text-left">
         <div>
-          <h2 className="text-2xl font-bold text-gray-900 mb-3" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "-0.3px", lineHeight: "1.4" }}>Server-Side Data with Virtual Scrolling</h2>
+          <h2 className="text-lg font-medium text-on-surface mb-3" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0px", lineHeight: "1.4" }}>Server-Side Data with Virtual Scrolling</h2>
           
-          <p className="text-gray-700 text-sm leading-relaxed" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.3px", lineHeight: "1.6", fontWeight: "400" }}>
+          <p className="text-sm text-on-surface leading-relaxed" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.25px", lineHeight: "1.6", fontWeight: "400" }}>
             Manages 100,000+ records using server-side pagination and virtual scrolling. Data is fetched on-demand with 50 records per page. Custom templates display status badges, progress metrics, and performance ratings.
           </p>
         </div>
         
         <div className="space-y-4 pt-2">
           <div>
-            <h2 className="font-semibold text-gray-900 text-sm mb-3" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.2px", fontWeight: "700" }}>Key Characteristics:</h2>
-            <ul className="list-disc list-inside space-y-2 text-gray-700 text-sm" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.2px", lineHeight: "1.6" }}>
-              <li><span className="font-semibold text-gray-900">Structured Tabular Layout:</span>  Displays database records in rows and columns for clear and organized data presentation.</li>
-              <li><span className="font-semibold text-gray-900">Scalable Performance:</span> Designed to handle large data volumes through server‑side processing and virtualized rendering.</li>
-              <li><span className="font-semibold text-gray-900">Advanced Interactivity:</span>  Supports server‑side pagination and sorting operations.</li>
-              <li><span className="font-semibold text-gray-900">Backend and Database Support:</span>  Integrates seamlessly with any backend technology and database through APIs.</li>
-              <li><span className="font-semibold text-gray-900">Customizable UI:</span> Enables flexible UI customization using templates for badges, metrics, and computed values.</li>
+            <h2 className="font-medium text-on-surface text-sm mb-3" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.25px", fontWeight: "500" }}>Key Characteristics:</h2>
+            <ul className="list-disc list-inside space-y-2 text-on-surface text-sm" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.25px", lineHeight: "1.6" }}>
+              <li><span className="font-medium text-on-surface">Structured Tabular Layout:</span>  Displays database records in rows and columns for clear and organized data presentation.</li>
+              <li><span className="font-medium text-on-surface">Scalable Performance:</span> Designed to handle large data volumes through server‑side processing and virtualized rendering.</li>
+              <li><span className="font-medium text-on-surface">Advanced Interactivity:</span>  Supports server‑side pagination and sorting operations.</li>
+              <li><span className="font-medium text-on-surface">Backend and Database Support:</span>  Integrates seamlessly with any backend technology and database through APIs.</li>
+              <li><span className="font-medium text-on-surface">Customizable UI:</span> Enables flexible UI customization using templates for badges, metrics, and computed values.</li>
             </ul>
           </div>
           
           <div>
-            <h2 className="font-semibold text-gray-900 text-sm mb-3" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.2px", fontWeight: "700" }}>Server‑Side Data Management</h2>
-            <p className="text-gray-700 text-sm" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.2px", lineHeight: "1.6", fontWeight: "400" }}>
+            <h2 className="font-medium text-on-surface text-sm mb-3" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.25px", fontWeight: "500" }}>Server‑Side Data Management</h2>
+            <p className="text-on-surface text-sm" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif", letterSpacing: "0.25px", lineHeight: "1.6", fontWeight: "400" }}>
               The Data Grid can integrate with all backend services and databases, enabling efficient server‑side data retrieval and processing. It forms the foundation for advanced grid capabilities such as pagination and sorting, ensuring consistent behavior and scalability across diverse data sources.
             </p>
           </div>
 
           <div>
             <h2
-              className="font-semibold text-gray-900 text-sm mb-3"
+              className="font-medium text-on-surface text-sm mb-3"
               style={{
                 fontFamily:
                   "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
-                letterSpacing: "0.2px",
-                fontWeight: "700",
+                letterSpacing: "0.25px",
+                fontWeight: "500",
               }}
             >
               Using the DataSource
             </h2>
 
             <p
-              className="text-gray-700 text-sm"
+              className="text-on-surface text-sm"
               style={{
                 fontFamily:
                   "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
-                letterSpacing: "0.2px",
+                letterSpacing: "0.25px",
                 lineHeight: "1.6",
                 fontWeight: "400",
               }}
             >
               By default, the Data Grid supports data binding using{" "}
-              <span className="font-semibold text-gray-900">
+              <span className="font-medium text-on-surface">
                 server‑side data sources
               </span>{" "}
               through DataManager. This demo illustrates{" "}
-              <span className="font-semibold text-gray-900">
+              <span className="font-medium text-on-surface">
                 server‑side data binding
               </span>{" "}
               by fetching data on demand from a REST API.
@@ -74,11 +74,11 @@ export default function DataSource() {
             <br />
 
             <ul
-              className="list-disc list-inside space-y-2 text-gray-700 text-sm"
+              className="list-disc list-inside space-y-2 text-on-surface text-sm"
               style={{
                 fontFamily:
                   "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
-                letterSpacing: "0.2px",
+                letterSpacing: "0.25px",
                 lineHeight: "1.6",
               }}
             >
@@ -92,7 +92,7 @@ export default function DataSource() {
               </li>
               <li>
                 The service endpoint is configured using the{" "}
-                <span className="font-semibold text-gray-900">service URL</span>{" "}
+                <span className="font-medium text-on-surface">service URL</span>{" "}
                 in the DataManager settings.
               </li>
             </ul>
@@ -100,11 +100,11 @@ export default function DataSource() {
             <br />
 
             <p
-              className="text-gray-700 text-sm"
+              className="text-on-surface text-sm"
               style={{
                 fontFamily:
                   "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
-                letterSpacing: "0.2px",
+                letterSpacing: "0.25px",
                 lineHeight: "1.6",
                 fontWeight: "400",
               }}
@@ -118,19 +118,19 @@ export default function DataSource() {
       </div>
     ),
     steps: (
-      <div className="space-y-2">
-        <h2 className="text-base font-bold text-gray-900 mb-2">Implementation Steps</h2>
+      <div className="space-y-3">
+        <h2 className="text-base font-medium text-on-surface mb-4">Implementation Steps</h2>
         
-        <div className="bg-white rounded p-2 border-l-4 border-teal-500">
-          <h4 className="text-left font-semibold text-gray-900 mb-1 text-sm">Step 1: Import Shimmer/Skeleton dependency styles</h4>
+        <div className="bg-white rounded p-4 border-l-4" style={{ borderLeftColor: '#6750A4', backgroundColor: '#FAFAFA' }}>
+          <h4 className="text-left font-medium text-on-surface mb-2 text-sm">Step 1: Import Shimmer/Skeleton dependency styles</h4>
           <br/>
           <CodeSnippet code={`@import '@syncfusion/react-base/styles/material.css';
 @import '@syncfusion/react-notifications/styles/material.css'; // skeleton
 @import '@syncfusion/react-grid/styles/material.css';`} language="css" />
         </div>
 
-        <div className="bg-white rounded p-2 border-l-4 border-teal-500">
-          <h4 className="text-left font-semibold text-gray-900 mb-1 text-sm">Step 2: Connect the backend API using the DataManager to enable seamless server‑side data operations.</h4>
+        <div className="bg-white rounded p-4 border-l-4" style={{ borderLeftColor: '#6750A4', backgroundColor: '#FAFAFA' }}>
+          <h4 className="text-left font-medium text-on-surface mb-2 text-sm">Step 2: Connect the backend API using the DataManager to enable seamless server‑side data operations.</h4>
           <br/>
           <CodeSnippet code={`import { DataManager, Query, UrlAdaptor } from '@syncfusion/react-data';
 
@@ -141,8 +141,8 @@ const data = new DataManager({
 });`} language="typescript" />
         </div>
 
-        <div className="bg-white rounded p-2 border-l-4 border-teal-500">
-          <h4 className="text-left font-semibold text-gray-900 mb-1 text-sm">Step 3: Configure the Data Grid for server‑side data using the "dataSource" property, and enable virtual scrolling by setting "virtualizationSettings.scrollMode" to "Virtual" for improved performance.</h4>
+        <div className="bg-white rounded p-4 border-l-4" style={{ borderLeftColor: '#6750A4', backgroundColor: '#FAFAFA' }}>
+          <h4 className="text-left font-medium text-on-surface mb-2 text-sm">Step 3: Configure the Data Grid for server‑side data using the "dataSource" property, and enable virtual scrolling by setting "virtualizationSettings.scrollMode" to "Virtual" for improved performance.</h4>
           <br/>
           <CodeSnippet code={`import { Grid, Columns, Column, ScrollMode, type VirtualizationSettings } from '@syncfusion/react-grid';
 
@@ -155,7 +155,7 @@ const [virtualizationSettings] = useState<VirtualizationSettings>({
     ),
     sample: (
       <div className="w-full">
-        <GridDataAPI />
+        <Grid />
       </div>
     ),
     code: (
@@ -163,17 +163,17 @@ const [virtualizationSettings] = useState<VirtualizationSettings>({
         <CodeViewer
           files={[
             {
-              filename: "GridDataAPI.tsx",
+              filename: "Grid.tsx",
               language: "typescript",
               code: gridCode
             },
             {
-              filename: "grid-data-api.css",
+              filename: "Grid.css",
               language: "css",
               code: gridCss
             },
             {
-              filename: "grid-data-api.module.css",
+              filename: "GridIcons.module.css",
               language: "css",
               code: gridCssModule
             },

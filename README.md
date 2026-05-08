@@ -6,12 +6,12 @@ A comprehensive demonstration of Syncfusion React Grid capabilities with multipl
 
 This application showcases six distinct grid implementations, each demonstrating specific use cases and performance optimization strategies for handling data at scale:
 
-- **Grid** - Basic data binding with sorting, filtering, and paging
-- **GridFeature** - Core features with custom templates and styling
-- **GridPagination** - Pagination with configurable page sizes
-- **GridDataAPI** - Server-side virtualization for millions of rows
-- **GridPerformance** - Virtual scrolling with dynamic row loading
-- **LiveData** - Real-time data streaming with live updates
+- **Setup** - Basic grid setup and quick start guide
+- **CoreFeatures** - Core grid features with advanced templates and styling
+- **DataSource** - Server-side data management with REST API integration
+- **Paging** - Pagination with configurable page sizes and CRUD operations
+- **VirtualScrolling** - Virtual scrolling with dynamic row loading for large datasets
+- **LiveData** - Real-time data streaming with continuous live updates
 
 ## 🎯 Key Features
 
@@ -83,95 +83,94 @@ The application will be available at `http://localhost:5173`
 ```
 src/
 ├── components/
-│   ├── Grid.tsx                 # Basic grid with core features
-│   ├── GridFeature.tsx          # Grid with templates, sorting, filtering, editing
-│   ├── GridPagination.tsx       # Pagination grid with CRUD operations
-│   ├── GridDataAPI.tsx          # Server-side virtualization with REST API
-│   ├── GridPerformance.tsx      # Virtual scrolling for large datasets
-│   ├── LiveData.tsx             # Real-time data streaming
-│   ├── Navbar.tsx               # Navigation component
-│   ├── CodeSnippet.tsx          # Code snippet display component
-│   ├── CodeViewer.tsx           # Multi-file code viewer
-│   └── SectionTabLayout.tsx     # Tab-based section layout
+│   ├── Grid.tsx                        # Basic grid component
+│   ├── EmployeeGrid.tsx                # Employee data grid
+│   ├── EmployeeListGrid.tsx            # Employee list grid with icons
+│   ├── TaskDetailsGrid.tsx             # Task details grid
+│   ├── WorkDetailsGrid.tsx             # Work details grid
+│   ├── LiveDataGrid.tsx                # Real-time live data grid
+│   ├── Navbar.tsx                      # Navigation component
+│   ├── CodeSnippet.tsx                 # Code snippet display component
+│   ├── CodeViewer.tsx                  # Multi-file code viewer
+│   └── SectionTabLayout.tsx            # Tab-based section layout
 ├── pages/
-│   ├── Installation.tsx         # Quick setup guide
-│   ├── Datasource.tsx           # Server-side data management demo
-│   ├── VisualTemplate.tsx       # Advanced grid features showcase
-│   ├── Pagination.tsx           # Pagination and CRUD demo
-│   ├── Virtualization.tsx       # Virtual scrolling demo
-│   └── TradeView.tsx            # Real-time live data demo
+│   ├── Setup.tsx                       # Quick setup guide page
+│   ├── CoreFeatures.tsx                # Core features showcase page
+│   ├── DataSource.tsx                  # Server-side data management page
+│   ├── Paging.tsx                      # Pagination and CRUD demo page
+│   ├── VirtualScrolling.tsx            # Virtual scrolling performance page
+│   └── LiveData.tsx                    # Real-time live data page
 ├── app/
 │   ├── models/
-│   │   ├── employee-data.tsx              # Employee dataset (10,000+ records)
-│   │   ├── employee-performance-data.ts   # Employee performance data
-│   │   ├── employee-task-data.ts          # Employee task performance data
-│   │   └── tradeDetails.ts                # Trade data for real-time streaming
+│   │   ├── employeeListData.ts         # Employee list dataset
+│   │   ├── employeeTasks.ts            # Employee task data
+│   │   ├── taskDetails.ts              # Task details dataset
+│   │   ├── tradeData.ts                # Trade data for real-time streaming
+│   │   └── workDetails.ts              # Work details dataset
 │   ├── styles/
-│   │   ├── codeBlock.css                  # Code block styling
-│   │   ├── grid-data-api.css              # Server-side grid styles
-│   │   ├── grid-data-api.module.css       # Module-specific styles
-│   │   ├── grid-feature.css               # Feature grid styles
-│   │   ├── grid-pagination.css            # Pagination grid styles
-│   │   ├── grid-performance.module.css    # Performance grid styles
-│   │   ├── grid.css                       # Core grid styles
-│   │   ├── live-data.css                  # Live data grid styles
-│   │   └── globals.css                    # Global application styles
-├── App.tsx                # Main app component
-├── App.css                # App-level styles
-├── main.tsx               # Entry point
-└── index.css              # Base styles
+│   │   ├── codeBlock.css               # Code block styling
+│   │   ├── EmployeeGrid.css            # Employee grid styles
+│   │   ├── EmployeeListGridIcon.module.css  # Employee list grid icon styles
+│   │   ├── Grid.css                    # Core grid styles
+│   │   ├── GridIcons.module.css        # Grid icon module styles
+│   │   ├── live-data-grid.css          # Live data grid styles
+│   │   ├── TaskDetailsGrid.css         # Task details grid styles
+│   │   ├── WorkDetailsGrid.css         # Work details grid styles
+│   │   └── globals.css                 # Global application styles
+│   └── App.tsx                         # Main app component
+├── App.tsx                             # App container
+├── App.css                             # App-level styles
+├── main.tsx                            # Entry point
+├── index.css                           # Base styles
 ```
 
-## 📊 Grid Implementation Details
-
-### Installation - Quick Setup & Getting Started
+### Setup - Quick Setup & Getting Started
+**Page:** `Setup.tsx`
 **Component:** `Grid.tsx`
-**Data:** `employee-task-data.ts`
-**Page Route:** `/installation`
-- Core Syncfusion Grid features
-- Basic sorting, filtering, and paging
+**Data:** `employeeTasks.ts`
+- Core Syncfusion Grid features and configuration
+- Basic sorting, filtering, and paging setup
 - Client-side flat array data binding
 - Professional demo layout with code examples
-- Step-by-step implementation guide
+- Step-by-step implementation guide for beginners
 
-### VisualTemplate - Advanced Grid Features
-**Component:** `GridFeature.tsx`
-**Data:** `employee-performance-data.ts`
-**Page Route:** `/visual-template`
-- Custom column templates with avatars
-- Multi-column sorting with checkbox filtering
+### CoreFeatures - Advanced Grid Features
+**Page:** `CoreFeatures.tsx`
+**Components:** `EmployeeGrid.tsx`, `TaskDetailsGrid.tsx`, `WorkDetailsGrid.tsx`
+**Data:** `employeeListData.ts`, `taskDetails.ts`, `workDetails.ts`
+- Custom column templates with avatars and icons
+- Multi-column sorting with advanced filtering
 - Inline editing with validation rules
 - Footer aggregates for summary calculations
 - CRUD toolbar actions
 - Color-coded styling and visual indicators
 
-### Pagination - Data Management with Paging
-**Component:** `GridPagination.tsx`
-**Data:** `employee-task-data.ts`
-**Page Route:** `/pagination`
-- Client-side pagination with configurable page sizes
-- Inline editing with validation
-- Complete CRUD operations (Create, Read, Update, Delete)
-- Date picker and form validation
-- Footer sum aggregates
-- 30 records per page display
-
-### Datasource - Server-Side Data Management
-**Component:** `GridDataAPI.tsx`
-**Data:** REST API via Syncfusion DataManager
+### DataSource - Server-Side Data Management
+**Page:** `DataSource.tsx`
+**Component:** `Grid.tsx`
 **Service URL:** `https://services.syncfusion.com/js/production/api/UrlDataSource`
-**Page Route:** `/data-source`
 - Server-side virtualization for 100,000+ records
-- On-demand data loading with 50 records per page
+- On-demand data loading with configurable page sizes
 - DataManager with UrlAdaptor for REST API integration
 - Custom templates for status badges and metrics
 - Loading skeleton/shimmer UI during data fetch
 - Responsive grid layout with adaptive columns
 
-### Virtualization - Virtual Scrolling for Performance
-**Component:** `GridPerformance.tsx`
-**Data:** `employee-data.tsx` (generateEmployeeData function)
-**Page Route:** `/virtualization`
+### Paging - Data Management with Pagination
+**Page:** `Paging.tsx`
+**Component:** `EmployeeListGrid.tsx`
+**Data:** `employeeListData.ts`
+- Client-side pagination with configurable page sizes
+- Inline editing with comprehensive validation
+- Complete CRUD operations (Create, Read, Update, Delete)
+- Date picker and form validation controls
+- Footer sum aggregates for metrics
+- Responsive pagination controls
+
+### VirtualScrolling - Virtual Scrolling for Performance
+**Page:** `VirtualScrolling.tsx`
+**Component:** `Grid.tsx`
+**Data:** `employeeListData.ts` with dynamic data generation
 - Client-side virtual rendering for 10,000+ records
 - DOM virtualization with row-level optimization
 - Multi-column sorting without performance impact
@@ -180,10 +179,10 @@ src/
 - Minimal memory footprint with buffer management
 - Consistent performance at high scroll velocities
 
-### TradeView - Real-Time Live Data Streaming
-**Component:** `LiveData.tsx`
-**Data:** `tradeDetails.ts` with dynamic updates
-**Page Route:** `/live-data`
+### LiveData - Real-Time Live Data Streaming
+**Page:** `LiveData.tsx`
+**Component:** `LiveDataGrid.tsx`
+**Data:** `tradeData.ts` with dynamic continuous updates
 - Real-time streaming data with continuous updates
 - Start, stop, and clear data feed controls
 - Configurable refresh delay for update frequency
@@ -285,22 +284,22 @@ const data = new DataManager({
 ## 💡 Common Use Cases
 
 ### Large Dataset Display (100,000+ Records)
-Use **Datasource** (GridDataAPI) with server-side virtualization, DataManager REST API integration, and virtual scrolling for enterprise-scale data with server-side filtering and sorting.
+Use **DataSource** page with server-side virtualization, DataManager REST API integration, and virtual scrolling for enterprise-scale data with server-side filtering and sorting.
 
 ### Massive Client-Side Datasets (10,000+ Records)
-Use **Virtualization** (GridPerformance) for client-side flat array data with DOM virtualization, smooth scrolling, and optimized memory management.
+Use **VirtualScrolling** page for client-side flat array data with DOM virtualization, smooth scrolling, and optimized memory management.
 
 ### Real-Time Monitoring & Trading
-Use **TradeView** (LiveData) for live data feeds with continuous updates, color-coded indicators, and high-frequency streaming capabilities.
+Use **LiveData** page for live data feeds with continuous updates, color-coded indicators, and high-frequency streaming capabilities.
 
 ### Data Entry & Management Forms
-Use **Pagination** (GridPagination) or **VisualTemplate** (GridFeature) with inline editing, validation, and CRUD toolbar actions for comprehensive data operations.
+Use **Paging** page with inline editing, validation, and CRUD toolbar actions for comprehensive data operations.
 
 ### Analytical Dashboards
-Combine **Pagination** with footer aggregates for summarized data views, or use **Datasource** with server-side aggregation for large datasets.
+Combine **Paging** with footer aggregates for summarized data views, or use **DataSource** with server-side aggregation for large datasets.
 
-### Getting Started & Documentation
-Use **Installation** (Grid) as the entry point for learning Syncfusion Grid basics with step-by-step code examples and implementation guides.
+### Advanced Grid Features Showcase
+Use **CoreFeatures** page to demonstrate custom templates, multi-column sorting, filtering, validation, and complex data relationships with multiple grid instances.
 
 ## 🤝 Contributing
 
