@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { CodeViewIcon, DescriptionIcon, EyeIcon, ListUnorderedIcon, CopyIcon } from '@syncfusion/react-icons';
+import { CodeViewIcon, DescriptionIcon, EyeIcon, ListUnorderedIcon } from '@syncfusion/react-icons';
 import '@/app/styles/material-interaction-theme.css';
 
 interface TabContentProps {
@@ -87,6 +87,8 @@ export default function SectionTabLayout({
                 width: '100%',
                 textAlign: 'left',
                 transition: 'all 150ms cubic-bezier(0.2, 0, 0, 1)',
+                borderBottomLeftRadius: activeTab === tab.id ? '0' : '8px',
+                borderTopLeftRadius: activeTab === tab.id ? '0' : '8px',
               }}
               title={tab.label}
             > 

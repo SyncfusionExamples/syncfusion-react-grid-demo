@@ -1,4 +1,5 @@
 import { Link, useLocation } from 'react-router-dom'
+import '@/app/styles/material-interaction-theme.css'
 
 export default function Navbar() {
   const location = useLocation()
@@ -27,16 +28,8 @@ export default function Navbar() {
             <Link
               key={item.href}
               to={item.href}
-              className={`px-4 py-1.5 text-sm font-medium transition-all duration-150 whitespace-nowrap flex-shrink-0 rounded-full ${
-                location.pathname === item.href
-                  ? 'bg-primary text-white'
-                  : 'bg-transparent border border-outline-variant text-on-surface hover:bg-surface'
-              }`}
-              style={{
-                fontSize: '14px',
-                fontWeight: '500',
-                letterSpacing: '0.1px',
-              }}
+              className={`md3-chip-sample ${location.pathname === item.href ? 'md3-state-selected' : 'md3-state-default'}`}
+              style={{textAlign: 'center'}}
             >
               {item.label}
             </Link>
