@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { oneLight } from 'react-syntax-highlighter/dist/esm/styles/prism'
 import { CopyIcon } from '@syncfusion/react-icons'
+import '@/app/styles/material-interaction-theme.css';
 
 interface CodeSnippetProps {
   code: string
@@ -25,8 +26,8 @@ const CodeSnippet: React.FC<CodeSnippetProps> = ({ code, language = 'bash' }) =>
     <div className="w-full overflow-auto rounded" style={{ border: '1px solid #E0E0E0', borderRadius: '8px', position: 'relative' }}>
       <button
         onClick={handleCopy}
-        className="absolute top-3 right-3 p-2 rounded hover:bg-gray-100 transition-colors"
-        style={{ zIndex: 10, background: 'transparent', border: 'none', cursor: 'pointer', color: '#6750A4' }}
+        className={`md3-copy-icon ${copied ? 'md3-state-pressed' : 'md3-state-default'}`}
+        style={{ position: 'absolute', top: '12px', right: '12px', zIndex: 10 }}
         title={copied ? "Copied!" : "Copy code"}
       >
         <CopyIcon />

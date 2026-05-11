@@ -23,7 +23,7 @@ export default function DataSourceGrid() {
 
   // Initializes DataManager with UrlAdaptor and service URL.
   const data = new DataManager({
-    url: 'https://services.syncfusion.com/js/production/api/UrlDataSource',
+    url: 'https://ej2services.syncfusion.com/js/development/api/UrlDataSource',
     adaptor: new UrlAdaptor()
   });
 
@@ -173,6 +173,8 @@ export default function DataSourceGrid() {
       </div>
     );
   }, []);
+  // sortSettings: enables multi-column sorting for arranging data
+  const [sortSettings] = useState({ enabled: true });
 
   return (
     <div style={{ width: '100%', height: 'calc(100vh - 120px)' }}>
@@ -183,6 +185,7 @@ export default function DataSourceGrid() {
         pageSettings={pageSettings}
         query={query}
         clipMode={ClipMode.EllipsisWithTooltip}
+        sortSettings={sortSettings}
       >
         <Columns>
           {/* Identifier Column */}
