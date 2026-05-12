@@ -6,6 +6,7 @@ import Paging from '@/pages/Paging'
 import VirtualScrolling from '@/pages/VirtualScrolling'
 import DataSource from '@/pages/DataSource'
 import '@/app/globals.css'
+import '@/app/styles/material-interaction-theme.css'
 import LiveData from './pages/LiveData'
 
 function App() {

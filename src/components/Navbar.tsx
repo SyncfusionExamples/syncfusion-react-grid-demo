@@ -1,4 +1,5 @@
 import { Link, useLocation } from 'react-router-dom'
+import '@/app/styles/material-interaction-theme.css'
 
 export default function Navbar() {
   const location = useLocation()
@@ -17,7 +18,7 @@ export default function Navbar() {
       <div className="w-full h-14 flex items-center px-4">
         {/* Brand Section */}
         <div className="flex items-center gap-2 flex-shrink-0">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" role="presentation"><rect width="24" height="24" fill-opacity="0.01"></rect><rect x="1" y="4.66675" width="5.71978" height="5.33461"></rect><rect x="1" y="10.6746" width="5.71978" height="5.33461"></rect><rect x="1" y="16.6655" width="5.71978" height="5.33461"></rect><rect x="7.43872" y="4.66675" width="5.71978" height="5.33461"></rect><rect x="7.43872" y="10.6746" width="5.71978" height="5.33461"></rect><rect x="7.43872" y="16.6655" width="5.71978" height="5.33461"></rect><rect width="5.53055" height="5.53055" transform="matrix(0.731301 0.682055 -0.731301 0.682055 19.3447 2)"></rect><rect x="13.8689" y="10.6746" width="5.71978" height="5.33461"></rect><rect x="13.8689" y="16.6655" width="5.71978" height="5.33461"></rect></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" role="presentation"><rect width="24" height="24" fillOpacity="0.01"></rect><rect x="1" y="4.66675" width="5.71978" height="5.33461"></rect><rect x="1" y="10.6746" width="5.71978" height="5.33461"></rect><rect x="1" y="16.6655" width="5.71978" height="5.33461"></rect><rect x="7.43872" y="4.66675" width="5.71978" height="5.33461"></rect><rect x="7.43872" y="10.6746" width="5.71978" height="5.33461"></rect><rect x="7.43872" y="16.6655" width="5.71978" height="5.33461"></rect><rect width="5.53055" height="5.53055" transform="matrix(0.731301 0.682055 -0.731301 0.682055 19.3447 2)"></rect><rect x="13.8689" y="10.6746" width="5.71978" height="5.33461"></rect><rect x="13.8689" y="16.6655" width="5.71978" height="5.33461"></rect></svg>
           <span className="text-base font-medium text-on-surface tracking-tight whitespace-nowrap" style={{ fontWeight: '500' }}>Syncfusion React Grid</span>
         </div>
         
@@ -27,16 +28,8 @@ export default function Navbar() {
             <Link
               key={item.href}
               to={item.href}
-              className={`px-4 py-1.5 text-sm font-medium transition-all duration-150 whitespace-nowrap flex-shrink-0 rounded-full ${
-                location.pathname === item.href
-                  ? 'bg-primary text-white'
-                  : 'bg-transparent border border-outline-variant text-on-surface hover:bg-surface'
-              }`}
-              style={{
-                fontSize: '14px',
-                fontWeight: '500',
-                letterSpacing: '0.1px',
-              }}
+              className={`md3-chip-sample ${location.pathname === item.href ? 'md3-state-selected' : 'md3-state-default'}`}
+              style={{textAlign: 'center'}}
             >
               {item.label}
             </Link>

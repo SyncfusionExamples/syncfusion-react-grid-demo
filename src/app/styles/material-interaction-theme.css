@@ -1,0 +1,320 @@
+/* Material Design 3 - Interaction Theme & State Management */
+/* Provides reusable classes for hover, pressed, and selected states */
+
+:root {
+  /* MD3 Color Tokens */
+  --md3-color-primary: #6750A4;
+  --md3-color-on-primary: #FFFFFF;
+  --md3-color-surface: #FFFFFF;
+  --md3-color-on-surface: #1C1B1F;
+  --md3-color-on-surface-variant: #49454E;
+  --md3-color-outline-variant: #C4C7C5;
+  --md3-color-scrim: #000000;
+
+  /* Opacity Layers */
+  --md3-opacity-primary-5: rgba(103, 80, 164, 0.05);
+  --md3-opacity-primary-8: rgba(103, 80, 164, 0.08);
+  --md3-opacity-primary-11: rgba(103, 80, 164, 0.11);
+  --md3-opacity-on-surface-5: rgba(28, 27, 31, 0.05);
+  --md3-opacity-on-surface-8: rgba(28, 27, 31, 0.08);
+
+  /* Radius Tokens */
+  --md3-radius-0: 0px;
+  --md3-radius-8: 8px;
+  --md3-radius-12: 12px;
+  --md3-radius-full: 9999px;
+
+  /* Spacing Tokens */
+  --md3-spacing-0: 0px;
+  --md3-spacing-2: 4px;
+  --md3-spacing-4: 8px;
+  --md3-spacing-6: 12px;
+  --md3-spacing-8: 16px;
+  --md3-spacing-10: 20px;
+  --md3-spacing-12: 24px;
+
+  /* Border Weights */
+  --md3-border-1: 1px;
+}
+
+/* ======================== */
+/* DESCRIPTION TAB - Vertical Tab (SectionTabLayout) */
+/* ======================== */
+
+.md3-tab-description {
+  width: 252px;
+  height: 40px;
+  border-radius: var(--md3-radius-8);
+  padding: var(--md3-spacing-0);
+  gap: var(--md3-spacing-0);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.25px;
+  transition: all 150ms cubic-bezier(0.2, 0, 0, 1);
+  border: none;
+  border-left: 1px solid var(--md3-color-primary);
+  cursor: pointer;
+  background: var(--md3-color-surface);
+  color: var(--md3-color-on-surface);
+}
+
+/* Description Tab - Default State */
+.md3-tab-description.md3-state-default {
+  background: var(--md3-color-surface);
+  border-radius: var(--md3-radius-8);
+  opacity: 1;
+  color: var(--md3-color-on-surface);
+}
+
+/* Description Tab - Hover State */
+.md3-tab-description.md3-state-default:hover {
+  background: var(--md3-opacity-primary-5);
+  border-radius: var(--md3-radius-8);
+  color: var(--md3-color-on-surface);
+}
+
+/* Description Tab - Pressed State */
+.md3-tab-description.md3-state-default:active {
+  background: var(--md3-opacity-primary-11);
+  border-radius: var(--md3-radius-8);
+  color: var(--md3-color-on-surface);
+}
+
+/* Description Tab - Selected State */
+.md3-tab-description.md3-state-selected {
+  background: var(--md3-opacity-primary-8);
+  border-radius: var(--md3-radius-8);
+  border-left: 4px solid var(--md3-color-primary);
+  color: var(--md3-color-primary);
+}
+
+/* Description Tab - Selected Hover */
+.md3-tab-description.md3-state-selected:hover {
+  background: var(--md3-opacity-primary-11);
+  border-left: 4px solid var(--md3-color-primary);
+  color: var(--md3-color-primary);
+}
+
+/* ======================== */
+/* COPY ICON BUTTON */
+/* ======================== */
+
+/* Copy Icon - Base Styling */
+.md3-copy-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: var(--md3-radius-12);
+  padding: var(--md3-spacing-0);
+  gap: var(--md3-spacing-0);
+  border: var(--md3-border-1) solid transparent;
+  background: var(--md3-color-surface);
+  color: var(--md3-color-primary);
+  cursor: pointer;
+  transition: all 150ms cubic-bezier(0.2, 0, 0, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Copy Icon - Default State */
+.md3-copy-icon.md3-state-default {
+  background: var(--md3-color-surface);
+  border-color: transparent;
+  color: var(--md3-color-primary);
+}
+
+/* Copy Icon - Hover State */
+.md3-copy-icon.md3-state-default:hover {
+  background: var(--md3-opacity-on-surface-5);
+  border-color: transparent;
+  color: var(--md3-color-primary);
+}
+
+/* Copy Icon - Pressed State */
+.md3-copy-icon.md3-state-default:active,
+.md3-copy-icon.md3-state-pressed {
+  background: var(--md3-opacity-on-surface-8);
+  border-color: transparent;
+  color: var(--md3-color-primary);
+}
+
+/* ======================== */
+/* SAMPLE TAB CHIPS */
+/* ======================== */
+
+/* Sample Chip Tab Base - Used in Navbar for DataSource, Core Features, etc. */
+.md3-chip-sample {
+  width: auto;
+  height: 32px;
+  border-radius: var(--md3-radius-full);
+  gap: var(--md3-spacing-0);
+  padding-top: var(--md3-spacing-6);
+  padding-right: var(--md3-spacing-6);
+  padding-bottom: var(--md3-spacing-6);
+  padding-left: var(--md3-spacing-6);
+  border: var(--md3-border-1) solid var(--md3-color-outline-variant);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.1px;
+  transition: all 150ms cubic-bezier(0.2, 0, 0, 1);
+  cursor: pointer;
+  background: var(--md3-color-surface);
+  color: var(--md3-color-on-surface);
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+/* Sample Chip Tab - Default State */
+.md3-chip-sample.md3-state-default {
+  background: var(--md3-color-surface);
+  border-color: var(--md3-color-outline-variant);
+  color: var(--md3-color-on-surface);
+}
+
+/* Sample Chip Tab - Hover State */
+.md3-chip-sample.md3-state-default:hover {
+  background: var(--md3-opacity-on-surface-5);
+  border-color: var(--md3-color-outline-variant);
+  color: var(--md3-color-on-surface);
+}
+
+/* Sample Chip Tab - Pressed State */
+.md3-chip-sample.md3-state-default:active {
+  background: var(--md3-opacity-on-surface-8);
+  border-color: var(--md3-color-outline-variant);
+  color: var(--md3-color-on-surface);
+}
+
+/* Sample Chip Tab - Selected State */
+.md3-chip-sample.md3-state-selected {
+  background: var(--md3-color-primary);
+  border-color: var(--md3-color-primary);
+  color: var(--md3-color-on-primary);
+}
+
+/* Sample Chip Tab - Selected Hover */
+.md3-chip-sample.md3-state-selected:hover {
+  background: #5b3fa0;
+  border-color: #5b3fa0;
+  color: var(--md3-color-on-primary);
+}
+
+/* ======================== */
+/* CODE SECTION FILE TABS */
+/* ======================== */
+
+/* Code File Tab Base - Used in CodeViewer for file tabs */
+.md3-tab-code-file {
+  width: auto;
+  min-height: 40px;
+  height: 40px;
+  border-radius: var(--md3-radius-8);
+  gap: var(--md3-spacing-0);
+  padding-top: var(--md3-spacing-10);
+  padding-right: var(--md3-spacing-12);
+  padding-bottom: var(--md3-spacing-10);
+  padding-left: var(--md3-spacing-12);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.1px;
+  transition: all 150ms cubic-bezier(0.2, 0, 0, 1);
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  color: var(--md3-color-on-surface-variant);
+  white-space: nowrap;
+}
+
+/* Code File Tab - Default State */
+.md3-tab-code-file.md3-state-default {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--md3-color-on-surface-variant);
+}
+
+/* Code File Tab - Hover State */
+.md3-tab-code-file.md3-state-default:hover {
+  background: var(--md3-opacity-on-surface-5);
+  border-bottom: 2px solid transparent;
+  color: var(--md3-color-on-surface);
+  border-radius: var(--md3-radius-8);
+}
+
+/* Code File Tab - Pressed State */
+.md3-tab-code-file.md3-state-default:active {
+  background: var(--md3-opacity-on-surface-8);
+  border-bottom: 2px solid transparent;
+  color: var(--md3-color-on-surface);
+  border-radius: var(--md3-radius-8);
+}
+
+/* Code File Tab - Selected State */
+.md3-tab-code-file.md3-state-selected {
+  background: transparent;
+  border-bottom: 2px solid var(--md3-color-primary);
+  color: var(--md3-color-primary);
+}
+
+/* Code File Tab - Selected Hover */
+.md3-tab-code-file.md3-state-selected:hover {
+  background: transparent;
+  border-bottom: 2px solid var(--md3-color-primary);
+  color: #5b3fa0;
+}
+
+/* ======================== */
+/* UTILITY STATE CLASSES */
+/* ======================== */
+
+/* Interaction state management */
+.md3-state-default {
+  position: relative;
+}
+
+.md3-state-hover {
+  position: relative;
+}
+
+.md3-state-pressed {
+  position: relative;
+}
+
+.md3-state-selected {
+  position: relative;
+}
+
+/* Disable interactions */
+.md3-disabled {
+  opacity: 0.38;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Focus Visible Ring for Accessibility */
+.md3-tab-description:focus-visible,
+.md3-chip-sample:focus-visible,
+.md3-tab-code-file:focus-visible,
+.md3-copy-icon:focus-visible {
+  outline: 2px solid var(--md3-color-primary);
+  outline-offset: 2px;
+}
+
+/* ======================== */
+/* RESPONSIVE ADJUSTMENTS */
+/* ======================== */
+
+@media (max-width: 640px) {
+  .md3-chip-sample {
+    width: 80px;
+    padding-left: var(--md3-spacing-4);
+    padding-right: var(--md3-spacing-8);
+  }
+
+  .md3-tab-code-file {
+    width: auto;
+    padding-left: var(--md3-spacing-8);
+    padding-right: var(--md3-spacing-8);
+  }
+}

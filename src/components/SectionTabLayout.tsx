@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import { CodeViewIcon, DescriptionIcon, EyeIcon, ListUnorderedIcon, CopyIcon } from '@syncfusion/react-icons';
+import { CodeViewIcon, DescriptionIcon, EyeIcon, ListUnorderedIcon } from '@syncfusion/react-icons';
+import '@/app/styles/material-interaction-theme.css';
 
 interface TabContentProps {
   description?: React.ReactNode
@@ -58,41 +59,47 @@ export default function SectionTabLayout({
   }
 
   return (
-    <div className="fixed top-14 left-0 right-0 bottom-0 bg-gray-50 flex flex-col" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif", background: '#F5F5F5' }}>
+    <div className="fixed top-14 left-0 right-0 bottom-0 flex flex-col" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif", background: '#FAFAFA' }}>
 
       {/* Main Content Area */}
-      <div className="flex" style={{height: 'calc(100vh - 56px)'}}>
+      <div className="flex" style={{height: 'calc(100vh - 56px)', padding: '16px', gap: '16px'}}>
         {/* Vertical Tabs Sidebar - Material Design */}
-        <div className="w-32 bg-white py-2 flex flex-col gap-0 flex-shrink-0" style={{width: '15%', backgroundColor: '#FAFAFA', borderRight: 'none', margin: '16px 0px 16px 16px', borderRadius: '12px', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.08)'}}>
+        <div className="flex flex-col gap-1 flex-shrink-0" style={{width: '200px', backgroundColor: '#FFFFFF', borderRadius: '12px', boxShadow: '0 2px 8px rgba(0, 0, 0, 0.12)', padding: '8px', overflow: 'auto'}}>
           {tabs.map((tab) => (
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`px-4 py-3 transition-colors duration-150 text-left border-l-4 font-medium rounded-r-lg ${
+              className={`px-4 py-3 transition-colors duration-150 text-left border-l-4 font-medium rounded-r-lg md3-tab-description ${
                 activeTab === tab.id
-                  ? 'bg-opacity-8 text-primary border-l-primary'
-                  : 'text-on-surface border-l-transparent hover:bg-surface'
+                  ? 'md3-state-selected bg-opacity-8 text-primary border-l-primary'
+                  : 'md3-state-default text-on-surface border-l-transparent hover:bg-surface'
               }`}
+              // className={`md3-tab-description ${activeTab === tab.id ? 'md3-state-selected' : 'md3-state-default'}`}
               style={{ 
                 fontSize: '14px', 
                 fontWeight: 500,
-                backgroundColor: activeTab === tab.id ? 'rgba(103, 80, 164, 0.12)' : 'transparent',
                 letterSpacing: '0.25px',
-                marginRight: '8px',
-                marginBottom: '4px',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '8px',
+                padding: '12px 16px',
+                borderRadius: '8px',
+                width: '100%',
+                textAlign: 'left',
+                transition: 'all 150ms cubic-bezier(0.2, 0, 0, 1)',
+                borderBottomLeftRadius: activeTab === tab.id ? '0' : '8px',
+                borderTopLeftRadius: activeTab === tab.id ? '0' : '8px',
               }}
               title={tab.label}
             > 
-              <div className="flex items-center gap-2">
-                {tabIcons[tab.id]}
-                <span>{tab.label}</span>
-              </div>
+              {tabIcons[tab.id]}
+              <span>{tab.label}</span>
             </button>
           ))}
         </div>
 
         {/* Main Content with Scrolling - Dialog-like appearance */}
-        <div className="flex-1 px-6 py-4 overflow-y-auto" style={{ background: '#FFFFFF', margin: '16px', borderRadius: '12px', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.08)' }}>
+        <div className="flex-1 px-6 py-6 overflow-y-auto" style={{ background: '#FFFFFF', borderRadius: '12px', boxShadow: '0 2px 8px rgba(0, 0, 0, 0.12)' }}>
           {getTabContent()}
         </div>
       </div>

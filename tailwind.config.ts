@@ -24,6 +24,12 @@ const config: Config = {
         normal: '400',
         medium: '500',
       },
+      borderRadius: {
+        'md3-0': '0px',
+        'md3-8': '8px',
+        'md3-12': '12px',
+        'md3-full': '9999px',
+      },
     },
   },
   plugins: [],
