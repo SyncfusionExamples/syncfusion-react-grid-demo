@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { oneLight } from 'react-syntax-highlighter/dist/esm/styles/prism'
 import { CopyIcon } from '@syncfusion/react-icons'
+import '@/app/styles/material-interaction-theme.css';
 
 interface CodeFile {
   filename: string
@@ -38,24 +39,23 @@ export default function CodeViewer({ files, defaultFile = 0 }: CodeViewerProps) 
   return (
     <div className="w-full h-full flex flex-col bg-white overflow-hidden rounded" style={{ borderRadius: '8px', border: '1px solid #E0E0E0' }}>
       {/* Horizontal File Tabs */}
-      <div className="flex gap-0 overflow-x-auto flex-wrap flex-shrink-0" style={{ borderBottom: '1px solid #E0E0E0', background: '#F5F5F5', borderRadius: '8px 8px 0 0' }}>
+      <div className="flex gap-0 overflow-x-auto flex-wrap flex-shrink-0" style={{ borderBottom: '1px solid #E0E0E0', background: '#F5F5F5', borderRadius: '8px 8px 0 0', padding: '8px' }}>
         {files.map((file, index) => (
           <button
             key={index}
             onClick={() => setActiveFile(index)}
-            className={`px-4 py-2.5 text-sm font-500 whitespace-nowrap transition-all duration-150 border-b-2 ${
-              activeFile === index
-                ? 'border-primary text-primary'
-                : 'border-transparent text-on-surface-variant hover:text-on-surface'
-            }`}
+            className={`md3-tab-code-file ${activeFile === index ? 'md3-state-selected' : 'md3-state-default'}`}
             style={{
-              backgroundColor: activeFile === index ? '#FFFFFF' : 'transparent',
               borderBottomColor: activeFile === index ? '#6750A4' : 'transparent',
               borderRadius: activeFile === index ? '8px 8px 0 0' : '0',
-              marginRight: '4px'
+              marginRight: '4px',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '4px',
+              transition: 'all 150ms cubic-bezier(0.2, 0, 0, 1)',
             }}
           >
-            <span className="mr-1">📄</span>
+            <span>📄</span>
             {file.filename}
           </button>
         ))}
@@ -72,8 +72,8 @@ export default function CodeViewer({ files, defaultFile = 0 }: CodeViewerProps) 
       <div className="flex-1 overflow-auto relative" style={{ position: 'relative' }}>
         <button
           onClick={handleCopy}
-          className="absolute top-3 right-3 p-2 rounded hover:bg-gray-100 transition-colors"
-          style={{ zIndex: 10, background: 'transparent', border: 'none', cursor: 'pointer', color: '#6750A4' }}
+          className={`md3-copy-icon ${copied ? 'md3-state-pressed' : 'md3-state-default'}`}
+          style={{ position: 'absolute', top: '12px', right: '12px', zIndex: 10 }}
           title={copied ? "Copied!" : "Copy code"}
         >
           <CopyIcon />
@@ -88,7 +88,7 @@ export default function CodeViewer({ files, defaultFile = 0 }: CodeViewerProps) 
             lineHeight: '1.6',
             fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, monospace",
             minHeight: '100%',
-            paddingTop: '40px',
+            paddingTop: '16px',
           }}
           wrapLines={true}
           wrapLongLines={true}
